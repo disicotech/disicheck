@@ -7,6 +7,10 @@ import '/components/commons/confirmation_modal/confirmation_modal_widget.dart';
 import '/components/commons/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+<<<<<<< HEAD
+=======
+import '/flutter_flow/flutter_flow_widgets.dart';
+>>>>>>> master
 import '/pages/admin/components/admin_home_view_desktop/admin_home_view_desktop_widget.dart';
 import '/pages/admin/components/admin_home_view_mobile/admin_home_view_mobile_widget.dart';
 import '/pages/home/components/current_project/current_project_widget.dart';
@@ -14,6 +18,11 @@ import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
 import '/pages/home/components/empty_update_component/empty_update_component_widget.dart';
 import '/pages/home/components/maintenance_update/maintenance_update_widget.dart';
 import '/pages/home/components/standard_home_view_desktop/standard_home_view_desktop_widget.dart';
+<<<<<<< HEAD
+=======
+import 'dart:convert';
+import 'dart:ui';
+>>>>>>> master
 import '/actions/actions.dart' as action_blocks;
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
@@ -21,6 +30,10 @@ import 'package:marketplace_check_internet_connection_library_vrjzhi/custom_code
     as marketplace_check_internet_connection_library_vrjzhi_actions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+<<<<<<< HEAD
+=======
+import 'package:flutter/gestures.dart';
+>>>>>>> master
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -192,6 +205,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           }
         }),
         Future(() async {
+<<<<<<< HEAD
           await MaintenancesTable().update(
             data: {
               'status': FFAppState().updateMaintenance.status,
@@ -240,6 +254,60 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             },
           );
                 }),
+=======
+          if (FFAppState().updateMaintenance != null) {
+            await MaintenancesTable().update(
+              data: {
+                'status': FFAppState().updateMaintenance.status,
+                'maintenance_final_status':
+                    FFAppState().updateMaintenance.maintenanceFinalStatus,
+                'observations': FFAppState().updateMaintenance.observations,
+                'activities': functions.convertDataTypeListToJSON(
+                    FFAppState().activitiesList.toList()),
+                'maintenance_photographic_evidence': FFAppState()
+                    .updateMaintenance
+                    .maintenancePhotographicEvidence,
+                'authorizing_signature':
+                    FFAppState().updateMaintenance.authorizingSignature,
+                'approver_id': FFAppState().updateMaintenance.approverId,
+                'reviewer_id': FFAppState().updateMaintenance.reviewerId,
+              },
+              matchingRows: (rows) => rows.eqOrNull(
+                'id',
+                FFAppState().updateMaintenance.id,
+              ),
+            );
+            await showDialog(
+              context: context,
+              builder: (dialogContext) {
+                return Dialog(
+                  elevation: 0,
+                  insetPadding: EdgeInsets.zero,
+                  backgroundColor: Colors.transparent,
+                  alignment: AlignmentDirectional(0.0, 0.0)
+                      .resolve(Directionality.of(context)),
+                  child: GestureDetector(
+                    onTap: () {
+                      FocusScope.of(dialogContext).unfocus();
+                      FocusManager.instance.primaryFocus?.unfocus();
+                    },
+                    child: ConfirmationModalWidget(
+                      confirmationTitle: 'Cambios actualizados',
+                      confirmationDescription:
+                          'Los últimos cambios que registraste han sido enviados',
+                      setCustomAction: () async {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                );
+              },
+            );
+          } else {
+            return;
+          }
+        }),
+>>>>>>> master
         Future(() async {
           if (FFAppState().authenticatedRole == 2) {
             // Querying Mttos for Coordinators

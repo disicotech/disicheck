@@ -6,6 +6,10 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/pages/maintenance/components/skeletons/shimmer_project_users/shimmer_project_users_widget.dart';
+<<<<<<< HEAD
+=======
+import 'dart:ui';
+>>>>>>> master
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/gestures.dart';
@@ -13,6 +17,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+<<<<<<< HEAD
+=======
+import 'package:provider/provider.dart';
+>>>>>>> master
 import 'sign_up_page_model.dart';
 export 'sign_up_page_model.dart';
 

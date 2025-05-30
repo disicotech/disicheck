@@ -1,7 +1,20 @@
+<<<<<<< HEAD
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'measuring_tool_form_widget.dart' show MeasuringToolFormWidget;
 import 'package:flutter/material.dart';
+=======
+import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/form_field_controller.dart';
+import 'dart:ui';
+import 'measuring_tool_form_widget.dart' show MeasuringToolFormWidget;
+import 'package:easy_debounce/easy_debounce.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+>>>>>>> master
 
 class MeasuringToolFormModel extends FlutterFlowModel<MeasuringToolFormWidget> {
   ///  Local state fields for this component.

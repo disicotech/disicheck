@@ -1,7 +1,17 @@
+<<<<<<< HEAD
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
+=======
+import '/backend/schema/structs/index.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import 'dart:ui';
+import 'package:easy_debounce/easy_debounce.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+>>>>>>> master
 import 'package:provider/provider.dart';
 import 'activities_input_model.dart';
 export 'activities_input_model.dart';
@@ -35,14 +45,22 @@ class _ActivitiesInputWidgetState extends State<ActivitiesInputWidget> {
     _model.activityNameTextController ??= TextEditingController(
         text: FFAppState()
             .activitiesList
+<<<<<<< HEAD
             .elementAtOrNull(widget.itemAtIndex!)
+=======
+            .elementAtOrNull(widget!.itemAtIndex!)
+>>>>>>> master
             ?.name);
     _model.activityNameFocusNode ??= FocusNode();
 
     _model.activityDescriptionTextController ??= TextEditingController(
         text: FFAppState()
             .activitiesList
+<<<<<<< HEAD
             .elementAtOrNull(widget.itemAtIndex!)
+=======
+            .elementAtOrNull(widget!.itemAtIndex!)
+>>>>>>> master
             ?.description);
     _model.activityDescriptionFocusNode ??= FocusNode();
 
@@ -79,7 +97,11 @@ class _ActivitiesInputWidgetState extends State<ActivitiesInputWidget> {
                       Duration(milliseconds: 2000),
                       () async {
                         FFAppState().updateActivitiesListAtIndex(
+<<<<<<< HEAD
                           widget.itemAtIndex!,
+=======
+                          widget!.itemAtIndex!,
+>>>>>>> master
                           (e) =>
                               e..name = _model.activityNameTextController.text,
                         );
@@ -171,7 +193,11 @@ class _ActivitiesInputWidgetState extends State<ActivitiesInputWidget> {
                       Duration(milliseconds: 2000),
                       () async {
                         FFAppState().updateActivitiesListAtIndex(
+<<<<<<< HEAD
                           widget.itemAtIndex!,
+=======
+                          widget!.itemAtIndex!,
+>>>>>>> master
                           (e) => e
                             ..description =
                                 _model.activityDescriptionTextController.text,
@@ -255,7 +281,11 @@ class _ActivitiesInputWidgetState extends State<ActivitiesInputWidget> {
           hoverColor: Colors.transparent,
           highlightColor: Colors.transparent,
           onTap: () async {
+<<<<<<< HEAD
             FFAppState().removeAtIndexFromActivitiesList(widget.itemAtIndex!);
+=======
+            FFAppState().removeAtIndexFromActivitiesList(widget!.itemAtIndex!);
+>>>>>>> master
             _model.updatePage(() {});
           },
           child: Icon(

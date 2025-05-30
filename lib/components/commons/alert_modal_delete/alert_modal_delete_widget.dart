@@ -1,8 +1,16 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+<<<<<<< HEAD
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+=======
+import 'dart:ui';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+>>>>>>> master
 import 'alert_modal_delete_model.dart';
 export 'alert_modal_delete_model.dart';
 
@@ -76,7 +84,11 @@ class _AlertModalDeleteWidgetState extends State<AlertModalDeleteWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 5.0),
                   child: Text(
                     valueOrDefault<String>(
+<<<<<<< HEAD
                       widget.alertTitle,
+=======
+                      widget!.alertTitle,
+>>>>>>> master
                       'Alert Title',
                     ),
                     textAlign: TextAlign.center,
@@ -97,7 +109,11 @@ class _AlertModalDeleteWidgetState extends State<AlertModalDeleteWidget> {
                 ),
                 Text(
                   valueOrDefault<String>(
+<<<<<<< HEAD
                     widget.alertDescription,
+=======
+                    widget!.alertDescription,
+>>>>>>> master
                     'Alert Description',
                   ),
                   textAlign: TextAlign.center,

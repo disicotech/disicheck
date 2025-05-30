@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import '/components/commons/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
@@ -5,6 +6,28 @@ import '/pages/maintenance/components/scheduled_maintenance_object/scheduled_mai
 import '/index.dart';
 import 'maintenance_page_widget.dart' show MaintenancePageWidget;
 import 'package:flutter/material.dart';
+=======
+import '/auth/supabase_auth/auth_util.dart';
+import '/backend/schema/enums/enums.dart';
+import '/backend/schema/structs/index.dart';
+import '/backend/supabase/supabase.dart';
+import '/components/commons/nav_bar/nav_bar_widget.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
+import '/pages/maintenance/components/no_completed_maintenances/no_completed_maintenances_widget.dart';
+import '/pages/maintenance/components/no_in_process_maintenances/no_in_process_maintenances_widget.dart';
+import '/pages/maintenance/components/no_scheduled_maintenances/no_scheduled_maintenances_widget.dart';
+import '/pages/maintenance/components/scheduled_maintenance_object/scheduled_maintenance_object_widget.dart';
+import '/pages/maintenance/components/skeletons/shimmer_maintenances_list/shimmer_maintenances_list_widget.dart';
+import 'dart:ui';
+import '/index.dart';
+import 'maintenance_page_widget.dart' show MaintenancePageWidget;
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+>>>>>>> master
 
 class MaintenancePageModel extends FlutterFlowModel<MaintenancePageWidget> {
   ///  Local state fields for this page.

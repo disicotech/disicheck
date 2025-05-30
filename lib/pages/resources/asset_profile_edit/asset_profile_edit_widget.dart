@@ -10,6 +10,11 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import '/pages/admin/components/assign_project_to_a_user/assign_project_to_a_user_widget.dart';
+<<<<<<< HEAD
+=======
+import 'dart:convert';
+import 'dart:ui';
+>>>>>>> master
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import '/index.dart';
@@ -134,11 +139,19 @@ class _AssetProfileEditWidgetState extends State<AssetProfileEditWidget> {
                 children: [
                   FutureBuilder<List<MaintenanceObjectsRow>>(
                     future: FFAppState().cachedMttObjectDetail(
+<<<<<<< HEAD
                       uniqueQueryKey: widget.maintenanceObjectId,
                       requestFn: () => MaintenanceObjectsTable().querySingleRow(
                         queryFn: (q) => q.eqOrNull(
                           'id',
                           widget.maintenanceObjectId,
+=======
+                      uniqueQueryKey: widget!.maintenanceObjectId,
+                      requestFn: () => MaintenanceObjectsTable().querySingleRow(
+                        queryFn: (q) => q.eqOrNull(
+                          'id',
+                          widget!.maintenanceObjectId,
+>>>>>>> master
                         ),
                       ),
                     ),
@@ -224,7 +237,13 @@ class _AssetProfileEditWidgetState extends State<AssetProfileEditWidget> {
                                               children: [
                                                 Builder(
                                                   builder: (context) {
+<<<<<<< HEAD
                                                     if ((_model
+=======
+                                                    if (_model.uploadedLocalFile_uploadForAssetEdit ==
+                                                            null ||
+                                                        (_model
+>>>>>>> master
                                                                 .uploadedLocalFile_uploadForAssetEdit
                                                                 .bytes
                                                                 ?.isEmpty ??
@@ -365,7 +384,11 @@ class _AssetProfileEditWidgetState extends State<AssetProfileEditWidget> {
                                   future: MaintenancesTable().querySingleRow(
                                     queryFn: (q) => q.eqOrNull(
                                       'odem_id',
+<<<<<<< HEAD
                                       widget.maintenanceObjectId,
+=======
+                                      widget!.maintenanceObjectId,
+>>>>>>> master
                                     ),
                                   ),
                                   builder: (context, snapshot) {
@@ -1542,8 +1565,13 @@ class _AssetProfileEditWidgetState extends State<AssetProfileEditWidget> {
                                                             (newValue) async {
                                                           safeSetState(() =>
                                                               _model.switchValue1 =
+<<<<<<< HEAD
                                                                   newValue);
                                                           if (newValue) {
+=======
+                                                                  newValue!);
+                                                          if (newValue!) {
+>>>>>>> master
                                                             _model.returnedObject =
                                                                 true;
                                                             safeSetState(() {});
@@ -1804,8 +1832,13 @@ class _AssetProfileEditWidgetState extends State<AssetProfileEditWidget> {
                                                         (newValue) async {
                                                       safeSetState(() =>
                                                           _model.switchValue2 =
+<<<<<<< HEAD
                                                               newValue);
                                                       if (newValue) {
+=======
+                                                              newValue!);
+                                                      if (newValue!) {
+>>>>>>> master
                                                         _model.registerObjectTransfer =
                                                             true;
                                                         safeSetState(() {});
@@ -1988,7 +2021,11 @@ class _AssetProfileEditWidgetState extends State<AssetProfileEditWidget> {
                                                                       (rows) =>
                                                                           rows.eqOrNull(
                                                                     'id',
+<<<<<<< HEAD
                                                                     widget
+=======
+                                                                    widget!
+>>>>>>> master
                                                                         .maintenanceObjectId,
                                                                   ),
                                                                 );
@@ -2009,7 +2046,11 @@ class _AssetProfileEditWidgetState extends State<AssetProfileEditWidget> {
                                                                       (rows) =>
                                                                           rows.eqOrNull(
                                                                     'id',
+<<<<<<< HEAD
                                                                     widget
+=======
+                                                                    widget!
+>>>>>>> master
                                                                         .maintenanceObjectId,
                                                                   ),
                                                                 );
@@ -2063,7 +2104,11 @@ class _AssetProfileEditWidgetState extends State<AssetProfileEditWidget> {
                                                                       (rows) =>
                                                                           rows.eqOrNull(
                                                                     'id',
+<<<<<<< HEAD
                                                                     widget
+=======
+                                                                    widget!
+>>>>>>> master
                                                                         .maintenanceObjectId,
                                                                   ),
                                                                 );
@@ -2260,7 +2305,11 @@ class _AssetProfileEditWidgetState extends State<AssetProfileEditWidget> {
                                                                             (rows) =>
                                                                                 rows.eqOrNull(
                                                                           'id',
+<<<<<<< HEAD
                                                                           widget
+=======
+                                                                          widget!
+>>>>>>> master
                                                                               .maintenanceObjectId,
                                                                         ),
                                                                       );
@@ -2294,7 +2343,11 @@ class _AssetProfileEditWidgetState extends State<AssetProfileEditWidget> {
                                                                                     AssetProfilePageWidget.routeName,
                                                                                     queryParameters: {
                                                                                       'maintenanceObjectId': serializeParam(
+<<<<<<< HEAD
                                                                                         widget.maintenanceObjectId,
+=======
+                                                                                        widget!.maintenanceObjectId,
+>>>>>>> master
                                                                                         ParamType.String,
                                                                                       ),
                                                                                     }.withoutNulls,

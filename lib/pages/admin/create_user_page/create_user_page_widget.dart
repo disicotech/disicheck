@@ -3,10 +3,18 @@ import '/components/commons/confirmation_modal/confirmation_modal_widget.dart';
 import '/components/commons/principal_action_button_orange/principal_action_button_orange_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+<<<<<<< HEAD
+=======
+import '/flutter_flow/flutter_flow_widgets.dart';
+>>>>>>> master
 import '/flutter_flow/upload_data.dart';
 import '/pages/admin/components/assign_project_to_a_user/assign_project_to_a_user_widget.dart';
 import '/pages/admin/components/assign_role_to_a_user/assign_role_to_a_user_widget.dart';
 import '/pages/maintenance/create_maintenance_objects/components/input_element/input_element_widget.dart';
+<<<<<<< HEAD
+=======
+import 'dart:ui';
+>>>>>>> master
 import '/actions/actions.dart' as action_blocks;
 import '/custom_code/actions/index.dart' as actions;
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
@@ -14,6 +22,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+<<<<<<< HEAD
+=======
+import 'package:provider/provider.dart';
+>>>>>>> master
 import 'create_user_page_model.dart';
 export 'create_user_page_model.dart';
 
@@ -199,6 +211,11 @@ class _CreateUserPageWidgetState extends State<CreateUserPageWidget> {
                                           Builder(
                                             builder: (context) {
                                               if (_model.uploadedFileUrl_uploadedLocalPhotoFileFromAdmin ==
+<<<<<<< HEAD
+=======
+                                                      null ||
+                                                  _model.uploadedFileUrl_uploadedLocalPhotoFileFromAdmin ==
+>>>>>>> master
                                                       '') {
                                                 return Container(
                                                   width: 120.0,

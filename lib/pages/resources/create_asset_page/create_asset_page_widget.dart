@@ -6,6 +6,10 @@ import '/components/commons/confirmation_modal/confirmation_modal_widget.dart';
 import '/components/commons/principal_action_button_orange/principal_action_button_orange_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+<<<<<<< HEAD
+=======
+import '/flutter_flow/flutter_flow_widgets.dart';
+>>>>>>> master
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import '/pages/maintenance/create_maintenance_objects/components/equipment_machines_form/equipment_machines_form_widget.dart';
@@ -18,6 +22,10 @@ import 'dart:ui';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/cupertino.dart';
+<<<<<<< HEAD
+=======
+import 'package:flutter/gestures.dart';
+>>>>>>> master
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -252,6 +260,11 @@ class _CreateAssetPageWidgetState extends State<CreateAssetPageWidget> {
                                                 Builder(
                                                   builder: (context) {
                                                     if (_model.uploadedFileUrl_uploadedLocalPhotoFile ==
+<<<<<<< HEAD
+=======
+                                                            null ||
+                                                        _model.uploadedFileUrl_uploadedLocalPhotoFile ==
+>>>>>>> master
                                                             '') {
                                                       return Container(
                                                         width: 120.0,
@@ -574,7 +587,11 @@ class _CreateAssetPageWidgetState extends State<CreateAssetPageWidget> {
                                                                       width: 2,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
+<<<<<<< HEAD
                                                                           .alternate,
+=======
+                                                                          .alternate!,
+>>>>>>> master
                                                                     )
                                                                   : null,
                                                               activeColor:
@@ -670,7 +687,11 @@ class _CreateAssetPageWidgetState extends State<CreateAssetPageWidget> {
                                                                       width: 2,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
+<<<<<<< HEAD
                                                                           .alternate,
+=======
+                                                                          .alternate!,
+>>>>>>> master
                                                                     )
                                                                   : null,
                                                               activeColor:
@@ -2098,16 +2119,33 @@ class _CreateAssetPageWidgetState extends State<CreateAssetPageWidget> {
                                               requiredAction: () async {
                                                 if (_model.moSelectedCategory ==
                                                     MoCategories.INFRA.name) {
+<<<<<<< HEAD
                                                   if ((_model.registrantDniTextController.text == '') ||
                                                       (_model.categoryDropdownValue == null ||
                                                           _model.categoryDropdownValue ==
                                                               '') ||
                                                       (_model.criticalityLevelTextController
+=======
+                                                  if ((_model.registrantDniTextController.text == null || _model.registrantDniTextController.text == '') ||
+                                                      (_model.categoryDropdownValue == null ||
+                                                          _model.categoryDropdownValue ==
+                                                              '') ||
+                                                      (_model.criticalityLevelTextController.text ==
+                                                              null ||
+                                                          _model.criticalityLevelTextController
+>>>>>>> master
                                                                   .text ==
                                                               '') ||
                                                       (_model
                                                                   .serviceLifeTextController
                                                                   .text ==
+<<<<<<< HEAD
+=======
+                                                              null ||
+                                                          _model
+                                                                  .serviceLifeTextController
+                                                                  .text ==
+>>>>>>> master
                                                               '') ||
                                                       (_model.criticalTaskPerformedValue ==
                                                               null ||
@@ -2120,11 +2158,27 @@ class _CreateAssetPageWidgetState extends State<CreateAssetPageWidget> {
                                                                   .infrastructureFormModel
                                                                   .infraIdentifierCodeTextController
                                                                   .text ==
+<<<<<<< HEAD
+=======
+                                                              null ||
+                                                          _model
+                                                                  .infrastructureFormModel
+                                                                  .infraIdentifierCodeTextController
+                                                                  .text ==
+>>>>>>> master
                                                               '') ||
                                                       (_model
                                                                   .infrastructureFormModel
                                                                   .infraSerialCodeTextController
                                                                   .text ==
+<<<<<<< HEAD
+=======
+                                                              null ||
+                                                          _model
+                                                                  .infrastructureFormModel
+                                                                  .infraSerialCodeTextController
+                                                                  .text ==
+>>>>>>> master
                                                               '')) {
                                                     await showDialog(
                                                       context: context,
@@ -2292,16 +2346,33 @@ class _CreateAssetPageWidgetState extends State<CreateAssetPageWidget> {
                                                         .moSelectedCategory ==
                                                     MoCategories
                                                         .HERRAMIENTAS.name) {
+<<<<<<< HEAD
                                                   if ((_model.registrantDniTextController.text == '') ||
                                                       (_model.categoryDropdownValue == null ||
                                                           _model.categoryDropdownValue ==
                                                               '') ||
                                                       (_model.criticalityLevelTextController
+=======
+                                                  if ((_model.registrantDniTextController.text == null || _model.registrantDniTextController.text == '') ||
+                                                      (_model.categoryDropdownValue == null ||
+                                                          _model.categoryDropdownValue ==
+                                                              '') ||
+                                                      (_model.criticalityLevelTextController.text ==
+                                                              null ||
+                                                          _model.criticalityLevelTextController
+>>>>>>> master
                                                                   .text ==
                                                               '') ||
                                                       (_model
                                                                   .serviceLifeTextController
                                                                   .text ==
+<<<<<<< HEAD
+=======
+                                                              null ||
+                                                          _model
+                                                                  .serviceLifeTextController
+                                                                  .text ==
+>>>>>>> master
                                                               '') ||
                                                       (_model.criticalTaskPerformedValue ==
                                                               null ||
@@ -2314,11 +2385,27 @@ class _CreateAssetPageWidgetState extends State<CreateAssetPageWidget> {
                                                                   .toolsFormModel
                                                                   .toolsIdentifierCodeTextController
                                                                   .text ==
+<<<<<<< HEAD
+=======
+                                                              null ||
+                                                          _model
+                                                                  .toolsFormModel
+                                                                  .toolsIdentifierCodeTextController
+                                                                  .text ==
+>>>>>>> master
                                                               '') ||
                                                       (_model
                                                                   .toolsFormModel
                                                                   .toolsSerialCodeTextController
                                                                   .text ==
+<<<<<<< HEAD
+=======
+                                                              null ||
+                                                          _model
+                                                                  .toolsFormModel
+                                                                  .toolsSerialCodeTextController
+                                                                  .text ==
+>>>>>>> master
                                                               '')) {
                                                     await showDialog(
                                                       context: context,
@@ -2525,16 +2612,33 @@ class _CreateAssetPageWidgetState extends State<CreateAssetPageWidget> {
                                                     MoCategories
                                                         .EQUIPOS_MAQUINAS
                                                         .name) {
+<<<<<<< HEAD
                                                   if ((_model.registrantDniTextController.text == '') ||
                                                       (_model.categoryDropdownValue == null ||
                                                           _model.categoryDropdownValue ==
                                                               '') ||
                                                       (_model.criticalityLevelTextController
+=======
+                                                  if ((_model.registrantDniTextController.text == null || _model.registrantDniTextController.text == '') ||
+                                                      (_model.categoryDropdownValue == null ||
+                                                          _model.categoryDropdownValue ==
+                                                              '') ||
+                                                      (_model.criticalityLevelTextController.text ==
+                                                              null ||
+                                                          _model.criticalityLevelTextController
+>>>>>>> master
                                                                   .text ==
                                                               '') ||
                                                       (_model
                                                                   .serviceLifeTextController
                                                                   .text ==
+<<<<<<< HEAD
+=======
+                                                              null ||
+                                                          _model
+                                                                  .serviceLifeTextController
+                                                                  .text ==
+>>>>>>> master
                                                               '') ||
                                                       (_model.criticalTaskPerformedValue ==
                                                               null ||
@@ -2547,11 +2651,27 @@ class _CreateAssetPageWidgetState extends State<CreateAssetPageWidget> {
                                                                   .equipmentMachinesFormModel
                                                                   .equipmentMachineIdentifierCodeTextController
                                                                   .text ==
+<<<<<<< HEAD
+=======
+                                                              null ||
+                                                          _model
+                                                                  .equipmentMachinesFormModel
+                                                                  .equipmentMachineIdentifierCodeTextController
+                                                                  .text ==
+>>>>>>> master
                                                               '') ||
                                                       (_model
                                                                   .equipmentMachinesFormModel
                                                                   .equipmentMachineSerialCodeTextController
                                                                   .text ==
+<<<<<<< HEAD
+=======
+                                                              null ||
+                                                          _model
+                                                                  .equipmentMachinesFormModel
+                                                                  .equipmentMachineSerialCodeTextController
+                                                                  .text ==
+>>>>>>> master
                                                               '')) {
                                                     await showDialog(
                                                       context: context,
@@ -2750,16 +2870,33 @@ class _CreateAssetPageWidgetState extends State<CreateAssetPageWidget> {
                                                         .moSelectedCategory ==
                                                     MoCategories
                                                         .INSTRUMENTOS.name) {
+<<<<<<< HEAD
                                                   if ((_model.registrantDniTextController.text == '') ||
                                                       (_model.categoryDropdownValue == null ||
                                                           _model.categoryDropdownValue ==
                                                               '') ||
                                                       (_model.criticalityLevelTextController
+=======
+                                                  if ((_model.registrantDniTextController.text == null || _model.registrantDniTextController.text == '') ||
+                                                      (_model.categoryDropdownValue == null ||
+                                                          _model.categoryDropdownValue ==
+                                                              '') ||
+                                                      (_model.criticalityLevelTextController.text ==
+                                                              null ||
+                                                          _model.criticalityLevelTextController
+>>>>>>> master
                                                                   .text ==
                                                               '') ||
                                                       (_model
                                                                   .serviceLifeTextController
                                                                   .text ==
+<<<<<<< HEAD
+=======
+                                                              null ||
+                                                          _model
+                                                                  .serviceLifeTextController
+                                                                  .text ==
+>>>>>>> master
                                                               '') ||
                                                       (_model.criticalTaskPerformedValue ==
                                                               null ||
@@ -2772,11 +2909,27 @@ class _CreateAssetPageWidgetState extends State<CreateAssetPageWidget> {
                                                                   .measuringToolFormModel
                                                                   .measuringToolCodeTextController
                                                                   .text ==
+<<<<<<< HEAD
+=======
+                                                              null ||
+                                                          _model
+                                                                  .measuringToolFormModel
+                                                                  .measuringToolCodeTextController
+                                                                  .text ==
+>>>>>>> master
                                                               '') ||
                                                       (_model
                                                                   .measuringToolFormModel
                                                                   .measuringToolSerialTextController
                                                                   .text ==
+<<<<<<< HEAD
+=======
+                                                              null ||
+                                                          _model
+                                                                  .measuringToolFormModel
+                                                                  .measuringToolSerialTextController
+                                                                  .text ==
+>>>>>>> master
                                                               '')) {
                                                     await showDialog(
                                                       context: context,

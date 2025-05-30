@@ -1,6 +1,10 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/home/components/skeletons/shimmer_current_project_name/shimmer_current_project_name_widget.dart';
+<<<<<<< HEAD
+=======
+import 'dart:ui';
+>>>>>>> master
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -45,7 +49,11 @@ class _CurrentProjectWidgetState extends State<CurrentProjectWidget> {
       _model.queryUserProjectId = await UsersProjectsTable().queryRows(
         queryFn: (q) => q.eqOrNull(
           'user_id',
+<<<<<<< HEAD
           widget.userId,
+=======
+          widget!.userId,
+>>>>>>> master
         ),
       );
       FFAppState().currentProject =

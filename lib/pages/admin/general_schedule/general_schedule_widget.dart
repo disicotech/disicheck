@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+<<<<<<< HEAD
 import '/flutter_flow/form_field_controller.dart';
 import '/pages/admin/skeletons/shimmer_general_schedule/shimmer_general_schedule_widget.dart';
 import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
@@ -12,6 +13,21 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+=======
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
+import '/pages/admin/skeletons/shimmer_general_schedule/shimmer_general_schedule_widget.dart';
+import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
+import 'dart:math';
+import 'dart:ui';
+import 'package:easy_debounce/easy_debounce.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+>>>>>>> master
 import 'general_schedule_model.dart';
 export 'general_schedule_model.dart';
 
@@ -1689,7 +1705,11 @@ class _GeneralScheduleWidgetState extends State<GeneralScheduleWidget>
                                                                   onSelectChanged) =>
                                                               DataRow(
                                                         color:
+<<<<<<< HEAD
                                                             WidgetStateProperty
+=======
+                                                            MaterialStateProperty
+>>>>>>> master
                                                                 .all(
                                                           filteredObjectsIndex %
                                                                       2 ==
@@ -2254,7 +2274,11 @@ class _GeneralScheduleWidgetState extends State<GeneralScheduleWidget>
                                                                     onSelectChanged) =>
                                                                 DataRow(
                                                           color:
+<<<<<<< HEAD
                                                               WidgetStateProperty
+=======
+                                                              MaterialStateProperty
+>>>>>>> master
                                                                   .all(
                                                             filteredObjectsIndex %
                                                                         2 ==

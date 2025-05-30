@@ -1,15 +1,33 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
+=======
+import 'package:go_router/go_router.dart';
+import 'package:page_transition/page_transition.dart';
+>>>>>>> master
 import 'package:provider/provider.dart';
 
 import '/backend/schema/structs/index.dart';
 import '/backend/schema/enums/enums.dart';
+<<<<<<< HEAD
 
 import '/auth/base_auth_user_provider.dart';
 
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+=======
+import '/backend/supabase/supabase.dart';
+
+import '/auth/base_auth_user_provider.dart';
+
+import '/main.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:ff_commons/flutter_flow/lat_lng.dart';
+import 'package:ff_commons/flutter_flow/place.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import 'serialization_util.dart';
+>>>>>>> master
 
 import '/index.dart';
 

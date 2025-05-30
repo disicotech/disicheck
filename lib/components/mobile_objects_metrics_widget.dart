@@ -1,6 +1,10 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/resources/skeletons/shimmer_mobile_objects_metrics/shimmer_mobile_objects_metrics_widget.dart';
+<<<<<<< HEAD
+=======
+import 'dart:ui';
+>>>>>>> master
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -133,9 +137,15 @@ class _MobileObjectsMetricsWidgetState
                                     containerObjectsWithMttoCountRowList
                                         .where((e) =>
                                             e.assignedProjectId ==
+<<<<<<< HEAD
                                             (widget.project != null &&
                                                     widget.project != ''
                                                 ? widget.project
+=======
+                                            (widget!.project != null &&
+                                                    widget!.project != ''
+                                                ? widget!.project
+>>>>>>> master
                                                 : FFAppState().currentProject))
                                         .toList()
                                         .length

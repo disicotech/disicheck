@@ -1,10 +1,21 @@
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+<<<<<<< HEAD
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
+=======
+import 'dart:math';
+import 'dart:ui';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+>>>>>>> master
 import 'confirmation_modal_model.dart';
 export 'confirmation_modal_model.dart';
 
@@ -142,7 +153,11 @@ class _ConfirmationModalWidgetState extends State<ConfirmationModalWidget>
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
             child: Text(
               valueOrDefault<String>(
+<<<<<<< HEAD
                 widget.confirmationTitle,
+=======
+                widget!.confirmationTitle,
+>>>>>>> master
                 'Confirmation Title',
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -161,7 +176,11 @@ class _ConfirmationModalWidgetState extends State<ConfirmationModalWidget>
           ),
           Text(
             valueOrDefault<String>(
+<<<<<<< HEAD
               widget.confirmationDescription,
+=======
+              widget!.confirmationDescription,
+>>>>>>> master
               'ConfirmationDescription',
             ),
             textAlign: TextAlign.center,

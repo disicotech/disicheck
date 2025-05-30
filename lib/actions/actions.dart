@@ -1,9 +1,20 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
+<<<<<<< HEAD
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
+=======
+import '/backend/schema/enums/enums.dart';
+import '/backend/schema/structs/index.dart';
+import '/backend/supabase/supabase.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import 'dart:convert';
+import '/index.dart';
+import 'package:ff_commons/api_requests/api_manager.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+>>>>>>> master
 import 'package:flutter/material.dart';
 
 /// Once the role of the user is defined, this action takes the user to the
@@ -37,7 +48,11 @@ Future checkAndSetUserRole(BuildContext context) async {
     ),
   );
   // Check authenticated use and set its RoleID
+<<<<<<< HEAD
   FFAppState().authenticatedRole = authenticatedUser.firstOrNull!.roleId;
+=======
+  FFAppState().authenticatedRole = authenticatedUser!.firstOrNull!.roleId;
+>>>>>>> master
   FFAppState().update(() {});
 }
 
@@ -52,16 +67,28 @@ Future<bool?> checkUserAprovalStatus(BuildContext context) async {
       currentUserUid,
     ),
   );
+<<<<<<< HEAD
   if ((pendingAprovalStatus).isNotEmpty) {
+=======
+  if (pendingAprovalStatus != null && (pendingAprovalStatus)!.isNotEmpty) {
+>>>>>>> master
     context.pushNamed(
       WaitForApprovalPageWidget.routeName,
       queryParameters: {
         'projectName': serializeParam(
+<<<<<<< HEAD
           pendingAprovalStatus.firstOrNull?.projectRequested,
           ParamType.String,
         ),
         'userEmail': serializeParam(
           pendingAprovalStatus.firstOrNull?.email,
+=======
+          pendingAprovalStatus?.firstOrNull?.projectRequested,
+          ParamType.String,
+        ),
+        'userEmail': serializeParam(
+          pendingAprovalStatus?.firstOrNull?.email,
+>>>>>>> master
           ParamType.String,
         ),
       }.withoutNulls,
@@ -85,7 +112,11 @@ Future<List<MaintenancesWithProjectRow>?> checkAndFilterMttos(
     ),
   );
   // Set User Name
+<<<<<<< HEAD
   FFAppState().authenticatedUserName = queryUserName.firstOrNull!.name;
+=======
+  FFAppState().authenticatedUserName = queryUserName!.firstOrNull!.name;
+>>>>>>> master
   if (FFAppState().authenticatedRole == 1) {
   } else if (FFAppState().authenticatedRole == 2) {
     // Querying Mttos for Coordinators
@@ -115,8 +146,13 @@ Future loadAndSetInventory(BuildContext context) async {
 
   getAllMaintenanceObjects = await GetAllUsersByProjectCall.call();
 
+<<<<<<< HEAD
   if ((getAllMaintenanceObjects.succeeded ?? true)) {
     FFAppState().inventoryList = ((getAllMaintenanceObjects.jsonBody ?? '')
+=======
+  if ((getAllMaintenanceObjects?.succeeded ?? true)) {
+    FFAppState().inventoryList = ((getAllMaintenanceObjects?.jsonBody ?? '')
+>>>>>>> master
             .toList()
             .map<MaintenanceObjectStruct?>(MaintenanceObjectStruct.maybeFromMap)
             .toList() as Iterable<MaintenanceObjectStruct?>)

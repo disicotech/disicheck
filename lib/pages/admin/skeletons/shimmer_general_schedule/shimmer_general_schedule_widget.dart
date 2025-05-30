@@ -1,9 +1,19 @@
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+<<<<<<< HEAD
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+=======
+import 'dart:math';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+>>>>>>> master
 import 'shimmer_general_schedule_model.dart';
 export 'shimmer_general_schedule_model.dart';
 
@@ -342,7 +352,11 @@ class _ShimmerGeneralScheduleWidgetState
               ],
               dataRowBuilder:
                   (itemsItem, itemsIndex, selected, onSelectChanged) => DataRow(
+<<<<<<< HEAD
                 color: WidgetStateProperty.all(
+=======
+                color: MaterialStateProperty.all(
+>>>>>>> master
                   itemsIndex % 2 == 0
                       ? FlutterFlowTheme.of(context).tertiary
                       : FlutterFlowTheme.of(context).tertiary,

@@ -1,4 +1,8 @@
 import 'package:supabase_flutter/supabase_flutter.dart' hide Provider;
+<<<<<<< HEAD
+=======
+import '/flutter_flow/flutter_flow_util.dart';
+>>>>>>> master
 
 export 'database/database.dart';
 export 'storage/storage.dart';

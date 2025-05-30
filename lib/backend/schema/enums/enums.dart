@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import 'package:collection/collection.dart';
+>>>>>>> master
 import 'package:ff_commons/flutter_flow/enums.dart';
 export 'package:ff_commons/flutter_flow/enums.dart';
 

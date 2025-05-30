@@ -1,5 +1,9 @@
 import '/backend/supabase/supabase.dart';
 import 'supabase_auth_manager.dart';
+<<<<<<< HEAD
+=======
+import 'supabase_user_provider.dart';
+>>>>>>> master
 
 export 'supabase_auth_manager.dart';
 

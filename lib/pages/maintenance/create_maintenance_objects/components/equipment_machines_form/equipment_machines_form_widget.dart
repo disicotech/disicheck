@@ -1,8 +1,16 @@
 import '/flutter_flow/flutter_flow_util.dart';
+<<<<<<< HEAD
+=======
+import 'dart:ui';
+>>>>>>> master
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+<<<<<<< HEAD
+=======
+import 'package:google_fonts/google_fonts.dart';
+>>>>>>> master
 import 'package:provider/provider.dart';
 import 'equipment_machines_form_model.dart';
 export 'equipment_machines_form_model.dart';

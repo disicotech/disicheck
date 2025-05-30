@@ -3,6 +3,11 @@ import '/backend/supabase/supabase.dart';
 import '/components/commons/closing_session_modal/closing_session_modal_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+<<<<<<< HEAD
+=======
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
+>>>>>>> master
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';

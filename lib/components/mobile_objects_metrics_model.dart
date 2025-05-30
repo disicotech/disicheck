@@ -1,9 +1,22 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+<<<<<<< HEAD
 import '/flutter_flow/request_manager.dart';
 
 import 'mobile_objects_metrics_widget.dart' show MobileObjectsMetricsWidget;
 import 'package:flutter/material.dart';
+=======
+import '/pages/resources/skeletons/shimmer_mobile_objects_metrics/shimmer_mobile_objects_metrics_widget.dart';
+import 'dart:ui';
+import '/flutter_flow/request_manager.dart';
+
+import 'mobile_objects_metrics_widget.dart' show MobileObjectsMetricsWidget;
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+>>>>>>> master
 
 class MobileObjectsMetricsModel
     extends FlutterFlowModel<MobileObjectsMetricsWidget> {

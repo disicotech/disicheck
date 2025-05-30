@@ -1,7 +1,15 @@
 import '/flutter_flow/flutter_flow_util.dart';
+<<<<<<< HEAD
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+=======
+import 'dart:ui';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+>>>>>>> master
 import 'alert_modal_model.dart';
 export 'alert_modal_model.dart';
 
@@ -101,7 +109,11 @@ class _AlertModalWidgetState extends State<AlertModalWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 5.0),
                       child: Text(
                         valueOrDefault<String>(
+<<<<<<< HEAD
                           widget.alertTitle,
+=======
+                          widget!.alertTitle,
+>>>>>>> master
                           'Alert Title',
                         ),
                         textAlign: TextAlign.center,
@@ -123,7 +135,11 @@ class _AlertModalWidgetState extends State<AlertModalWidget> {
                     ),
                     Text(
                       valueOrDefault<String>(
+<<<<<<< HEAD
                         widget.alertDescription,
+=======
+                        widget!.alertDescription,
+>>>>>>> master
                         'Alert Description',
                       ),
                       textAlign: TextAlign.center,

@@ -1,7 +1,17 @@
 import '/backend/schema/enums/enums.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+<<<<<<< HEAD
 import 'nav_bar_widget.dart' show NavBarWidget;
 import 'package:flutter/material.dart';
+=======
+import 'dart:ui';
+import '/index.dart';
+import 'nav_bar_widget.dart' show NavBarWidget;
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+>>>>>>> master
 
 class NavBarModel extends FlutterFlowModel<NavBarWidget> {
   ///  Local state fields for this component.

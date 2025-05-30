@@ -1,10 +1,19 @@
 import 'dart:convert';
+<<<<<<< HEAD
+=======
+import 'dart:typed_data';
+import '../schema/structs/index.dart';
+>>>>>>> master
 
 import 'package:flutter/foundation.dart';
 
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:ff_commons/api_requests/api_manager.dart';
 
+<<<<<<< HEAD
+=======
+import 'package:ff_commons/api_requests/api_paging_params.dart';
+>>>>>>> master
 
 export 'package:ff_commons/api_requests/api_manager.dart' show ApiCallResponse;
 
@@ -438,7 +447,11 @@ class CreateReportOrInventoryFromMakeCall {
     int? numberOfOperativeMaintenanceObjects,
     String? startDate = '',
     String? endDate = '',
+<<<<<<< HEAD
     dynamic objectsInventoryJson,
+=======
+    dynamic? objectsInventoryJson,
+>>>>>>> master
     String? action = '',
   }) async {
     final objectsInventory = _serializeJson(objectsInventoryJson, true);

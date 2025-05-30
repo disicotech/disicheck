@@ -2,11 +2,23 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+<<<<<<< HEAD
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+=======
+import 'dart:math';
+import 'dart:ui';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+>>>>>>> master
 import 'wait_for_approval_page_model.dart';
 export 'wait_for_approval_page_model.dart';
 
@@ -532,7 +544,11 @@ class _WaitForApprovalPageWidgetState extends State<WaitForApprovalPageWidget>
                                         ),
                                         Text(
                                           valueOrDefault<String>(
+<<<<<<< HEAD
                                             widget.projectName,
+=======
+                                            widget!.projectName,
+>>>>>>> master
                                             'Nombre del proyecto',
                                           ),
                                           textAlign: TextAlign.end,
@@ -577,7 +593,11 @@ class _WaitForApprovalPageWidgetState extends State<WaitForApprovalPageWidget>
                                         ),
                                         Text(
                                           valueOrDefault<String>(
+<<<<<<< HEAD
                                             widget.userEmail,
+=======
+                                            widget!.userEmail,
+>>>>>>> master
                                             'Email',
                                           ),
                                           textAlign: TextAlign.end,

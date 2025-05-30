@@ -1,8 +1,17 @@
 import '/flutter_flow/flutter_flow_util.dart';
+<<<<<<< HEAD
+=======
+import 'dart:ui';
+>>>>>>> master
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+<<<<<<< HEAD
+=======
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+>>>>>>> master
 import 'input_element_model.dart';
 export 'input_element_model.dart';
 
@@ -67,7 +76,11 @@ class _InputElementWidgetState extends State<InputElementWidget> {
               children: [
                 Text(
                   valueOrDefault<String>(
+<<<<<<< HEAD
                     widget.inputLabel,
+=======
+                    widget!.inputLabel,
+>>>>>>> master
                     'Input label',
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -98,9 +111,15 @@ class _InputElementWidgetState extends State<InputElementWidget> {
                             useGoogleFonts: !FlutterFlowTheme.of(context)
                                 .labelMediumIsCustom,
                           ),
+<<<<<<< HEAD
                       hintText: widget.capitalized
                           ? functions.capitalizeInitials(widget.inputHint)
                           : widget.inputHint,
+=======
+                      hintText: widget!.capitalized
+                          ? functions.capitalizeInitials(widget!.inputHint)
+                          : widget!.inputHint,
+>>>>>>> master
                       hintStyle: FlutterFlowTheme.of(context)
                           .labelMedium
                           .override(

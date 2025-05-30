@@ -11,10 +11,18 @@ import '/pages/admin/components/assign_role_to_a_user/assign_role_to_a_user_widg
 import '/pages/admin/skeletons/shimmer_user_info/shimmer_user_info_widget.dart';
 import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
 import '/pages/home/components/skeletons/shimmer_current_project_name/shimmer_current_project_name_widget.dart';
+<<<<<<< HEAD
+=======
+import 'dart:ui';
+>>>>>>> master
 import '/actions/actions.dart' as action_blocks;
 import '/index.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+<<<<<<< HEAD
+=======
+import 'package:flutter/gestures.dart';
+>>>>>>> master
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -184,7 +192,11 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
                                               UsersTable().querySingleRow(
                                             queryFn: (q) => q.eqOrNull(
                                               'id',
+<<<<<<< HEAD
                                               widget.userId,
+=======
+                                              widget!.userId,
+>>>>>>> master
                                             ),
                                           ),
                                         ),
@@ -388,7 +400,11 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
                                                                       AutoSizeText(
                                                                     valueOrDefault<
                                                                         String>(
+<<<<<<< HEAD
                                                                       widget
+=======
+                                                                      widget!
+>>>>>>> master
                                                                           .userName,
                                                                       'Sin Nombre',
                                                                     ).maybeHandleOverflow(
@@ -425,7 +441,11 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
                                                                 Text(
                                                                   valueOrDefault<
                                                                       String>(
+<<<<<<< HEAD
                                                                     widget
+=======
+                                                                    widget!
+>>>>>>> master
                                                                         .userEmail,
                                                                     'Sin Email',
                                                                   ),
@@ -495,7 +515,11 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
                                                                           TextSpan(
                                                                             text:
                                                                                 valueOrDefault<String>(
+<<<<<<< HEAD
                                                                               widget.userDNI,
+=======
+                                                                              widget!.userDNI,
+>>>>>>> master
                                                                               'No registra',
                                                                             ),
                                                                             style:
@@ -604,7 +628,11 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
                                                                           (q) =>
                                                                               q.eqOrNull(
                                                                         'user_id',
+<<<<<<< HEAD
                                                                         widget
+=======
+                                                                        widget!
+>>>>>>> master
                                                                             .userId,
                                                                       ),
                                                                     ),
@@ -833,14 +861,22 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
                                                   await UsersProjectsTable()
                                                       .update(
                                                     data: {
+<<<<<<< HEAD
                                                       'user_id': widget.userId,
+=======
+                                                      'user_id': widget!.userId,
+>>>>>>> master
                                                       'project_id': _model
                                                           .selectedPojectToAssign,
                                                     },
                                                     matchingRows: (rows) =>
                                                         rows.eqOrNull(
                                                       'user_id',
+<<<<<<< HEAD
                                                       widget.userId,
+=======
+                                                      widget!.userId,
+>>>>>>> master
                                                     ),
                                                   );
                                                   await UsersTable().update(
@@ -851,7 +887,11 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
                                                     matchingRows: (rows) =>
                                                         rows.eqOrNull(
                                                       'id',
+<<<<<<< HEAD
                                                       widget.userId,
+=======
+                                                      widget!.userId,
+>>>>>>> master
                                                     ),
                                                   );
                                                   await showDialog(
@@ -925,7 +965,11 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
                                                                 (rows) => rows
                                                                     .eqOrNull(
                                                               'id',
+<<<<<<< HEAD
                                                               widget.userId,
+=======
+                                                              widget!.userId,
+>>>>>>> master
                                                             ),
                                                           );
                                                           Navigator.pop(

@@ -27,8 +27,13 @@ class NotificationsRow extends SupabaseDataRow {
   String? get type => getField<String>('type');
   set type(String? value) => setField<String>('type', value);
 
+<<<<<<< HEAD
   dynamic get additionalData => getField<dynamic>('additional_data');
   set additionalData(dynamic value) =>
+=======
+  dynamic? get additionalData => getField<dynamic>('additional_data');
+  set additionalData(dynamic? value) =>
+>>>>>>> master
       setField<dynamic>('additional_data', value);
 
   DateTime get createdAt => getField<DateTime>('created_at')!;

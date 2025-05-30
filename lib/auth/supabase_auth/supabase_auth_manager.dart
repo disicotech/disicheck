@@ -29,7 +29,11 @@ class SupabaseAuthManager extends AuthManager
     } on AuthException catch (e) {
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
+<<<<<<< HEAD
         SnackBar(content: Text('Error: ${e.message}')),
+=======
+        SnackBar(content: Text('Error: ${e.message!}')),
+>>>>>>> master
       );
     }
   }
@@ -48,7 +52,11 @@ class SupabaseAuthManager extends AuthManager
     } on AuthException catch (e) {
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
+<<<<<<< HEAD
         SnackBar(content: Text('Error: ${e.message}')),
+=======
+        SnackBar(content: Text('Error: ${e.message!}')),
+>>>>>>> master
       );
       return;
     }
@@ -71,7 +79,11 @@ class SupabaseAuthManager extends AuthManager
     } on AuthException catch (e) {
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
+<<<<<<< HEAD
         SnackBar(content: Text('Error: ${e.message}')),
+=======
+        SnackBar(content: Text('Error: ${e.message!}')),
+>>>>>>> master
       );
       return;
     }
@@ -92,7 +104,11 @@ class SupabaseAuthManager extends AuthManager
     } on AuthException catch (e) {
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
+<<<<<<< HEAD
         SnackBar(content: Text('Error: ${e.message}')),
+=======
+        SnackBar(content: Text('Error: ${e.message!}')),
+>>>>>>> master
       );
       return null;
     }
@@ -153,7 +169,11 @@ class SupabaseAuthManager extends AuthManager
     } on AuthException catch (e) {
       final errorMsg = e.message.contains('User already registered')
           ? 'El correo está actualmente registrado o siendo usado por otra cuenta.'
+<<<<<<< HEAD
           : 'Error: ${e.message}';
+=======
+          : 'Error: ${e.message!}';
+>>>>>>> master
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(errorMsg)),

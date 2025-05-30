@@ -1,8 +1,17 @@
 import '/flutter_flow/flutter_flow_util.dart';
+<<<<<<< HEAD
+=======
+import 'dart:ui';
+>>>>>>> master
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
+=======
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+>>>>>>> master
 import 'maintenance_history_card_model.dart';
 export 'maintenance_history_card_model.dart';
 
@@ -64,7 +73,11 @@ class _MaintenanceHistoryCardWidgetState
             MaintenanceDetailWidget.routeName,
             queryParameters: {
               'maintenanceId': serializeParam(
+<<<<<<< HEAD
                 widget.maintenanceId,
+=======
+                widget!.maintenanceId,
+>>>>>>> master
                 ParamType.String,
               ),
             }.withoutNulls,
@@ -117,7 +130,11 @@ class _MaintenanceHistoryCardWidgetState
                       children: [
                         Text(
                           valueOrDefault<String>(
+<<<<<<< HEAD
                             widget.maintenanceCode,
+=======
+                            widget!.maintenanceCode,
+>>>>>>> master
                             'MNT-111',
                           ),
                           style: FlutterFlowTheme.of(context)
@@ -134,7 +151,11 @@ class _MaintenanceHistoryCardWidgetState
                         ),
                         Text(
                           valueOrDefault<String>(
+<<<<<<< HEAD
                             widget.typeOfMaintenance,
+=======
+                            widget!.typeOfMaintenance,
+>>>>>>> master
                             'Tipo de Mtto.',
                           ),
                           style: FlutterFlowTheme.of(context)
@@ -150,7 +171,11 @@ class _MaintenanceHistoryCardWidgetState
                         Text(
                           valueOrDefault<String>(
                             functions.dateForScheduledMtto(
+<<<<<<< HEAD
                                 widget.maintenanceDate?.toString()),
+=======
+                                widget!.maintenanceDate?.toString()),
+>>>>>>> master
                             'Dic 01, 2025',
                           ),
                           style: FlutterFlowTheme.of(context)

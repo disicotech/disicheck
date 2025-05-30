@@ -1,10 +1,25 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+<<<<<<< HEAD
+=======
+import '/pages/home/components/skeletons/shimmer_current_project_name/shimmer_current_project_name_widget.dart';
+import '/pages/maintenance/components/skeletons/shimmer_maintenance/shimmer_maintenance_widget.dart';
+import 'dart:ui';
+import '/flutter_flow/custom_functions.dart' as functions;
+>>>>>>> master
 import '/flutter_flow/request_manager.dart';
 
 import 'scheduled_maintenance_object_widget.dart'
     show ScheduledMaintenanceObjectWidget;
+<<<<<<< HEAD
 import 'package:flutter/material.dart';
+=======
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+>>>>>>> master
 
 class ScheduledMaintenanceObjectModel
     extends FlutterFlowModel<ScheduledMaintenanceObjectWidget> {

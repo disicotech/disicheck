@@ -1,17 +1,51 @@
+<<<<<<< HEAD
 import '/backend/schema/enums/enums.dart';
 import '/backend/supabase/supabase.dart';
+=======
+import '/auth/supabase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/enums/enums.dart';
+import '/backend/schema/structs/index.dart';
+import '/backend/supabase/supabase.dart';
+import '/components/commons/empty_assets_list_component/empty_assets_list_component_widget.dart';
+>>>>>>> master
 import '/components/commons/nav_bar/nav_bar_widget.dart';
 import '/components/maintenance_object_grid_view/maintenance_object_grid_view_widget.dart';
 import '/components/maintenance_object_list_view/maintenance_object_list_view_widget.dart';
 import '/components/mobile_objects_metrics_widget.dart';
+<<<<<<< HEAD
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
+=======
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
+import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
+import '/pages/resources/components/filter_by_category/filter_by_category_widget.dart';
+import '/pages/resources/components/filter_by_category_copy/filter_by_category_copy_widget.dart';
+import '/pages/resources/skeletons/shimmer_mobile_objects_list/shimmer_mobile_objects_list_widget.dart';
+import 'dart:math';
+import 'dart:ui';
+import '/flutter_flow/custom_functions.dart' as functions;
+>>>>>>> master
 import '/flutter_flow/request_manager.dart';
 
 import '/index.dart';
 import 'assets_inventory_page_widget.dart' show AssetsInventoryPageWidget;
+<<<<<<< HEAD
 import 'package:flutter/material.dart';
+=======
+import 'package:easy_debounce/easy_debounce.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+>>>>>>> master
 
 class AssetsInventoryPageModel
     extends FlutterFlowModel<AssetsInventoryPageWidget> {

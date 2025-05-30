@@ -3,13 +3,25 @@ import '/components/commons/confirmation_modal/confirmation_modal_widget.dart';
 import '/components/commons/principal_action_button_orange/principal_action_button_orange_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+<<<<<<< HEAD
 import '/pages/admin/components/assign_project_to_a_user/assign_project_to_a_user_widget.dart';
 import '/pages/admin/components/assign_role_to_a_user/assign_role_to_a_user_widget.dart';
 import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
+=======
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/pages/admin/components/assign_project_to_a_user/assign_project_to_a_user_widget.dart';
+import '/pages/admin/components/assign_role_to_a_user/assign_role_to_a_user_widget.dart';
+import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
+import 'dart:ui';
+>>>>>>> master
 import '/actions/actions.dart' as action_blocks;
 import '/index.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+<<<<<<< HEAD
+=======
+import 'package:flutter/gestures.dart';
+>>>>>>> master
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -268,7 +280,11 @@ class _ControlAccessRequestPageWidgetState
                                                   UsersTable().querySingleRow(
                                                 queryFn: (q) => q.eqOrNull(
                                                   'id',
+<<<<<<< HEAD
                                                   widget.userId,
+=======
+                                                  widget!.userId,
+>>>>>>> master
                                                 ),
                                               ),
                                               builder: (context, snapshot) {
@@ -357,7 +373,11 @@ class _ControlAccessRequestPageWidgetState
                                                             child: AutoSizeText(
                                                               valueOrDefault<
                                                                   String>(
+<<<<<<< HEAD
                                                                 widget
+=======
+                                                                widget!
+>>>>>>> master
                                                                     .userName,
                                                                 'Sin Nombre',
                                                               ).maybeHandleOverflow(
@@ -406,7 +426,11 @@ class _ControlAccessRequestPageWidgetState
                                                             child: Text(
                                                               valueOrDefault<
                                                                   String>(
+<<<<<<< HEAD
                                                                 widget
+=======
+                                                                widget!
+>>>>>>> master
                                                                     .userEmail,
                                                                 'Sin Email',
                                                               ),
@@ -648,7 +672,11 @@ class _ControlAccessRequestPageWidgetState
                                           buttonText: 'Asignar permisos',
                                           requiredAction: () async {
                                             await UsersProjectsTable().insert({
+<<<<<<< HEAD
                                               'user_id': widget.userId,
+=======
+                                              'user_id': widget!.userId,
+>>>>>>> master
                                               'project_id':
                                                   _model.selectedPojectToAssign,
                                             });
@@ -660,14 +688,22 @@ class _ControlAccessRequestPageWidgetState
                                               matchingRows: (rows) =>
                                                   rows.eqOrNull(
                                                 'id',
+<<<<<<< HEAD
                                                 widget.userId,
+=======
+                                                widget!.userId,
+>>>>>>> master
                                               ),
                                             );
                                             await AccessRequestsTable().delete(
                                               matchingRows: (rows) =>
                                                   rows.eqOrNull(
                                                 'access_request_id',
+<<<<<<< HEAD
                                                 widget.accessRequestID,
+=======
+                                                widget!.accessRequestID,
+>>>>>>> master
                                               ),
                                             );
                                             await showDialog(

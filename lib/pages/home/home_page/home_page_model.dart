@@ -1,19 +1,55 @@
+<<<<<<< HEAD
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/commons/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+=======
+import '/auth/supabase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/enums/enums.dart';
+import '/backend/schema/structs/index.dart';
+import '/backend/supabase/supabase.dart';
+import '/components/commons/confirmation_modal/confirmation_modal_widget.dart';
+import '/components/commons/nav_bar/nav_bar_widget.dart';
+import '/flutter_flow/flutter_flow_calendar.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+>>>>>>> master
 import '/pages/admin/components/admin_home_view_desktop/admin_home_view_desktop_widget.dart';
 import '/pages/admin/components/admin_home_view_mobile/admin_home_view_mobile_widget.dart';
 import '/pages/home/components/current_project/current_project_widget.dart';
 import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
+<<<<<<< HEAD
 import '/pages/home/components/maintenance_update/maintenance_update_widget.dart';
 import '/pages/home/components/standard_home_view_desktop/standard_home_view_desktop_widget.dart';
+=======
+import '/pages/home/components/empty_update_component/empty_update_component_widget.dart';
+import '/pages/home/components/maintenance_update/maintenance_update_widget.dart';
+import '/pages/home/components/standard_home_view_desktop/standard_home_view_desktop_widget.dart';
+import 'dart:convert';
+import 'dart:ui';
+import '/actions/actions.dart' as action_blocks;
+import '/flutter_flow/custom_functions.dart' as functions;
+>>>>>>> master
 import '/flutter_flow/request_manager.dart';
 
 import '/index.dart';
 import 'home_page_widget.dart' show HomePageWidget;
+<<<<<<< HEAD
 import 'package:flutter/material.dart';
+=======
+import 'package:marketplace_check_internet_connection_library_vrjzhi/custom_code/actions/index.dart'
+    as marketplace_check_internet_connection_library_vrjzhi_actions;
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+>>>>>>> master
 
 class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   ///  Local state fields for this page.

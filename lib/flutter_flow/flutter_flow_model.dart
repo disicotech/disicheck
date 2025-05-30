@@ -2,6 +2,10 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
+<<<<<<< HEAD
+=======
+import 'flutter_flow_util.dart';
+>>>>>>> master
 
 Widget wrapWithModel<T extends FlutterFlowModel>({
   required T model,

@@ -6,6 +6,11 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/admin/skeletons/shimmer_users_list/shimmer_users_list_widget.dart';
 import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
+<<<<<<< HEAD
+=======
+import 'dart:math';
+import 'dart:ui';
+>>>>>>> master
 import '/index.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -803,7 +808,11 @@ class _UsersListPageWidgetState extends State<UsersListPageWidget>
                                                                   .contains(
                                                                       e.name))
                                                               .toList()
+<<<<<<< HEAD
                                                               .toList() ??
+=======
+                                                              ?.toList() ??
+>>>>>>> master
                                                           [];
 
                                                       return ListView.separated(

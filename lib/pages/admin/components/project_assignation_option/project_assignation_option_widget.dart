@@ -1,6 +1,14 @@
 import '/flutter_flow/flutter_flow_util.dart';
+<<<<<<< HEAD
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
+=======
+import 'dart:ui';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+>>>>>>> master
 import 'project_assignation_option_model.dart';
 export 'project_assignation_option_model.dart';
 
@@ -65,7 +73,11 @@ class _ProjectAssignationOptionWidgetState
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
+<<<<<<< HEAD
                       widget.projectName!,
+=======
+                      widget!.projectName!,
+>>>>>>> master
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily:
                                 FlutterFlowTheme.of(context).bodyMediumFamily,
@@ -79,7 +91,11 @@ class _ProjectAssignationOptionWidgetState
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                       child: Text(
+<<<<<<< HEAD
                         widget.projectLocation!,
+=======
+                        widget!.projectLocation!,
+>>>>>>> master
                         style: FlutterFlowTheme.of(context).bodySmall.override(
                               fontFamily:
                                   FlutterFlowTheme.of(context).bodySmallFamily,

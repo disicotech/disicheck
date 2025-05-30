@@ -45,14 +45,24 @@ class MaintenancesRow extends SupabaseDataRow {
   String get status => getField<String>('status')!;
   set status(String value) => setField<String>('status', value);
 
+<<<<<<< HEAD
   dynamic get activities => getField<dynamic>('activities');
   set activities(dynamic value) => setField<dynamic>('activities', value);
+=======
+  dynamic? get activities => getField<dynamic>('activities');
+  set activities(dynamic? value) => setField<dynamic>('activities', value);
+>>>>>>> master
 
   String? get observations => getField<String>('observations');
   set observations(String? value) => setField<String>('observations', value);
 
+<<<<<<< HEAD
   dynamic get specificActivities => getField<dynamic>('specific_activities');
   set specificActivities(dynamic value) =>
+=======
+  dynamic? get specificActivities => getField<dynamic>('specific_activities');
+  set specificActivities(dynamic? value) =>
+>>>>>>> master
       setField<dynamic>('specific_activities', value);
 
   String? get maintenanceProvider => getField<String>('maintenance_provider');

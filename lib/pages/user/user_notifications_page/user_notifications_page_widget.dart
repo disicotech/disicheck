@@ -1,9 +1,18 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+<<<<<<< HEAD
+=======
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
+>>>>>>> master
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+<<<<<<< HEAD
+=======
+import 'package:provider/provider.dart';
+>>>>>>> master
 import 'user_notifications_page_model.dart';
 export 'user_notifications_page_model.dart';
 

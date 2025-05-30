@@ -1,8 +1,16 @@
 import '/flutter_flow/flutter_flow_util.dart';
+<<<<<<< HEAD
+=======
+import 'dart:ui';
+>>>>>>> master
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+<<<<<<< HEAD
+=======
+import 'package:provider/provider.dart';
+>>>>>>> master
 import 'maintenance_object_grid_view_model.dart';
 export 'maintenance_object_grid_view_model.dart';
 
@@ -86,9 +94,15 @@ class _MaintenanceObjectGridViewWidgetState
                       child: CachedNetworkImage(
                         fadeInDuration: Duration(milliseconds: 500),
                         fadeOutDuration: Duration(milliseconds: 500),
+<<<<<<< HEAD
                         imageUrl: widget.maintenanceObjectImage != null &&
                                 widget.maintenanceObjectImage != ''
                             ? widget.maintenanceObjectImage!
+=======
+                        imageUrl: widget!.maintenanceObjectImage != null &&
+                                widget!.maintenanceObjectImage != ''
+                            ? widget!.maintenanceObjectImage!
+>>>>>>> master
                             : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/d5sk98qZloElOEHM6UCe/assets/v7hcgz9y5jsj/disicheck-default-mo-image.png',
                         width: 141.98,
                         height: 96.5,
@@ -104,7 +118,11 @@ class _MaintenanceObjectGridViewWidgetState
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
               child: Text(
                 valueOrDefault<String>(
+<<<<<<< HEAD
                   widget.maintenanceObjectName,
+=======
+                  widget!.maintenanceObjectName,
+>>>>>>> master
                   'Sin nombre',
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -123,7 +141,11 @@ class _MaintenanceObjectGridViewWidgetState
             ),
             Text(
               valueOrDefault<String>(
+<<<<<<< HEAD
                 widget.maintenanceObjectCategory,
+=======
+                widget!.maintenanceObjectCategory,
+>>>>>>> master
                 'Sin categoría',
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(

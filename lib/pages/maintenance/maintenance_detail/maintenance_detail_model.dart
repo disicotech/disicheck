@@ -1,12 +1,26 @@
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+<<<<<<< HEAD
 import '/pages/maintenance/components/mtto_detail/mtto_detail_widget.dart';
+=======
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/pages/maintenance/components/mtto_detail/mtto_detail_widget.dart';
+import '/pages/maintenance/components/skeletons/shimmer_maintenance_detail/shimmer_maintenance_detail_widget.dart';
+import 'dart:ui';
+>>>>>>> master
 import '/flutter_flow/request_manager.dart';
 
 import '/index.dart';
 import 'maintenance_detail_widget.dart' show MaintenanceDetailWidget;
+<<<<<<< HEAD
 import 'package:flutter/material.dart';
+=======
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+>>>>>>> master
 
 class MaintenanceDetailModel extends FlutterFlowModel<MaintenanceDetailWidget> {
   ///  Local state fields for this page.

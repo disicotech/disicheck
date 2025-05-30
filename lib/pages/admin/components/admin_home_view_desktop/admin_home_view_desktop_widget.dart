@@ -1,10 +1,21 @@
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/resources/components/maintenance_stats/maintenance_stats_widget.dart';
+<<<<<<< HEAD
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
+=======
+import 'dart:math';
+import 'dart:ui';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+>>>>>>> master
 import 'admin_home_view_desktop_model.dart';
 export 'admin_home_view_desktop_model.dart';
 
@@ -188,7 +199,11 @@ class _AdminHomeViewDesktopWidgetState extends State<AdminHomeViewDesktopWidget>
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 12.0),
                             child: Text(
+<<<<<<< HEAD
                               widget.scheduledMttos.toString(),
+=======
+                              widget!.scheduledMttos.toString(),
+>>>>>>> master
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
@@ -257,7 +272,11 @@ class _AdminHomeViewDesktopWidgetState extends State<AdminHomeViewDesktopWidget>
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 12.0),
                             child: Text(
+<<<<<<< HEAD
                               widget.failuresFound.toString(),
+=======
+                              widget!.failuresFound.toString(),
+>>>>>>> master
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
@@ -326,7 +345,11 @@ class _AdminHomeViewDesktopWidgetState extends State<AdminHomeViewDesktopWidget>
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 12.0),
                             child: Text(
+<<<<<<< HEAD
                               widget.fixedFailures.toString(),
+=======
+                              widget!.fixedFailures.toString(),
+>>>>>>> master
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall

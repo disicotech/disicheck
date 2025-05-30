@@ -1,11 +1,19 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
+=======
+import 'package:from_css_color/from_css_color.dart';
+>>>>>>> master
 
 import '/backend/schema/structs/index.dart';
 import '/backend/schema/enums/enums.dart';
 import '/backend/supabase/supabase.dart';
 
+<<<<<<< HEAD
+=======
+import 'package:ff_commons/flutter_flow/lat_lng.dart';
+>>>>>>> master
 import 'package:ff_commons/flutter_flow/place.dart';
 import 'package:ff_commons/flutter_flow/uploaded_file.dart';
 

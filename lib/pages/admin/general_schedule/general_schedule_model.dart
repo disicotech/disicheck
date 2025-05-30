@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import '/backend/supabase/supabase.dart';
 import '/components/commons/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
@@ -6,6 +7,29 @@ import '/flutter_flow/form_field_controller.dart';
 import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
 import 'general_schedule_widget.dart' show GeneralScheduleWidget;
 import 'package:flutter/material.dart';
+=======
+import '/backend/api_requests/api_calls.dart';
+import '/backend/supabase/supabase.dart';
+import '/components/commons/nav_bar/nav_bar_widget.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_data_table.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
+import '/pages/admin/skeletons/shimmer_general_schedule/shimmer_general_schedule_widget.dart';
+import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
+import 'dart:math';
+import 'dart:ui';
+import 'general_schedule_widget.dart' show GeneralScheduleWidget;
+import 'package:easy_debounce/easy_debounce.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+>>>>>>> master
 
 class GeneralScheduleModel extends FlutterFlowModel<GeneralScheduleWidget> {
   ///  Local state fields for this page.

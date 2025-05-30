@@ -2,10 +2,20 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/home/components/skeletons/shimmer_current_project_name/shimmer_current_project_name_widget.dart';
 import '/pages/maintenance/components/skeletons/shimmer_maintenance/shimmer_maintenance_widget.dart';
+<<<<<<< HEAD
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+=======
+import 'dart:ui';
+import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+>>>>>>> master
 import 'scheduled_maintenance_object_model.dart';
 export 'scheduled_maintenance_object_model.dart';
 
@@ -122,12 +132,20 @@ class _ScheduledMaintenanceObjectWidgetState
                             Expanded(
                               child: FutureBuilder<List<MaintenanceObjectsRow>>(
                                 future: _model.mttProjects(
+<<<<<<< HEAD
                                   uniqueQueryKey: widget.assetId,
+=======
+                                  uniqueQueryKey: widget!.assetId,
+>>>>>>> master
                                   requestFn: () =>
                                       MaintenanceObjectsTable().querySingleRow(
                                     queryFn: (q) => q.eqOrNull(
                                       'id',
+<<<<<<< HEAD
                                       widget.assetId,
+=======
+                                      widget!.assetId,
+>>>>>>> master
                                     ),
                                   ),
                                 ),
@@ -163,7 +181,11 @@ class _ScheduledMaintenanceObjectWidgetState
                                             FutureBuilder<List<ProjectsRow>>(
                                               future:
                                                   _model.mttoStatusScheduled(
+<<<<<<< HEAD
                                                 uniqueQueryKey: widget.assetId,
+=======
+                                                uniqueQueryKey: widget!.assetId,
+>>>>>>> master
                                                 requestFn: () => ProjectsTable()
                                                     .querySingleRow(
                                                   queryFn: (q) => q.eqOrNull(
@@ -296,12 +318,20 @@ class _ScheduledMaintenanceObjectWidgetState
                                             FutureBuilder<List<UsersRow>>(
                                               future: _model.mttAssignedProject(
                                                 uniqueQueryKey:
+<<<<<<< HEAD
                                                     widget.assetAssigedCodeId,
+=======
+                                                    widget!.assetAssigedCodeId,
+>>>>>>> master
                                                 requestFn: () =>
                                                     UsersTable().querySingleRow(
                                                   queryFn: (q) => q.eqOrNull(
                                                     'id',
+<<<<<<< HEAD
                                                     widget.assetAssigedCodeId,
+=======
+                                                    widget!.assetAssigedCodeId,
+>>>>>>> master
                                                   ),
                                                 ),
                                               ),
@@ -368,7 +398,11 @@ class _ScheduledMaintenanceObjectWidgetState
                                                   valueOrDefault<String>(
                                                     functions
                                                         .dateForScheduledMtto(
+<<<<<<< HEAD
                                                             widget
+=======
+                                                            widget!
+>>>>>>> master
                                                                 .maintenanceDate
                                                                 ?.toString()),
                                                     '00 Mes, Año',

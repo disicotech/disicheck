@@ -1,9 +1,17 @@
 import '/backend/schema/enums/enums.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+<<<<<<< HEAD
+=======
+import 'dart:ui';
+>>>>>>> master
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+<<<<<<< HEAD
+=======
+import 'package:provider/provider.dart';
+>>>>>>> master
 import 'nav_bar_model.dart';
 export 'nav_bar_model.dart';
 
@@ -101,7 +109,11 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                       children: [
                         Builder(
                           builder: (context) {
+<<<<<<< HEAD
                             if (widget.homeSelected) {
+=======
+                            if (widget!.homeSelected) {
+>>>>>>> master
                               return Icon(
                                 Icons.home,
                                 color: FlutterFlowTheme.of(context).primary,
@@ -128,7 +140,11 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                                       .fontStyle,
                                 ),
                                 color: valueOrDefault<Color>(
+<<<<<<< HEAD
                                   widget.homeSelected
+=======
+                                  widget!.homeSelected
+>>>>>>> master
                                       ? FlutterFlowTheme.of(context).primaryText
                                       : FlutterFlowTheme.of(context)
                                           .secondaryText,
@@ -176,7 +192,11 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                       children: [
                         Builder(
                           builder: (context) {
+<<<<<<< HEAD
                             if (widget.mttosSelected ?? false) {
+=======
+                            if (widget!.mttosSelected ?? false) {
+>>>>>>> master
                               return Icon(
                                 Icons.build_rounded,
                                 color: FlutterFlowTheme.of(context).primary,
@@ -203,7 +223,11 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                                       .fontStyle,
                                 ),
                                 color: valueOrDefault<Color>(
+<<<<<<< HEAD
                                   widget.mttosSelected!
+=======
+                                  widget!.mttosSelected!
+>>>>>>> master
                                       ? FlutterFlowTheme.of(context).primaryText
                                       : FlutterFlowTheme.of(context)
                                           .secondaryText,
@@ -257,7 +281,11 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                       children: [
                         Builder(
                           builder: (context) {
+<<<<<<< HEAD
                             if (widget.inventorySelected ?? false) {
+=======
+                            if (widget!.inventorySelected ?? false) {
+>>>>>>> master
                               return Icon(
                                 Icons.inventory,
                                 color: FlutterFlowTheme.of(context).primary,
@@ -284,7 +312,11 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                                       .fontStyle,
                                 ),
                                 color: valueOrDefault<Color>(
+<<<<<<< HEAD
                                   widget.inventorySelected!
+=======
+                                  widget!.inventorySelected!
+>>>>>>> master
                                       ? FlutterFlowTheme.of(context).primaryText
                                       : FlutterFlowTheme.of(context)
                                           .secondaryText,
@@ -332,7 +364,11 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                       children: [
                         Builder(
                           builder: (context) {
+<<<<<<< HEAD
                             if (widget.profileSelected ?? false) {
+=======
+                            if (widget!.profileSelected ?? false) {
+>>>>>>> master
                               return Icon(
                                 Icons.person_sharp,
                                 color: FlutterFlowTheme.of(context).primary,
@@ -359,7 +395,11 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                                       .fontStyle,
                                 ),
                                 color: valueOrDefault<Color>(
+<<<<<<< HEAD
                                   widget.profileSelected!
+=======
+                                  widget!.profileSelected!
+>>>>>>> master
                                       ? FlutterFlowTheme.of(context).primaryText
                                       : FlutterFlowTheme.of(context)
                                           .secondaryText,

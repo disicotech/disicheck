@@ -3,10 +3,18 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/home/components/skeletons/shimmer_current_project_name/shimmer_current_project_name_widget.dart';
 import '/pages/home/components/skeletons/shimmer_maintenance_update/shimmer_maintenance_update_widget.dart';
+<<<<<<< HEAD
+=======
+import 'dart:ui';
+>>>>>>> master
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+<<<<<<< HEAD
+=======
+import 'package:provider/provider.dart';
+>>>>>>> master
 import 'maintenance_update_model.dart';
 export 'maintenance_update_model.dart';
 
@@ -63,7 +71,11 @@ class _MaintenanceUpdateWidgetState extends State<MaintenanceUpdateWidget> {
         requestFn: () => MaintenanceObjectsTable().querySingleRow(
           queryFn: (q) => q.eqOrNull(
             'id',
+<<<<<<< HEAD
             widget.maintenanceObjectId,
+=======
+            widget!.maintenanceObjectId,
+>>>>>>> master
           ),
         ),
       ),
@@ -161,7 +173,11 @@ class _MaintenanceUpdateWidgetState extends State<MaintenanceUpdateWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 7.0),
                     child: Text(
                       valueOrDefault<String>(
+<<<<<<< HEAD
                         widget.maintenanceObservations,
+=======
+                        widget!.maintenanceObservations,
+>>>>>>> master
                         'Por el momento no hay comentarios.',
                       ).maybeHandleOverflow(
                         maxChars: 40,
@@ -215,7 +231,11 @@ class _MaintenanceUpdateWidgetState extends State<MaintenanceUpdateWidget> {
                                 requestFn: () => UsersTable().querySingleRow(
                                   queryFn: (q) => q.eqOrNull(
                                     'id',
+<<<<<<< HEAD
                                     widget.personAssignedId,
+=======
+                                    widget!.personAssignedId,
+>>>>>>> master
                                   ),
                                 ),
                               ),
@@ -263,7 +283,11 @@ class _MaintenanceUpdateWidgetState extends State<MaintenanceUpdateWidget> {
                             Text(
                               valueOrDefault<String>(
                                 functions.dateForScheduledMtto(
+<<<<<<< HEAD
                                     widget.dateCreated?.toString()),
+=======
+                                    widget!.dateCreated?.toString()),
+>>>>>>> master
                                 '01 Dic, 2024',
                               ),
                               style: FlutterFlowTheme.of(context)
