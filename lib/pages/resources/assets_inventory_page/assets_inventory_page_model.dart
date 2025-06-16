@@ -3,10 +3,10 @@ import '/backend/supabase/supabase.dart';
 import '/components/commons/nav_bar/nav_bar_widget.dart';
 import '/components/maintenance_object_grid_view/maintenance_object_grid_view_widget.dart';
 import '/components/maintenance_object_list_view/maintenance_object_list_view_widget.dart';
-import '/components/mobile_objects_metrics_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
+import '/pages/home/components/mobile_objects_metrics/mobile_objects_metrics_widget.dart';
 import '/flutter_flow/request_manager.dart';
 
 import '/index.dart';

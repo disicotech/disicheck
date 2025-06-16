@@ -59,6 +59,12 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.queryUserProject = await UsersWithProjectsTable().queryRows(
+        queryFn: (q) => q.eqOrNull(
+          'user_id',
+          widget.userId,
+        ),
+      );
       await action_blocks.conditionAdminRoleNavigation(context);
     });
 
@@ -147,7 +153,14 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
                           child: wrapWithModel(
                             model: _model.desktopSideBarModel,
                             updateCallback: () => safeSetState(() {}),
-                            child: DesktopSideBarWidget(),
+                            child: DesktopSideBarWidget(
+                              homeSelected: false,
+                              mttosSelected: false,
+                              inventorySelected: false,
+                              reportsSelected: false,
+                              usersSelected: true,
+                              scheduleSelected: false,
+                            ),
                           ),
                         ),
                       ),
@@ -834,8 +847,16 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
                                                       .update(
                                                     data: {
                                                       'user_id': widget.userId,
-                                                      'project_id': _model
-                                                          .selectedPojectToAssign,
+                                                      'project_id': _model.selectedPojectToAssign !=
+                                                                  null &&
+                                                              _model.selectedPojectToAssign !=
+                                                                  ''
+                                                          ? _model
+                                                              .selectedPojectToAssign
+                                                          : _model
+                                                              .queryUserProject
+                                                              ?.firstOrNull
+                                                              ?.projectId,
                                                     },
                                                     matchingRows: (rows) =>
                                                         rows.eqOrNull(
@@ -846,7 +867,11 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
                                                   await UsersTable().update(
                                                     data: {
                                                       'role_id': _model
-                                                          .selectedRoleToAssign,
+                                                                  .selectedRoleToAssign !=
+                                                              null
+                                                          ? _model
+                                                              .selectedRoleToAssign
+                                                          : widget.userRole,
                                                     },
                                                     matchingRows: (rows) =>
                                                         rows.eqOrNull(
@@ -888,6 +913,9 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
                                                       );
                                                     },
                                                   );
+
+                                                  _model
+                                                      .clearChacheCurrentUserProjectCache();
                                                 },
                                               ),
                                             ),

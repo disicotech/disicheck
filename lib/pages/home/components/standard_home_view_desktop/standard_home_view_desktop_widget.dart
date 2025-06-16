@@ -127,6 +127,7 @@ class _StandardHomeViewDesktopWidgetState
       height: MediaQuery.sizeOf(context).height * 1.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).tertiary,
+        borderRadius: BorderRadius.circular(8.0),
       ),
       child: Padding(
         padding: EdgeInsets.all(15.0),
@@ -391,7 +392,11 @@ class _StandardHomeViewDesktopWidgetState
                   child: wrapWithModel(
                     model: _model.maintenanceStatsModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: MaintenanceStatsWidget(),
+                    child: MaintenanceStatsWidget(
+                      scheduledMttos: widget.scheduledMttos,
+                      failuresFound: widget.failuresFound,
+                      fixedFailures: widget.failuresFixed,
+                    ),
                   ),
                 ),
               ),

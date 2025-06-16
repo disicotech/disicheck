@@ -19,6 +19,8 @@ class ManageUserModel extends FlutterFlowModel<ManageUserWidget> {
 
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Backend Call - Query Rows] action in ManageUser widget.
+  List<UsersWithProjectsRow>? queryUserProject;
   // Model for DesktopSideBar component.
   late DesktopSideBarModel desktopSideBarModel;
   // Model for AssignRoleToAUser component.

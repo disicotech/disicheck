@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/pages/admin/skeletons/shimmer_general_schedule/shimmer_general_schedule_widget.dart';
 import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
+import '/pages/maintenance/components/skeletons/shimmer_project_input/shimmer_project_input_widget.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
@@ -113,7 +114,14 @@ class _GeneralScheduleWidgetState extends State<GeneralScheduleWidget>
                               child: wrapWithModel(
                                 model: _model.desktopSideBarModel,
                                 updateCallback: () => safeSetState(() {}),
-                                child: DesktopSideBarWidget(),
+                                child: DesktopSideBarWidget(
+                                  homeSelected: false,
+                                  mttosSelected: false,
+                                  inventorySelected: false,
+                                  reportsSelected: false,
+                                  usersSelected: false,
+                                  scheduleSelected: true,
+                                ),
                               ),
                             ),
                           ],
@@ -958,22 +966,7 @@ class _GeneralScheduleWidgetState extends State<GeneralScheduleWidget>
                                                           (context, snapshot) {
                                                         // Customize what your widget looks like when it's loading.
                                                         if (!snapshot.hasData) {
-                                                          return Center(
-                                                            child: SizedBox(
-                                                              width: 50.0,
-                                                              height: 50.0,
-                                                              child:
-                                                                  CircularProgressIndicator(
-                                                                valueColor:
-                                                                    AlwaysStoppedAnimation<
-                                                                        Color>(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          );
+                                                          return ShimmerProjectInputWidget();
                                                         }
                                                         List<ProjectsRow>
                                                             containerProjectsRowList =

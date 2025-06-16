@@ -10,7 +10,6 @@ import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'access_requests_page_model.dart';
 export 'access_requests_page_model.dart';
 
@@ -52,8 +51,6 @@ class _AccessRequestsPageWidgetState extends State<AccessRequestsPageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Title(
         title: 'Peticiones de Acceso',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
@@ -90,7 +87,14 @@ class _AccessRequestsPageWidgetState extends State<AccessRequestsPageWidget> {
                       child: wrapWithModel(
                         model: _model.desktopSideBarModel,
                         updateCallback: () => safeSetState(() {}),
-                        child: DesktopSideBarWidget(),
+                        child: DesktopSideBarWidget(
+                          homeSelected: true,
+                          mttosSelected: false,
+                          inventorySelected: false,
+                          reportsSelected: false,
+                          usersSelected: false,
+                          scheduleSelected: false,
+                        ),
                       ),
                     ),
                   Expanded(

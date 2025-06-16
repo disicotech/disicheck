@@ -1,8 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'card30_article_widget.dart' show Card30ArticleWidget;
+import 'shimmer_project_input_widget.dart' show ShimmerProjectInputWidget;
 import 'package:flutter/material.dart';
 
-class Card30ArticleModel extends FlutterFlowModel<Card30ArticleWidget> {
+class ShimmerProjectInputModel
+    extends FlutterFlowModel<ShimmerProjectInputWidget> {
   @override
   void initState(BuildContext context) {}
 

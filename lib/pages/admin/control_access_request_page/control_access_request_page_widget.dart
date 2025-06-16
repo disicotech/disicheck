@@ -13,7 +13,6 @@ import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'control_access_request_page_model.dart';
 export 'control_access_request_page_model.dart';
 
@@ -71,8 +70,6 @@ class _ControlAccessRequestPageWidgetState
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Title(
         title: 'Control de Accesos',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
@@ -144,7 +141,14 @@ class _ControlAccessRequestPageWidgetState
                           child: wrapWithModel(
                             model: _model.desktopSideBarModel,
                             updateCallback: () => safeSetState(() {}),
-                            child: DesktopSideBarWidget(),
+                            child: DesktopSideBarWidget(
+                              homeSelected: false,
+                              mttosSelected: false,
+                              inventorySelected: false,
+                              reportsSelected: false,
+                              usersSelected: true,
+                              scheduleSelected: false,
+                            ),
                           ),
                         ),
                       ),

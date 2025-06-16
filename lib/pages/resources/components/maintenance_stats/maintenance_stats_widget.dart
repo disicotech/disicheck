@@ -19,7 +19,7 @@ class MaintenanceStatsWidget extends StatefulWidget {
     this.fixedFailures,
   });
 
-  final Widget? scheduledMttos;
+  final int? scheduledMttos;
   final int? failuresFound;
   final int? fixedFailures;
 
@@ -101,31 +101,32 @@ class _MaintenanceStatsWidgetState extends State<MaintenanceStatsWidget>
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-      child: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 4.0,
-              color: FlutterFlowTheme.of(context).alternate,
-              offset: Offset(
-                0.0,
-                2.0,
-              ),
-            )
-          ],
-          borderRadius: BorderRadius.circular(8.0),
-        ),
-        child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
-                child: Text(
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(8.0),
+        child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                blurRadius: 4.0,
+                color: FlutterFlowTheme.of(context).alternate,
+                offset: Offset(
+                  0.0,
+                  2.0,
+                ),
+              )
+            ],
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(20.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
                   'Actividad Reciente',
                   style: FlutterFlowTheme.of(context).headlineSmall.override(
                         font: GoogleFonts.roboto(
@@ -143,11 +144,8 @@ class _MaintenanceStatsWidgetState extends State<MaintenanceStatsWidget>
                             .fontStyle,
                       ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 0.0, 0.0),
-                child: Text(
-                  'Relación Mantenimients vs. Fallas',
+                Text(
+                  'Relación Mantenimientos vs. Fallas',
                   style: FlutterFlowTheme.of(context).labelMedium.override(
                         font: GoogleFonts.plusJakartaSans(
                           fontWeight: FontWeight.w500,
@@ -156,32 +154,28 @@ class _MaintenanceStatsWidgetState extends State<MaintenanceStatsWidget>
                               .fontStyle,
                         ),
                         color: Color(0xFF57636C),
-                        fontSize: 14.0,
+                        fontSize: 18.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
                         fontStyle:
                             FlutterFlowTheme.of(context).labelMedium.fontStyle,
                       ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 10.0, 16.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Container(
-                      height: 32.0,
-                      constraints: BoxConstraints(
-                        maxHeight: 32.0,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(30.0),
-                      ),
-                      child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        height: 32.0,
+                        constraints: BoxConstraints(
+                          maxHeight: 32.0,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30.0),
+                        ),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -191,46 +185,38 @@ class _MaintenanceStatsWidgetState extends State<MaintenanceStatsWidget>
                               color: FlutterFlowTheme.of(context).primary,
                               size: 20.0,
                             ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  8.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                'Mttos programados',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.plusJakartaSans(
-                                        fontWeight: FontWeight.w500,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                      color: Color(0xFF14181B),
-                                      fontSize: 14.0,
-                                      letterSpacing: 0.0,
+                            Text(
+                              'Mttos programados',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    font: GoogleFonts.plusJakartaSans(
                                       fontWeight: FontWeight.w500,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .fontStyle,
                                     ),
-                              ),
+                                    color: Color(0xFF14181B),
+                                    fontSize: 14.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                             ),
-                          ],
+                          ].divide(SizedBox(width: 5.0)),
                         ),
                       ),
-                    ),
-                    Container(
-                      height: 32.0,
-                      constraints: BoxConstraints(
-                        maxHeight: 32.0,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(30.0),
-                      ),
-                      child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                      Container(
+                        height: 32.0,
+                        constraints: BoxConstraints(
+                          maxHeight: 32.0,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30.0),
+                        ),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -240,46 +226,38 @@ class _MaintenanceStatsWidgetState extends State<MaintenanceStatsWidget>
                               color: FlutterFlowTheme.of(context).error,
                               size: 20.0,
                             ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  8.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                'Fallas encontradas',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.plusJakartaSans(
-                                        fontWeight: FontWeight.w500,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                      color: Color(0xFF14181B),
-                                      fontSize: 14.0,
-                                      letterSpacing: 0.0,
+                            Text(
+                              'Fallas encontradas',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    font: GoogleFonts.plusJakartaSans(
                                       fontWeight: FontWeight.w500,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .fontStyle,
                                     ),
-                              ),
+                                    color: Color(0xFF14181B),
+                                    fontSize: 14.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                             ),
-                          ],
+                          ].divide(SizedBox(width: 5.0)),
                         ),
                       ),
-                    ),
-                    Container(
-                      height: 32.0,
-                      constraints: BoxConstraints(
-                        maxHeight: 32.0,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(30.0),
-                      ),
-                      child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                      Container(
+                        height: 32.0,
+                        constraints: BoxConstraints(
+                          maxHeight: 32.0,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30.0),
+                        ),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -289,109 +267,108 @@ class _MaintenanceStatsWidgetState extends State<MaintenanceStatsWidget>
                               color: Color(0xFF39D2C0),
                               size: 20.0,
                             ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  8.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                'Fallas corregidas',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.plusJakartaSans(
-                                        fontWeight: FontWeight.w500,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                      color: Color(0xFF14181B),
-                                      fontSize: 14.0,
-                                      letterSpacing: 0.0,
+                            Text(
+                              'Fallas corregidas',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    font: GoogleFonts.plusJakartaSans(
                                       fontWeight: FontWeight.w500,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .fontStyle,
                                     ),
-                              ),
+                                    color: Color(0xFF14181B),
+                                    fontSize: 14.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                             ),
-                          ],
+                          ].divide(SizedBox(width: 5.0)),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
-                child: ClipRRect(
+                ClipRRect(
                   borderRadius: BorderRadius.circular(10.0),
                   child: Container(
                     width: double.infinity,
+                    height: MediaQuery.sizeOf(context).height * 0.5,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).tertiary,
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                     alignment: AlignmentDirectional(0.0, 0.0),
-                    child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                      child: Container(
-                        width: double.infinity,
-                        height: 300.0,
-                        child: FlutterFlowPieChart(
-                          data: FFPieChartData(
-                            values: [
+                    child: Container(
+                      width: double.infinity,
+                      height: MediaQuery.sizeOf(context).height * 1.0,
+                      child: FlutterFlowPieChart(
+                        data: FFPieChartData(
+                          values: [
+                            formatNumber(
                               functions.convertToInt(
-                                  GenerateReportFromDbCall.mttosProgramados(
-                                (_model.getReportFromDB?.jsonBody ?? ''),
-                              )?.toString())!,
+                                  widget.scheduledMttos?.toString()),
+                              formatType: FormatType.custom,
+                              format: '0',
+                              locale: '',
+                            ),
+                            formatNumber(
                               functions.convertToInt(
-                                  GenerateReportFromDbCall.fallasEncontradas(
-                                (_model.getReportFromDB?.jsonBody ?? ''),
-                              )?.toString())!,
+                                  widget.failuresFound?.toString()),
+                              formatType: FormatType.custom,
+                              format: '0',
+                              locale: '',
+                            ),
+                            formatNumber(
                               functions.convertToInt(
-                                  GenerateReportFromDbCall.fallasCorregidas(
-                                (_model.getReportFromDB?.jsonBody ?? ''),
-                              )?.toString())!
-                            ],
-                            colors: [
-                              Color(0x7FF58321),
-                              FlutterFlowTheme.of(context).successBackground,
-                              FlutterFlowTheme.of(context).errorBackground
-                            ],
-                            radius: [100.0, 100.0, 100.0],
-                            borderWidth: [2.0, 2.0, 2.0],
-                            borderColor: [
-                              FlutterFlowTheme.of(context).primary,
-                              FlutterFlowTheme.of(context).success,
-                              FlutterFlowTheme.of(context).error
-                            ],
-                          ),
-                          donutHoleRadius: 0.0,
-                          donutHoleColor: Colors.white,
-                          sectionLabelStyle: FlutterFlowTheme.of(context)
-                              .headlineSmall
-                              .override(
-                                font: GoogleFonts.roboto(
+                                  widget.fixedFailures?.toString()),
+                              formatType: FormatType.custom,
+                              format: '0',
+                              locale: '',
+                            )
+                          ],
+                          colors: [
+                            Color(0x7FF58321),
+                            FlutterFlowTheme.of(context).successBackground,
+                            FlutterFlowTheme.of(context).errorBackground
+                          ],
+                          radius: [100.0, 100.0, 100.0],
+                          borderWidth: [1.0, 1.0, 1.0],
+                          borderColor: [
+                            FlutterFlowTheme.of(context).primary,
+                            FlutterFlowTheme.of(context).success,
+                            FlutterFlowTheme.of(context).error
+                          ],
+                        ),
+                        donutHoleRadius: 50.0,
+                        donutHoleColor: FlutterFlowTheme.of(context).tertiary,
+                        sectionLabelType: PieChartSectionLabelType.value,
+                        sectionLabelStyle:
+                            FlutterFlowTheme.of(context).headlineSmall.override(
+                                  font: GoogleFonts.roboto(
+                                    fontWeight: FontWeight.w500,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .fontStyle,
+                                  ),
+                                  color: Color(0xFF14181B),
+                                  fontSize: 24.0,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                   fontStyle: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .fontStyle,
                                 ),
-                                color: Color(0xFF14181B),
-                                fontSize: 24.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.w500,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .headlineSmall
-                                    .fontStyle,
-                              ),
-                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ].divide(SizedBox(height: 10.0)),
+            ),
           ),
         ),
       ).animateOnPageLoad(animationsMap['containerOnPageLoadAnimation']!),

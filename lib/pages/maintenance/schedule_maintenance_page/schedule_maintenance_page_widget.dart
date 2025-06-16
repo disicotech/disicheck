@@ -438,196 +438,386 @@ class _ScheduleMaintenancePageWidgetState
                                               }
                                             },
                                           ),
-                                          FutureBuilder<
-                                              List<UsersWithProjectsRow>>(
-                                            future: UsersWithProjectsTable()
-                                                .queryRows(
-                                              queryFn: (q) => q
-                                                  .eqOrNull(
-                                                    'role_id',
-                                                    3,
-                                                  )
-                                                  .eqOrNull(
-                                                    'project_id',
-                                                    FFAppState().currentProject,
+                                          Builder(
+                                            builder: (context) {
+                                              if (FFAppState()
+                                                      .authenticatedRole ==
+                                                  1) {
+                                                return FutureBuilder<
+                                                    List<UsersRow>>(
+                                                  future:
+                                                      UsersTable().queryRows(
+                                                    queryFn: (q) => q.eqOrNull(
+                                                      'role_id',
+                                                      3,
+                                                    ),
                                                   ),
-                                            ),
-                                            builder: (context, snapshot) {
-                                              // Customize what your widget looks like when it's loading.
-                                              if (!snapshot.hasData) {
-                                                return Center(
-                                                  child:
-                                                      ShimmerProjectUsersWidget(),
-                                                );
-                                              }
-                                              List<UsersWithProjectsRow>
-                                                  containerUsersWithProjectsRowList =
-                                                  snapshot.data!;
+                                                  builder: (context, snapshot) {
+                                                    // Customize what your widget looks like when it's loading.
+                                                    if (!snapshot.hasData) {
+                                                      return Center(
+                                                        child:
+                                                            ShimmerProjectUsersWidget(),
+                                                      );
+                                                    }
+                                                    List<UsersRow>
+                                                        containerUsersRowList =
+                                                        snapshot.data!;
 
-                                              return Container(
-                                                decoration: BoxDecoration(),
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 30.0, 0.0, 0.0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Flexible(
-                                                        child: Column(
+                                                    return Container(
+                                                      decoration:
+                                                          BoxDecoration(),
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    30.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Row(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .stretch,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
                                                           children: [
-                                                            Text(
-                                                              'Persona Encargada',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .nunito(
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontStyle,
-                                                                    ),
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryText,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    fontStyle: FlutterFlowTheme.of(
+                                                            Flexible(
+                                                              child: Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .stretch,
+                                                                children: [
+                                                                  Text(
+                                                                    'Persona Encargada',
+                                                                    style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
-                                                                        .fontStyle,
+                                                                        .override(
+                                                                          font:
+                                                                              GoogleFonts.nunito(
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryText,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
                                                                   ),
-                                                            ),
-                                                            FlutterFlowDropDown<
-                                                                String>(
-                                                              controller: _model
-                                                                      .mttoPersonAssignedValueController1 ??=
-                                                                  FormFieldController<
+                                                                  FlutterFlowDropDown<
                                                                       String>(
-                                                                _model.mttoPersonAssignedValue1 ??=
-                                                                    '',
-                                                              ),
-                                                              options: List<
-                                                                      String>.from(
-                                                                  containerUsersWithProjectsRowList
-                                                                      .map((e) =>
-                                                                          e.userId)
-                                                                      .withoutNulls
-                                                                      .toList()),
-                                                              optionLabels:
-                                                                  containerUsersWithProjectsRowList
-                                                                      .map((e) =>
-                                                                          e.userName)
-                                                                      .withoutNulls
-                                                                      .toList(),
-                                                              onChanged: (val) =>
-                                                                  safeSetState(() =>
-                                                                      _model.mttoPersonAssignedValue1 =
-                                                                          val),
-                                                              width: MediaQuery
-                                                                          .sizeOf(
+                                                                    controller: _model
+                                                                            .mttoPersonAssignedValueController1 ??=
+                                                                        FormFieldController<
+                                                                            String>(
+                                                                      _model.mttoPersonAssignedValue1 ??=
+                                                                          '',
+                                                                    ),
+                                                                    options: List<String>.from(containerUsersRowList
+                                                                        .map((e) =>
+                                                                            e.id)
+                                                                        .toList()),
+                                                                    optionLabels: containerUsersRowList
+                                                                        .map((e) =>
+                                                                            e.name)
+                                                                        .toList(),
+                                                                    onChanged: (val) =>
+                                                                        safeSetState(() =>
+                                                                            _model.mttoPersonAssignedValue1 =
+                                                                                val),
+                                                                    width: MediaQuery.sizeOf(context)
+                                                                            .width *
+                                                                        0.85,
+                                                                    height:
+                                                                        40.0,
+                                                                    searchHintTextStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelMediumIsCustom,
+                                                                        ),
+                                                                    searchTextStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                        ),
+                                                                    textStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                        ),
+                                                                    hintText:
+                                                                        'Asigna una persona',
+                                                                    searchHintText:
+                                                                        'Busca por el nombre de la persona...',
+                                                                    icon: Icon(
+                                                                      Icons
+                                                                          .keyboard_arrow_down_rounded,
+                                                                      color: FlutterFlowTheme.of(
                                                                               context)
-                                                                      .width *
-                                                                  0.85,
-                                                              height: 40.0,
-                                                              searchHintTextStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).labelMediumFamily,
-                                                                        letterSpacing:
+                                                                          .secondaryText,
+                                                                      size:
+                                                                          24.0,
+                                                                    ),
+                                                                    fillColor: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .tertiary,
+                                                                    elevation:
+                                                                        1.0,
+                                                                    borderColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    borderWidth:
+                                                                        0.0,
+                                                                    borderRadius:
+                                                                        8.0,
+                                                                    margin: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            12.0,
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            !FlutterFlowTheme.of(context).labelMediumIsCustom,
-                                                                      ),
-                                                              searchTextStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        useGoogleFonts:
-                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
-                                                                      ),
-                                                              textStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        useGoogleFonts:
-                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
-                                                                      ),
-                                                              hintText:
-                                                                  'Asigna una persona',
-                                                              searchHintText:
-                                                                  'Busca por el nombre de la persona...',
-                                                              icon: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_down_rounded,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                                size: 24.0,
+                                                                            12.0,
+                                                                            0.0),
+                                                                    hidesUnderline:
+                                                                        true,
+                                                                    isOverButton:
+                                                                        false,
+                                                                    isSearchable:
+                                                                        true,
+                                                                    isMultiSelect:
+                                                                        false,
+                                                                  ),
+                                                                ].divide(SizedBox(
+                                                                    height:
+                                                                        12.0)),
                                                               ),
-                                                              fillColor:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .tertiary,
-                                                              elevation: 1.0,
-                                                              borderColor: Colors
-                                                                  .transparent,
-                                                              borderWidth: 0.0,
-                                                              borderRadius: 8.0,
-                                                              margin:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          12.0,
-                                                                          0.0,
-                                                                          12.0,
-                                                                          0.0),
-                                                              hidesUnderline:
-                                                                  true,
-                                                              isOverButton:
-                                                                  false,
-                                                              isSearchable:
-                                                                  true,
-                                                              isMultiSelect:
-                                                                  false,
                                                             ),
-                                                          ].divide(SizedBox(
-                                                              height: 12.0)),
+                                                          ],
                                                         ),
                                                       ),
-                                                    ],
+                                                    );
+                                                  },
+                                                );
+                                              } else {
+                                                return FutureBuilder<
+                                                    List<UsersWithProjectsRow>>(
+                                                  future:
+                                                      UsersWithProjectsTable()
+                                                          .queryRows(
+                                                    queryFn: (q) => q
+                                                        .eqOrNull(
+                                                          'role_id',
+                                                          3,
+                                                        )
+                                                        .eqOrNull(
+                                                          'project_id',
+                                                          FFAppState()
+                                                              .currentProject,
+                                                        ),
                                                   ),
-                                                ),
-                                              );
+                                                  builder: (context, snapshot) {
+                                                    // Customize what your widget looks like when it's loading.
+                                                    if (!snapshot.hasData) {
+                                                      return Center(
+                                                        child:
+                                                            ShimmerProjectUsersWidget(),
+                                                      );
+                                                    }
+                                                    List<UsersWithProjectsRow>
+                                                        containerUsersWithProjectsRowList =
+                                                        snapshot.data!;
+
+                                                    return Container(
+                                                      decoration:
+                                                          BoxDecoration(),
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    30.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Flexible(
+                                                              child: Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .stretch,
+                                                                children: [
+                                                                  Text(
+                                                                    'Persona Encargada',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          font:
+                                                                              GoogleFonts.nunito(
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryText,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
+                                                                  ),
+                                                                  FlutterFlowDropDown<
+                                                                      String>(
+                                                                    controller: _model
+                                                                            .mttoPersonAssignedValueController2 ??=
+                                                                        FormFieldController<
+                                                                            String>(
+                                                                      _model.mttoPersonAssignedValue2 ??=
+                                                                          '',
+                                                                    ),
+                                                                    options: List<String>.from(containerUsersWithProjectsRowList
+                                                                        .map((e) =>
+                                                                            e.userId)
+                                                                        .withoutNulls
+                                                                        .toList()),
+                                                                    optionLabels: containerUsersWithProjectsRowList
+                                                                        .map((e) =>
+                                                                            e.userName)
+                                                                        .withoutNulls
+                                                                        .toList(),
+                                                                    onChanged: (val) =>
+                                                                        safeSetState(() =>
+                                                                            _model.mttoPersonAssignedValue2 =
+                                                                                val),
+                                                                    width: MediaQuery.sizeOf(context)
+                                                                            .width *
+                                                                        0.85,
+                                                                    height:
+                                                                        40.0,
+                                                                    searchHintTextStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelMediumIsCustom,
+                                                                        ),
+                                                                    searchTextStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                        ),
+                                                                    textStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                        ),
+                                                                    hintText:
+                                                                        'Asigna una persona',
+                                                                    searchHintText:
+                                                                        'Busca por el nombre de la persona...',
+                                                                    icon: Icon(
+                                                                      Icons
+                                                                          .keyboard_arrow_down_rounded,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                      size:
+                                                                          24.0,
+                                                                    ),
+                                                                    fillColor: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .tertiary,
+                                                                    elevation:
+                                                                        1.0,
+                                                                    borderColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    borderWidth:
+                                                                        0.0,
+                                                                    borderRadius:
+                                                                        8.0,
+                                                                    margin: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            12.0,
+                                                                            0.0,
+                                                                            12.0,
+                                                                            0.0),
+                                                                    hidesUnderline:
+                                                                        true,
+                                                                    isOverButton:
+                                                                        false,
+                                                                    isSearchable:
+                                                                        true,
+                                                                    isMultiSelect:
+                                                                        false,
+                                                                  ),
+                                                                ].divide(SizedBox(
+                                                                    height:
+                                                                        12.0)),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    );
+                                                  },
+                                                );
+                                              }
                                             },
                                           ),
                                           Padding(
@@ -2035,10 +2225,10 @@ class _ScheduleMaintenancePageWidgetState
                                                       FlutterFlowDropDown<
                                                           String>(
                                                         controller: _model
-                                                                .mttoPersonAssignedValueController2 ??=
+                                                                .mttoPersonAssignedValueController3 ??=
                                                             FormFieldController<
                                                                 String>(
-                                                          _model.mttoPersonAssignedValue2 ??=
+                                                          _model.mttoPersonAssignedValue3 ??=
                                                               '',
                                                         ),
                                                         options: List<
@@ -2056,7 +2246,7 @@ class _ScheduleMaintenancePageWidgetState
                                                                 .toList(),
                                                         onChanged: (val) =>
                                                             safeSetState(() =>
-                                                                _model.mttoPersonAssignedValue2 =
+                                                                _model.mttoPersonAssignedValue3 =
                                                                     val),
                                                         width:
                                                             MediaQuery.sizeOf(
@@ -3045,7 +3235,7 @@ class _ScheduleMaintenancePageWidgetState
                                                         ..odemId = FFAppState()
                                                             .selectedMoForScheduledMtto
                                                         ..responsibleId = _model
-                                                            .mttoPersonAssignedValue2
+                                                            .mttoPersonAssignedValue3
                                                         ..maintenanceCode =
                                                             valueOrDefault<
                                                                 String>(

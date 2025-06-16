@@ -124,7 +124,9 @@ class _AdminHomeViewDesktopWidgetState extends State<AdminHomeViewDesktopWidget>
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      decoration: BoxDecoration(),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8.0),
+      ),
       child: Padding(
         padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
         child: Column(
@@ -383,7 +385,11 @@ class _AdminHomeViewDesktopWidgetState extends State<AdminHomeViewDesktopWidget>
                 child: wrapWithModel(
                   model: _model.maintenanceStatsModel,
                   updateCallback: () => safeSetState(() {}),
-                  child: MaintenanceStatsWidget(),
+                  child: MaintenanceStatsWidget(
+                    scheduledMttos: widget.scheduledMttos,
+                    failuresFound: widget.failuresFound,
+                    fixedFailures: widget.fixedFailures,
+                  ),
                 ),
               ),
             ),

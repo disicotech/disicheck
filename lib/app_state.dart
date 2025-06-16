@@ -469,7 +469,6 @@ class FFAppState extends ChangeNotifier {
     'Anual',
     'Bianual',
     'Trianual',
-    'Min',
     'Única'
   ];
   List<String> get mttFrecuency => _mttFrecuency;

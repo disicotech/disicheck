@@ -180,7 +180,14 @@ class _AssetProfilePageWidgetState extends State<AssetProfilePageWidget>
                   wrapWithModel(
                     model: _model.desktopSideBarModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: DesktopSideBarWidget(),
+                    child: DesktopSideBarWidget(
+                      homeSelected: false,
+                      mttosSelected: false,
+                      inventorySelected: true,
+                      reportsSelected: false,
+                      usersSelected: false,
+                      scheduleSelected: false,
+                    ),
                   ),
                   Flexible(
                     child: SingleChildScrollView(

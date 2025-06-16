@@ -33,7 +33,7 @@ class HomePageWidget extends StatefulWidget {
   const HomePageWidget({super.key});
 
   static String routeName = 'HomePage';
-  static String routePath = '/homePage';
+  static String routePath = '/home';
 
   @override
   State<HomePageWidget> createState() => _HomePageWidgetState();
@@ -1822,7 +1822,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           model: _model.desktopSideBarModel,
                                           updateCallback: () =>
                                               safeSetState(() {}),
-                                          child: DesktopSideBarWidget(),
+                                          child: DesktopSideBarWidget(
+                                            homeSelected: true,
+                                            mttosSelected: false,
+                                            inventorySelected: false,
+                                            reportsSelected: false,
+                                            usersSelected: false,
+                                            scheduleSelected: false,
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -1899,9 +1906,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                 MainAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              if (FFAppState()
-                                                                      .authenticatedRole ==
-                                                                  2)
+                                                              if ((FFAppState()
+                                                                          .authenticatedRole ==
+                                                                      2) ||
+                                                                  (FFAppState()
+                                                                          .authenticatedRole ==
+                                                                      3))
                                                                 Expanded(
                                                                   child:
                                                                       wrapWithModel(
@@ -2189,7 +2199,26 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                         safeSetState(
                                                                             () {}),
                                                                     child:
-                                                                        AdminHomeViewDesktopWidget(),
+                                                                        AdminHomeViewDesktopWidget(
+                                                                      scheduledMttos:
+                                                                          getJsonField(
+                                                                        containerGenerateReportFromDbResponse
+                                                                            .jsonBody,
+                                                                        r'''$.programados''',
+                                                                      ),
+                                                                      failuresFound:
+                                                                          getJsonField(
+                                                                        containerGenerateReportFromDbResponse
+                                                                            .jsonBody,
+                                                                        r'''$.fallas_encontradas''',
+                                                                      ),
+                                                                      fixedFailures:
+                                                                          getJsonField(
+                                                                        containerGenerateReportFromDbResponse
+                                                                            .jsonBody,
+                                                                        r'''$.fallas_corregidas''',
+                                                                      ),
+                                                                    ),
                                                                   );
                                                                 } else {
                                                                   return Container(

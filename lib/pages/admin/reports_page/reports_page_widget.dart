@@ -241,7 +241,14 @@ class _ReportsPageWidgetState extends State<ReportsPageWidget>
                 wrapWithModel(
                   model: _model.desktopSideBarModel,
                   updateCallback: () => safeSetState(() {}),
-                  child: DesktopSideBarWidget(),
+                  child: DesktopSideBarWidget(
+                    homeSelected: false,
+                    mttosSelected: false,
+                    inventorySelected: false,
+                    reportsSelected: true,
+                    usersSelected: false,
+                    scheduleSelected: false,
+                  ),
                 ),
                 Expanded(
                   child: Container(
@@ -305,7 +312,7 @@ class _ReportsPageWidgetState extends State<ReportsPageWidget>
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 10.0, 0.0, 0.0),
                                       child: Text(
-                                        'Métricas calculadas con un periodo de  \ntiempo de un mes atrás.',
+                                        'Métricas calculadas con un periodo de   tiempo de un mes atrás.',
                                         textAlign: TextAlign.start,
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -1224,7 +1231,7 @@ class _ReportsPageWidgetState extends State<ReportsPageWidget>
                                                       child: Text(
                                                         valueOrDefault<String>(
                                                           GenerateReportFromDbCall
-                                                              .executedMttos(
+                                                              .fallasEncontradas(
                                                             (_model.generateReportOnApp
                                                                     ?.jsonBody ??
                                                                 ''),
@@ -1320,7 +1327,7 @@ class _ReportsPageWidgetState extends State<ReportsPageWidget>
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
-                                                MainAxisAlignment.spaceAround,
+                                                MainAxisAlignment.spaceBetween,
                                             children: [
                                               Flexible(
                                                 child: Padding(
@@ -1404,80 +1411,93 @@ class _ReportsPageWidgetState extends State<ReportsPageWidget>
                                                     0.0, 10.0, 0.0, 0.0),
                                             child: Material(
                                               color: Colors.transparent,
-                                              elevation: 1.0,
+                                              elevation: 0.0,
                                               shape: RoundedRectangleBorder(
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
                                               ),
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .tertiary,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                ),
-                                                child:
-                                                    FlutterFlowDropDown<String>(
-                                                  controller: _model
-                                                          .inventoryCategoryValueController ??=
-                                                      FormFieldController<
-                                                          String>(
-                                                    _model.inventoryCategoryValue ??=
-                                                        '',
-                                                  ),
-                                                  options: List<String>.from(
-                                                      MoCategories.values
-                                                          .map((e) => e.name)
-                                                          .toList()),
-                                                  optionLabels: OmCategories
-                                                      .values
-                                                      .map((e) => e.name)
-                                                      .toList(),
-                                                  onChanged: (val) =>
-                                                      safeSetState(() => _model
-                                                              .inventoryCategoryValue =
-                                                          val),
-                                                  width: double.infinity,
-                                                  height: 40.0,
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily,
-                                                            letterSpacing: 0.0,
-                                                            useGoogleFonts:
-                                                                !FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumIsCustom,
-                                                          ),
-                                                  hintText:
-                                                      'Selecciona una categoría',
-                                                  icon: Icon(
-                                                    Icons
-                                                        .keyboard_arrow_down_rounded,
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                                child: Container(
+                                                  decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryText,
-                                                    size: 24.0,
+                                                        .tertiary,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                    border: Border.all(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
+                                                    ),
                                                   ),
-                                                  elevation: 2.0,
-                                                  borderColor:
-                                                      Colors.transparent,
-                                                  borderWidth: 0.0,
-                                                  borderRadius: 8.0,
-                                                  margin: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          12.0, 0.0, 12.0, 0.0),
-                                                  hidesUnderline: true,
-                                                  isOverButton: false,
-                                                  isSearchable: false,
-                                                  isMultiSelect: false,
+                                                  child: FlutterFlowDropDown<
+                                                      String>(
+                                                    controller: _model
+                                                            .inventoryCategoryValueController ??=
+                                                        FormFieldController<
+                                                            String>(
+                                                      _model.inventoryCategoryValue ??=
+                                                          '',
+                                                    ),
+                                                    options: List<String>.from(
+                                                        MoCategories.values
+                                                            .map((e) => e.name)
+                                                            .toList()),
+                                                    optionLabels: OmCategories
+                                                        .values
+                                                        .map((e) => e.name)
+                                                        .toList(),
+                                                    onChanged: (val) =>
+                                                        safeSetState(() => _model
+                                                                .inventoryCategoryValue =
+                                                            val),
+                                                    width: double.infinity,
+                                                    height: 40.0,
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumIsCustom,
+                                                            ),
+                                                    hintText:
+                                                        'Selecciona una categoría',
+                                                    icon: Icon(
+                                                      Icons
+                                                          .keyboard_arrow_down_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                      size: 24.0,
+                                                    ),
+                                                    elevation: 0.0,
+                                                    borderColor:
+                                                        Colors.transparent,
+                                                    borderWidth: 0.0,
+                                                    borderRadius: 8.0,
+                                                    margin:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(12.0, 0.0,
+                                                                12.0, 0.0),
+                                                    hidesUnderline: true,
+                                                    isOverButton: false,
+                                                    isSearchable: false,
+                                                    isMultiSelect: false,
+                                                  ),
                                                 ),
                                               ),
                                             ),

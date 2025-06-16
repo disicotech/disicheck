@@ -225,7 +225,28 @@ class _MaintenanceObjectListViewWidgetState
                                                     widget.assetName,
                                                     'Activo sin nombre',
                                                   ).maybeHandleOverflow(
-                                                    maxChars: 22,
+                                                    maxChars: () {
+                                                      if (MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width <
+                                                          kBreakpointSmall) {
+                                                        return 22;
+                                                      } else if (MediaQuery
+                                                                  .sizeOf(
+                                                                      context)
+                                                              .width <
+                                                          kBreakpointMedium) {
+                                                        return 22;
+                                                      } else if (MediaQuery
+                                                                  .sizeOf(
+                                                                      context)
+                                                              .width <
+                                                          kBreakpointLarge) {
+                                                        return 150;
+                                                      } else {
+                                                        return 150;
+                                                      }
+                                                    }(),
                                                     replacement: '…',
                                                   ),
                                                   style: FlutterFlowTheme.of(
@@ -257,7 +278,28 @@ class _MaintenanceObjectListViewWidgetState
                                                     containerProjectsRow?.name,
                                                     'Proyecto',
                                                   ).maybeHandleOverflow(
-                                                    maxChars: 22,
+                                                    maxChars: () {
+                                                      if (MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width <
+                                                          kBreakpointSmall) {
+                                                        return 22;
+                                                      } else if (MediaQuery
+                                                                  .sizeOf(
+                                                                      context)
+                                                              .width <
+                                                          kBreakpointMedium) {
+                                                        return 22;
+                                                      } else if (MediaQuery
+                                                                  .sizeOf(
+                                                                      context)
+                                                              .width <
+                                                          kBreakpointLarge) {
+                                                        return 150;
+                                                      } else {
+                                                        return 150;
+                                                      }
+                                                    }(),
                                                     replacement: '…',
                                                   ),
                                                   style: FlutterFlowTheme.of(

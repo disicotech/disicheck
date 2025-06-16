@@ -1,7 +1,7 @@
 import '/components/commons/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
-import '/pages/maintenance/components/scheduled_maintenance_object/scheduled_maintenance_object_widget.dart';
+import '/pages/maintenance/scheduled_maintenance_object/scheduled_maintenance_object_widget.dart';
 import '/index.dart';
 import 'maintenance_page_widget.dart' show MaintenancePageWidget;
 import 'package:flutter/material.dart';

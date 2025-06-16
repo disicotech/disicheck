@@ -30,6 +30,9 @@ class ScheduleMaintenancePageModel
   // State field(s) for mttoPersonAssigned widget.
   String? mttoPersonAssignedValue1;
   FormFieldController<String>? mttoPersonAssignedValueController1;
+  // State field(s) for mttoPersonAssigned widget.
+  String? mttoPersonAssignedValue2;
+  FormFieldController<String>? mttoPersonAssignedValueController2;
   // State field(s) for mttoType widget.
   String? mttoTypeValue1;
   FormFieldController<String>? mttoTypeValueController1;
@@ -54,8 +57,8 @@ class ScheduleMaintenancePageModel
   // Model for MaintenanceObjectListView component.
   late MaintenanceObjectListViewModel maintenanceObjectListViewModel2;
   // State field(s) for mttoPersonAssigned widget.
-  String? mttoPersonAssignedValue2;
-  FormFieldController<String>? mttoPersonAssignedValueController2;
+  String? mttoPersonAssignedValue3;
+  FormFieldController<String>? mttoPersonAssignedValueController3;
   // State field(s) for mttoType widget.
   String? mttoTypeValue2;
   FormFieldController<String>? mttoTypeValueController2;
