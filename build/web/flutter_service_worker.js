@@ -1,7 +1,7 @@
 'use strict';
 const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
-const CACHE_NAME = 'flutter-app-cache';
+const CACHE_NAME = 'flutter-app-cache-v2.0.3';
 
 const RESOURCES = {"flutter_bootstrap.js": "74744934ffdcd0f5341a5eeb31af28a6",
 "version.json": "008f43a652c644ab6a04aa5132dabbb9",
