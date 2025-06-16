@@ -6,8 +6,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/admin/skeletons/shimmer_users_list/shimmer_users_list_widget.dart';
 import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
-import 'dart:math';
-import 'dart:ui';
 import '/index.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -218,7 +216,14 @@ class _UsersListPageWidgetState extends State<UsersListPageWidget>
                       wrapWithModel(
                         model: _model.desktopSideBarModel,
                         updateCallback: () => safeSetState(() {}),
-                        child: DesktopSideBarWidget(),
+                        child: DesktopSideBarWidget(
+                          homeSelected: false,
+                          mttosSelected: false,
+                          inventorySelected: false,
+                          reportsSelected: false,
+                          usersSelected: true,
+                          scheduleSelected: false,
+                        ),
                       ),
                       Flexible(
                         child: Padding(
@@ -229,25 +234,31 @@ class _UsersListPageWidgetState extends State<UsersListPageWidget>
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Text(
-                                  'Busca usuarios por su nombre',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.roboto(
-                                          fontWeight: FontWeight.w500,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        fontSize: 16.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w500,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Text(
+                                      'Busca usuarios por su nombre',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.roboto(
+                                              fontWeight: FontWeight.w500,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            fontSize: 16.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ],
                                 ),
                                 Container(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
@@ -805,7 +816,7 @@ class _UsersListPageWidgetState extends State<UsersListPageWidget>
                                                                   .contains(
                                                                       e.name))
                                                               .toList()
-                                                              ?.toList() ??
+                                                              .toList() ??
                                                           [];
 
                                                       return ListView.separated(

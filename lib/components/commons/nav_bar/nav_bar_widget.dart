@@ -1,11 +1,9 @@
 import '/backend/schema/enums/enums.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'nav_bar_model.dart';
 export 'nav_bar_model.dart';
 
@@ -103,7 +101,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                       children: [
                         Builder(
                           builder: (context) {
-                            if (widget!.homeSelected) {
+                            if (widget.homeSelected) {
                               return Icon(
                                 Icons.home,
                                 color: FlutterFlowTheme.of(context).primary,
@@ -130,7 +128,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                                       .fontStyle,
                                 ),
                                 color: valueOrDefault<Color>(
-                                  widget!.homeSelected
+                                  widget.homeSelected
                                       ? FlutterFlowTheme.of(context).primaryText
                                       : FlutterFlowTheme.of(context)
                                           .secondaryText,
@@ -178,7 +176,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                       children: [
                         Builder(
                           builder: (context) {
-                            if (widget!.mttosSelected ?? false) {
+                            if (widget.mttosSelected ?? false) {
                               return Icon(
                                 Icons.build_rounded,
                                 color: FlutterFlowTheme.of(context).primary,
@@ -205,7 +203,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                                       .fontStyle,
                                 ),
                                 color: valueOrDefault<Color>(
-                                  widget!.mttosSelected!
+                                  widget.mttosSelected!
                                       ? FlutterFlowTheme.of(context).primaryText
                                       : FlutterFlowTheme.of(context)
                                           .secondaryText,
@@ -259,7 +257,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                       children: [
                         Builder(
                           builder: (context) {
-                            if (widget!.inventorySelected ?? false) {
+                            if (widget.inventorySelected ?? false) {
                               return Icon(
                                 Icons.inventory,
                                 color: FlutterFlowTheme.of(context).primary,
@@ -286,7 +284,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                                       .fontStyle,
                                 ),
                                 color: valueOrDefault<Color>(
-                                  widget!.inventorySelected!
+                                  widget.inventorySelected!
                                       ? FlutterFlowTheme.of(context).primaryText
                                       : FlutterFlowTheme.of(context)
                                           .secondaryText,
@@ -334,7 +332,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                       children: [
                         Builder(
                           builder: (context) {
-                            if (widget!.profileSelected ?? false) {
+                            if (widget.profileSelected ?? false) {
                               return Icon(
                                 Icons.person_sharp,
                                 color: FlutterFlowTheme.of(context).primary,
@@ -361,7 +359,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                                       .fontStyle,
                                 ),
                                 color: valueOrDefault<Color>(
-                                  widget!.profileSelected!
+                                  widget.profileSelected!
                                       ? FlutterFlowTheme.of(context).primaryText
                                       : FlutterFlowTheme.of(context)
                                           .secondaryText,

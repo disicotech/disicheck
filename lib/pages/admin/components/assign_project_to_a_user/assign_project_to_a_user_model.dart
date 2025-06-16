@@ -1,14 +1,7 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:ui';
 import 'assign_project_to_a_user_widget.dart' show AssignProjectToAUserWidget;
-import 'package:easy_debounce/easy_debounce.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
-import 'package:text_search/text_search.dart';
 
 class AssignProjectToAUserModel
     extends FlutterFlowModel<AssignProjectToAUserWidget> {

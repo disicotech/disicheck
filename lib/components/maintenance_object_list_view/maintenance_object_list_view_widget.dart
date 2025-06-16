@@ -2,11 +2,9 @@ import '/backend/schema/enums/enums.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/home/components/skeletons/shimmer_current_project/shimmer_current_project_widget.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -87,11 +85,11 @@ class _MaintenanceObjectListViewWidgetState
         if (FFAppState().Internet) {
           return FutureBuilder<List<ProjectsRow>>(
             future: FFAppState().cacheProjectName(
-              uniqueQueryKey: widget!.assetProject,
+              uniqueQueryKey: widget.assetProject,
               requestFn: () => ProjectsTable().querySingleRow(
                 queryFn: (q) => q.eqOrNull(
                   'id',
-                  widget!.assetProject,
+                  widget.assetProject,
                 ),
               ),
             ),
@@ -116,9 +114,9 @@ class _MaintenanceObjectListViewWidgetState
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  if ((widget!.pageComingFrom ==
+                  if ((widget.pageComingFrom ==
                           NavbarNavigation.SCHEDULE_MAINTENANCE_PAGE.name) ||
-                      (widget!.pageComingFrom ==
+                      (widget.pageComingFrom ==
                           NavbarNavigation
                               .CREATING_MAINTENANCE_STATE_PAGE.name)) {
                     context.goNamed(
@@ -141,7 +139,7 @@ class _MaintenanceObjectListViewWidgetState
                       AssetProfilePageWidget.routeName,
                       queryParameters: {
                         'maintenanceObjectId': serializeParam(
-                          widget!.assetId,
+                          widget.assetId,
                           ParamType.String,
                         ),
                       }.withoutNulls,
@@ -190,12 +188,12 @@ class _MaintenanceObjectListViewWidgetState
                                               Duration(milliseconds: 3000),
                                           fadeOutDuration:
                                               Duration(milliseconds: 3000),
-                                          imageUrl: widget!
+                                          imageUrl: widget
                                                           .maintenanceObjectPhoto !=
                                                       null &&
-                                                  widget!.maintenanceObjectPhoto !=
+                                                  widget.maintenanceObjectPhoto !=
                                                       ''
-                                              ? widget!.maintenanceObjectPhoto!
+                                              ? widget.maintenanceObjectPhoto!
                                               : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/c8bRUeGNp3TczWAFJQdZ/assets/y9xiztzrmjgm/disicheck-asset-default-image.jpg',
                                           width: 0.0,
                                           height: 10.0,
@@ -224,10 +222,31 @@ class _MaintenanceObjectListViewWidgetState
                                               children: [
                                                 Text(
                                                   valueOrDefault<String>(
-                                                    widget!.assetName,
+                                                    widget.assetName,
                                                     'Activo sin nombre',
                                                   ).maybeHandleOverflow(
-                                                    maxChars: 22,
+                                                    maxChars: () {
+                                                      if (MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width <
+                                                          kBreakpointSmall) {
+                                                        return 22;
+                                                      } else if (MediaQuery
+                                                                  .sizeOf(
+                                                                      context)
+                                                              .width <
+                                                          kBreakpointMedium) {
+                                                        return 22;
+                                                      } else if (MediaQuery
+                                                                  .sizeOf(
+                                                                      context)
+                                                              .width <
+                                                          kBreakpointLarge) {
+                                                        return 150;
+                                                      } else {
+                                                        return 150;
+                                                      }
+                                                    }(),
                                                     replacement: '…',
                                                   ),
                                                   style: FlutterFlowTheme.of(
@@ -259,7 +278,28 @@ class _MaintenanceObjectListViewWidgetState
                                                     containerProjectsRow?.name,
                                                     'Proyecto',
                                                   ).maybeHandleOverflow(
-                                                    maxChars: 22,
+                                                    maxChars: () {
+                                                      if (MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width <
+                                                          kBreakpointSmall) {
+                                                        return 22;
+                                                      } else if (MediaQuery
+                                                                  .sizeOf(
+                                                                      context)
+                                                              .width <
+                                                          kBreakpointMedium) {
+                                                        return 22;
+                                                      } else if (MediaQuery
+                                                                  .sizeOf(
+                                                                      context)
+                                                              .width <
+                                                          kBreakpointLarge) {
+                                                        return 150;
+                                                      } else {
+                                                        return 150;
+                                                      }
+                                                    }(),
                                                     replacement: '…',
                                                   ),
                                                   style: FlutterFlowTheme.of(
@@ -299,7 +339,7 @@ class _MaintenanceObjectListViewWidgetState
                                                       TextSpan(
                                                         text: valueOrDefault<
                                                             String>(
-                                                          widget!.assetCode,
+                                                          widget.assetCode,
                                                           'sin código',
                                                         ),
                                                         style:
@@ -356,7 +396,7 @@ class _MaintenanceObjectListViewWidgetState
                                                 ),
                                                 Text(
                                                   valueOrDefault<String>(
-                                                    widget!.assetCategory,
+                                                    widget.assetCategory,
                                                     'Categoría',
                                                   ),
                                                   style: FlutterFlowTheme.of(
@@ -404,7 +444,7 @@ class _MaintenanceObjectListViewWidgetState
                                                 children: [
                                                   Builder(
                                                     builder: (context) {
-                                                      if (widget!
+                                                      if (widget
                                                               .pageComingFrom ==
                                                           NavbarNavigation
                                                               .CREATING_MAINTENANCE_STATE_PAGE
@@ -460,7 +500,7 @@ class _MaintenanceObjectListViewWidgetState
                                                                     width: 2,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .alternate!,
+                                                                        .alternate,
                                                                   )
                                                                 : null,
                                                             activeColor:
@@ -473,7 +513,7 @@ class _MaintenanceObjectListViewWidgetState
                                                                     .info,
                                                           ),
                                                         );
-                                                      } else if (widget!
+                                                      } else if (widget
                                                               .pageComingFrom ==
                                                           NavbarNavigation
                                                               .SCHEDULE_MAINTENANCE_PAGE
@@ -503,7 +543,7 @@ class _MaintenanceObjectListViewWidgetState
                                                               queryParameters: {
                                                                 'maintenanceObjectId':
                                                                     serializeParam(
-                                                                  widget!
+                                                                  widget
                                                                       .assetId,
                                                                   ParamType
                                                                       .String,
@@ -549,9 +589,9 @@ class _MaintenanceObjectListViewWidgetState
             hoverColor: Colors.transparent,
             highlightColor: Colors.transparent,
             onTap: () async {
-              if ((widget!.pageComingFrom ==
+              if ((widget.pageComingFrom ==
                       NavbarNavigation.SCHEDULE_MAINTENANCE_PAGE.name) ||
-                  (widget!.pageComingFrom ==
+                  (widget.pageComingFrom ==
                       NavbarNavigation.CREATING_MAINTENANCE_STATE_PAGE.name)) {
                 context.goNamed(
                   AssetsInventoryPageWidget.routeName,
@@ -573,7 +613,7 @@ class _MaintenanceObjectListViewWidgetState
                   AssetProfilePageWidget.routeName,
                   queryParameters: {
                     'maintenanceObjectId': serializeParam(
-                      widget!.assetId,
+                      widget.assetId,
                       ParamType.String,
                     ),
                   }.withoutNulls,
@@ -619,12 +659,12 @@ class _MaintenanceObjectListViewWidgetState
                                           Duration(milliseconds: 3000),
                                       fadeOutDuration:
                                           Duration(milliseconds: 3000),
-                                      imageUrl: widget!
+                                      imageUrl: widget
                                                       .maintenanceObjectPhoto !=
                                                   null &&
-                                              widget!.maintenanceObjectPhoto !=
+                                              widget.maintenanceObjectPhoto !=
                                                   ''
-                                          ? widget!.maintenanceObjectPhoto!
+                                          ? widget.maintenanceObjectPhoto!
                                           : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/d5sk98qZloElOEHM6UCe/assets/v7hcgz9y5jsj/disicheck-default-mo-image.png',
                                       width: 0.0,
                                       height: 10.0,
@@ -654,7 +694,7 @@ class _MaintenanceObjectListViewWidgetState
                                             children: [
                                               Text(
                                                 valueOrDefault<String>(
-                                                  widget!.assetName,
+                                                  widget.assetName,
                                                   'Activo sin nombre',
                                                 ),
                                                 style: FlutterFlowTheme.of(
@@ -682,7 +722,7 @@ class _MaintenanceObjectListViewWidgetState
                                               ),
                                               Text(
                                                 valueOrDefault<String>(
-                                                  widget!.assetCategory,
+                                                  widget.assetCategory,
                                                   'Categoría',
                                                 ),
                                                 style: FlutterFlowTheme.of(
@@ -730,7 +770,7 @@ class _MaintenanceObjectListViewWidgetState
                                             children: [
                                               Builder(
                                                 builder: (context) {
-                                                  if (widget!.pageComingFrom ==
+                                                  if (widget.pageComingFrom ==
                                                       NavbarNavigation
                                                           .CREATING_MAINTENANCE_STATE_PAGE
                                                           .name) {
@@ -784,7 +824,7 @@ class _MaintenanceObjectListViewWidgetState
                                                                 width: 2,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .alternate!,
+                                                                    .alternate,
                                                               )
                                                             : null,
                                                         activeColor:
@@ -797,7 +837,7 @@ class _MaintenanceObjectListViewWidgetState
                                                                 .info,
                                                       ),
                                                     );
-                                                  } else if (widget!
+                                                  } else if (widget
                                                           .pageComingFrom ==
                                                       NavbarNavigation
                                                           .SCHEDULE_MAINTENANCE_PAGE
@@ -828,7 +868,7 @@ class _MaintenanceObjectListViewWidgetState
                                                           queryParameters: {
                                                             'maintenanceObjectId':
                                                                 serializeParam(
-                                                              widget!.assetId,
+                                                              widget.assetId,
                                                               ParamType.String,
                                                             ),
                                                           }.withoutNulls,

@@ -1,16 +1,13 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/maintenance/components/maintenance_history_card/maintenance_history_card_widget.dart';
 import '/pages/resources/components/empty_maintenance_list/empty_maintenance_list_widget.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'maintenance_object_profile_model.dart';
 export 'maintenance_object_profile_model.dart';
 
@@ -125,7 +122,7 @@ class _MaintenanceObjectProfileWidgetState
                                   MaintenanceObjectsTable().querySingleRow(
                                 queryFn: (q) => q.eqOrNull(
                                   'id',
-                                  widget!.maintenanceObjectId,
+                                  widget.maintenanceObjectId,
                                 ),
                               ),
                             ),
@@ -471,7 +468,7 @@ class _MaintenanceObjectProfileWidgetState
                                                 MaintenancesTable().queryRows(
                                               queryFn: (q) => q.eqOrNull(
                                                 'odem_id',
-                                                widget!.maintenanceObjectId,
+                                                widget.maintenanceObjectId,
                                               ),
                                             ),
                                           ),

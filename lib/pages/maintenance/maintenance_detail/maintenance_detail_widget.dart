@@ -1,10 +1,7 @@
-import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/maintenance/components/mtto_detail/mtto_detail_widget.dart';
 import '/pages/maintenance/components/skeletons/shimmer_maintenance_detail/shimmer_maintenance_detail_widget.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
@@ -70,11 +67,11 @@ class _MaintenanceDetailWidgetState extends State<MaintenanceDetailWidget> {
                   if (FFAppState().Internet) {
                     return FutureBuilder<List<MaintenancesRow>>(
                       future: _model.cacheMaintenanceDetail(
-                        uniqueQueryKey: widget!.maintenanceId,
+                        uniqueQueryKey: widget.maintenanceId,
                         requestFn: () => MaintenancesTable().querySingleRow(
                           queryFn: (q) => q.eqOrNull(
                             'id',
-                            widget!.maintenanceId,
+                            widget.maintenanceId,
                           ),
                         ),
                       ),
@@ -233,7 +230,7 @@ class _MaintenanceDetailWidgetState extends State<MaintenanceDetailWidget> {
                                                 onlineViewMaintenancesRow
                                                     ?.activities,
                                             maintenanceId:
-                                                widget!.maintenanceId!,
+                                                widget.maintenanceId!,
                                             mttProvider:
                                                 onlineViewMaintenancesRow
                                                     ?.maintenanceProvider,
@@ -242,7 +239,7 @@ class _MaintenanceDetailWidgetState extends State<MaintenanceDetailWidget> {
                                                     .maintenanceFinalStatus,
                                             photographicRecord:
                                                 onlineViewMaintenancesRow
-                                                    ?.maintenancePhotographicEvidence,
+                                                    .maintenancePhotographicEvidence,
                                           ),
                                         ),
                                       ],
@@ -371,65 +368,65 @@ class _MaintenanceDetailWidgetState extends State<MaintenanceDetailWidget> {
                                         mttoObjectId: FFAppState()
                                             .userMaintenances
                                             .where((e) =>
-                                                e.id == widget!.maintenanceId)
+                                                e.id == widget.maintenanceId)
                                             .toList()
                                             .firstOrNull
                                             ?.odemId,
                                         mttoAssignedPersonId: FFAppState()
                                             .userMaintenances
                                             .where((e) =>
-                                                e.id == widget!.maintenanceId)
+                                                e.id == widget.maintenanceId)
                                             .toList()
                                             .firstOrNull
                                             ?.responsibleId,
                                         mttObservations: FFAppState()
                                             .userMaintenances
                                             .where((e) =>
-                                                e.id == widget!.maintenanceId)
+                                                e.id == widget.maintenanceId)
                                             .toList()
                                             .firstOrNull
                                             ?.observations,
                                         mttoCurrentStatus: FFAppState()
                                             .userMaintenances
                                             .where((e) =>
-                                                e.id == widget!.maintenanceId)
+                                                e.id == widget.maintenanceId)
                                             .toList()
                                             .firstOrNull
                                             ?.status,
                                         mttoStartTime: FFAppState()
                                             .userMaintenances
                                             .where((e) =>
-                                                e.id == widget!.maintenanceId)
+                                                e.id == widget.maintenanceId)
                                             .toList()
                                             .firstOrNull
                                             ?.startDate,
                                         mttoFrecuency: FFAppState()
                                             .userMaintenances
                                             .where((e) =>
-                                                e.id == widget!.maintenanceId)
+                                                e.id == widget.maintenanceId)
                                             .toList()
                                             .firstOrNull
                                             ?.frequency,
                                         mttoActivities: _model.activities,
-                                        maintenanceId: widget!.maintenanceId!,
+                                        maintenanceId: widget.maintenanceId!,
                                         mttProvider: FFAppState()
                                             .userMaintenances
                                             .where((e) =>
-                                                e.id == widget!.maintenanceId)
+                                                e.id == widget.maintenanceId)
                                             .toList()
                                             .firstOrNull
                                             ?.maintenanceProvider,
                                         mttFinalStatus: FFAppState()
                                             .userMaintenances
                                             .where((e) =>
-                                                e.id == widget!.maintenanceId)
+                                                e.id == widget.maintenanceId)
                                             .toList()
                                             .firstOrNull!
                                             .maintenanceFinalStatus,
                                         photographicRecord: FFAppState()
                                             .userMaintenances
                                             .where((e) =>
-                                                e.id == widget!.maintenanceId)
+                                                e.id == widget.maintenanceId)
                                             .toList()
                                             .firstOrNull
                                             ?.maintenancePhotographicEvidence,

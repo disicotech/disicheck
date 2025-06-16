@@ -1,17 +1,14 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/schema/enums/enums.dart';
-import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/commons/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
 import '/pages/maintenance/components/no_completed_maintenances/no_completed_maintenances_widget.dart';
 import '/pages/maintenance/components/no_in_process_maintenances/no_in_process_maintenances_widget.dart';
 import '/pages/maintenance/components/no_scheduled_maintenances/no_scheduled_maintenances_widget.dart';
-import '/pages/maintenance/components/scheduled_maintenance_object/scheduled_maintenance_object_widget.dart';
 import '/pages/maintenance/components/skeletons/shimmer_maintenances_list/shimmer_maintenances_list_widget.dart';
-import 'dart:ui';
+import '/pages/maintenance/scheduled_maintenance_object/scheduled_maintenance_object_widget.dart';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
@@ -96,7 +93,14 @@ class _MaintenancePageWidgetState extends State<MaintenancePageWidget>
                             wrapWithModel(
                               model: _model.desktopSideBarModel1,
                               updateCallback: () => safeSetState(() {}),
-                              child: DesktopSideBarWidget(),
+                              child: DesktopSideBarWidget(
+                                homeSelected: false,
+                                mttosSelected: true,
+                                inventorySelected: false,
+                                reportsSelected: false,
+                                usersSelected: false,
+                                scheduleSelected: false,
+                              ),
                             ),
                             Expanded(
                               child: Column(
@@ -762,7 +766,14 @@ class _MaintenancePageWidgetState extends State<MaintenancePageWidget>
                             wrapWithModel(
                               model: _model.desktopSideBarModel2,
                               updateCallback: () => safeSetState(() {}),
-                              child: DesktopSideBarWidget(),
+                              child: DesktopSideBarWidget(
+                                homeSelected: false,
+                                mttosSelected: true,
+                                inventorySelected: false,
+                                reportsSelected: false,
+                                usersSelected: false,
+                                scheduleSelected: false,
+                              ),
                             ),
                             Expanded(
                               child: Column(

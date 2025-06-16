@@ -1,24 +1,19 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
 import '/backend/schema/structs/index.dart';
 import '/backend/schema/enums/enums.dart';
-import '/backend/supabase/supabase.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
-import '/main.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:ff_commons/flutter_flow/lat_lng.dart';
-import 'package:ff_commons/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 import '/index.dart';
+import 'package:marketplace_check_internet_connection_library_vrjzhi/index.dart'
+    as $marketplace_check_internet_connection_library_vrjzhi;
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -80,239 +75,249 @@ class AppStateNotifier extends ChangeNotifier {
   }
 }
 
-GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
-      initialLocation: '/',
-      debugLogDiagnostics: true,
-      refreshListenable: appStateNotifier,
-      navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? HomePageWidget() : OnboardingPageWidget(),
-      routes: [
-        FFRoute(
-          name: '_initialize',
-          path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn
-              ? HomePageWidget()
-              : OnboardingPageWidget(),
-        ),
-        FFRoute(
-          name: OnboardingPageWidget.routeName,
-          path: OnboardingPageWidget.routePath,
-          builder: (context, params) => OnboardingPageWidget(),
-        ),
-        FFRoute(
-          name: MaintenancePageWidget.routeName,
-          path: MaintenancePageWidget.routePath,
-          builder: (context, params) => MaintenancePageWidget(),
-        ),
-        FFRoute(
-          name: AccessRequestsPageWidget.routeName,
-          path: AccessRequestsPageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => AccessRequestsPageWidget(),
-        ),
-        FFRoute(
-          name: CreateUserPageWidget.routeName,
-          path: CreateUserPageWidget.routePath,
-          builder: (context, params) => CreateUserPageWidget(),
-        ),
-        FFRoute(
-          name: AssetProfileEditWidget.routeName,
-          path: AssetProfileEditWidget.routePath,
-          builder: (context, params) => AssetProfileEditWidget(
-            maintenanceObjectId: params.getParam(
-              'maintenanceObjectId',
-              ParamType.String,
-            ),
+GoRouter createRouter(AppStateNotifier appStateNotifier) {
+  $marketplace_check_internet_connection_library_vrjzhi.initializeRoutes(
+    homePageWidgetName:
+        'marketplace_check_internet_connection_library_vrjzhi.HomePage',
+  );
+
+  return GoRouter(
+    initialLocation: '/',
+    debugLogDiagnostics: true,
+    refreshListenable: appStateNotifier,
+    navigatorKey: appNavigatorKey,
+    errorBuilder: (context, state) =>
+        appStateNotifier.loggedIn ? HomePageWidget() : OnboardingPageWidget(),
+    routes: [
+      FFRoute(
+        name: '_initialize',
+        path: '/',
+        builder: (context, _) => appStateNotifier.loggedIn
+            ? HomePageWidget()
+            : OnboardingPageWidget(),
+      ),
+      FFRoute(
+        name: OnboardingPageWidget.routeName,
+        path: OnboardingPageWidget.routePath,
+        builder: (context, params) => OnboardingPageWidget(),
+      ),
+      FFRoute(
+        name: MaintenancePageWidget.routeName,
+        path: MaintenancePageWidget.routePath,
+        builder: (context, params) => MaintenancePageWidget(),
+      ),
+      FFRoute(
+        name: AccessRequestsPageWidget.routeName,
+        path: AccessRequestsPageWidget.routePath,
+        requireAuth: true,
+        builder: (context, params) => AccessRequestsPageWidget(),
+      ),
+      FFRoute(
+        name: CreateUserPageWidget.routeName,
+        path: CreateUserPageWidget.routePath,
+        builder: (context, params) => CreateUserPageWidget(),
+      ),
+      FFRoute(
+        name: AssetProfileEditWidget.routeName,
+        path: AssetProfileEditWidget.routePath,
+        builder: (context, params) => AssetProfileEditWidget(
+          maintenanceObjectId: params.getParam(
+            'maintenanceObjectId',
+            ParamType.String,
           ),
         ),
-        FFRoute(
-          name: MaintenanceObjectProfileWidget.routeName,
-          path: MaintenanceObjectProfileWidget.routePath,
-          builder: (context, params) => MaintenanceObjectProfileWidget(
-            maintenanceObjectId: params.getParam(
-              'maintenanceObjectId',
-              ParamType.String,
-            ),
+      ),
+      FFRoute(
+        name: MaintenanceObjectProfileWidget.routeName,
+        path: MaintenanceObjectProfileWidget.routePath,
+        builder: (context, params) => MaintenanceObjectProfileWidget(
+          maintenanceObjectId: params.getParam(
+            'maintenanceObjectId',
+            ParamType.String,
           ),
         ),
-        FFRoute(
-          name: CreateAssetPageWidget.routeName,
-          path: CreateAssetPageWidget.routePath,
-          builder: (context, params) => CreateAssetPageWidget(),
-        ),
-        FFRoute(
-          name: WaitForApprovalPageWidget.routeName,
-          path: WaitForApprovalPageWidget.routePath,
-          builder: (context, params) => WaitForApprovalPageWidget(
-            projectName: params.getParam(
-              'projectName',
-              ParamType.String,
-            ),
-            userEmail: params.getParam(
-              'userEmail',
-              ParamType.String,
-            ),
+      ),
+      FFRoute(
+        name: CreateAssetPageWidget.routeName,
+        path: CreateAssetPageWidget.routePath,
+        builder: (context, params) => CreateAssetPageWidget(),
+      ),
+      FFRoute(
+        name: WaitForApprovalPageWidget.routeName,
+        path: WaitForApprovalPageWidget.routePath,
+        builder: (context, params) => WaitForApprovalPageWidget(
+          projectName: params.getParam(
+            'projectName',
+            ParamType.String,
+          ),
+          userEmail: params.getParam(
+            'userEmail',
+            ParamType.String,
           ),
         ),
-        FFRoute(
-          name: LoginPageWidget.routeName,
-          path: LoginPageWidget.routePath,
-          builder: (context, params) => LoginPageWidget(),
-        ),
-        FFRoute(
-          name: HomePageDesktopWidget.routeName,
-          path: HomePageDesktopWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => HomePageDesktopWidget(),
-        ),
-        FFRoute(
-          name: AssetProfilePageWidget.routeName,
-          path: AssetProfilePageWidget.routePath,
-          builder: (context, params) => AssetProfilePageWidget(
-            maintenanceObjectId: params.getParam(
-              'maintenanceObjectId',
-              ParamType.String,
-            ),
+      ),
+      FFRoute(
+        name: LoginPageWidget.routeName,
+        path: LoginPageWidget.routePath,
+        builder: (context, params) => LoginPageWidget(),
+      ),
+      FFRoute(
+        name: AssetProfilePageWidget.routeName,
+        path: AssetProfilePageWidget.routePath,
+        builder: (context, params) => AssetProfilePageWidget(
+          maintenanceObjectId: params.getParam(
+            'maintenanceObjectId',
+            ParamType.String,
           ),
         ),
-        FFRoute(
-          name: ForgotPassWordPageWidget.routeName,
-          path: ForgotPassWordPageWidget.routePath,
-          builder: (context, params) => ForgotPassWordPageWidget(),
-        ),
-        FFRoute(
-          name: ResetPasswordPageWidget.routeName,
-          path: ResetPasswordPageWidget.routePath,
-          builder: (context, params) => ResetPasswordPageWidget(),
-        ),
-        FFRoute(
-          name: UserNotificationsPageWidget.routeName,
-          path: UserNotificationsPageWidget.routePath,
-          builder: (context, params) => UserNotificationsPageWidget(),
-        ),
-        FFRoute(
-          name: ReportsPageWidget.routeName,
-          path: ReportsPageWidget.routePath,
-          builder: (context, params) => ReportsPageWidget(),
-        ),
-        FFRoute(
-          name: SignUpPageWidget.routeName,
-          path: SignUpPageWidget.routePath,
-          builder: (context, params) => SignUpPageWidget(),
-        ),
-        FFRoute(
-          name: UserProfilePageWidget.routeName,
-          path: UserProfilePageWidget.routePath,
-          builder: (context, params) => UserProfilePageWidget(),
-        ),
-        FFRoute(
-          name: UsersListPageWidget.routeName,
-          path: UsersListPageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => UsersListPageWidget(),
-        ),
-        FFRoute(
-          name: HomePageWidget.routeName,
-          path: HomePageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => HomePageWidget(),
-        ),
-        FFRoute(
-          name: ScheduleMaintenancePageWidget.routeName,
-          path: ScheduleMaintenancePageWidget.routePath,
-          builder: (context, params) => ScheduleMaintenancePageWidget(),
-        ),
-        FFRoute(
-          name: GeneralScheduleWidget.routeName,
-          path: GeneralScheduleWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => GeneralScheduleWidget(),
-        ),
-        FFRoute(
-          name: ControlAccessRequestPageWidget.routeName,
-          path: ControlAccessRequestPageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => ControlAccessRequestPageWidget(
-            userId: params.getParam(
-              'userId',
-              ParamType.String,
-            ),
-            userName: params.getParam(
-              'userName',
-              ParamType.String,
-            ),
-            userEmail: params.getParam(
-              'userEmail',
-              ParamType.String,
-            ),
-            userRole: params.getParam(
-              'userRole',
-              ParamType.int,
-            ),
-            accessRequestID: params.getParam(
-              'accessRequestID',
-              ParamType.String,
-            ),
-            userProfilePic: params.getParam(
-              'userProfilePic',
-              ParamType.String,
-            ),
+      ),
+      FFRoute(
+        name: ForgotPassWordPageWidget.routeName,
+        path: ForgotPassWordPageWidget.routePath,
+        builder: (context, params) => ForgotPassWordPageWidget(),
+      ),
+      FFRoute(
+        name: ResetPasswordPageWidget.routeName,
+        path: ResetPasswordPageWidget.routePath,
+        builder: (context, params) => ResetPasswordPageWidget(),
+      ),
+      FFRoute(
+        name: UserNotificationsPageWidget.routeName,
+        path: UserNotificationsPageWidget.routePath,
+        builder: (context, params) => UserNotificationsPageWidget(),
+      ),
+      FFRoute(
+        name: ReportsPageWidget.routeName,
+        path: ReportsPageWidget.routePath,
+        builder: (context, params) => ReportsPageWidget(),
+      ),
+      FFRoute(
+        name: SignUpPageWidget.routeName,
+        path: SignUpPageWidget.routePath,
+        builder: (context, params) => SignUpPageWidget(),
+      ),
+      FFRoute(
+        name: UserProfilePageWidget.routeName,
+        path: UserProfilePageWidget.routePath,
+        builder: (context, params) => UserProfilePageWidget(),
+      ),
+      FFRoute(
+        name: UsersListPageWidget.routeName,
+        path: UsersListPageWidget.routePath,
+        requireAuth: true,
+        builder: (context, params) => UsersListPageWidget(),
+      ),
+      FFRoute(
+        name: HomePageWidget.routeName,
+        path: HomePageWidget.routePath,
+        requireAuth: true,
+        builder: (context, params) => HomePageWidget(),
+      ),
+      FFRoute(
+        name: ScheduleMaintenancePageWidget.routeName,
+        path: ScheduleMaintenancePageWidget.routePath,
+        builder: (context, params) => ScheduleMaintenancePageWidget(),
+      ),
+      FFRoute(
+        name: GeneralScheduleWidget.routeName,
+        path: GeneralScheduleWidget.routePath,
+        requireAuth: true,
+        builder: (context, params) => GeneralScheduleWidget(),
+      ),
+      FFRoute(
+        name: ControlAccessRequestPageWidget.routeName,
+        path: ControlAccessRequestPageWidget.routePath,
+        requireAuth: true,
+        builder: (context, params) => ControlAccessRequestPageWidget(
+          userId: params.getParam(
+            'userId',
+            ParamType.String,
+          ),
+          userName: params.getParam(
+            'userName',
+            ParamType.String,
+          ),
+          userEmail: params.getParam(
+            'userEmail',
+            ParamType.String,
+          ),
+          userRole: params.getParam(
+            'userRole',
+            ParamType.int,
+          ),
+          accessRequestID: params.getParam(
+            'accessRequestID',
+            ParamType.String,
+          ),
+          userProfilePic: params.getParam(
+            'userProfilePic',
+            ParamType.String,
           ),
         ),
-        FFRoute(
-          name: MaintenanceDetailWidget.routeName,
-          path: MaintenanceDetailWidget.routePath,
-          builder: (context, params) => MaintenanceDetailWidget(
-            maintenanceId: params.getParam(
-              'maintenanceId',
-              ParamType.String,
-            ),
+      ),
+      FFRoute(
+        name: MaintenanceDetailWidget.routeName,
+        path: MaintenanceDetailWidget.routePath,
+        builder: (context, params) => MaintenanceDetailWidget(
+          maintenanceId: params.getParam(
+            'maintenanceId',
+            ParamType.String,
           ),
         ),
-        FFRoute(
-          name: ManageUserWidget.routeName,
-          path: ManageUserWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => ManageUserWidget(
-            userId: params.getParam(
-              'userId',
-              ParamType.String,
-            ),
-            userName: params.getParam(
-              'userName',
-              ParamType.String,
-            ),
-            userEmail: params.getParam(
-              'userEmail',
-              ParamType.String,
-            ),
-            userRole: params.getParam(
-              'userRole',
-              ParamType.int,
-            ),
-            userProfilePic: params.getParam(
-              'userProfilePic',
-              ParamType.String,
-            ),
-            userDNI: params.getParam(
-              'userDNI',
-              ParamType.String,
-            ),
+      ),
+      FFRoute(
+        name: ManageUserWidget.routeName,
+        path: ManageUserWidget.routePath,
+        requireAuth: true,
+        builder: (context, params) => ManageUserWidget(
+          userId: params.getParam(
+            'userId',
+            ParamType.String,
+          ),
+          userName: params.getParam(
+            'userName',
+            ParamType.String,
+          ),
+          userEmail: params.getParam(
+            'userEmail',
+            ParamType.String,
+          ),
+          userRole: params.getParam(
+            'userRole',
+            ParamType.int,
+          ),
+          userProfilePic: params.getParam(
+            'userProfilePic',
+            ParamType.String,
+          ),
+          userDNI: params.getParam(
+            'userDNI',
+            ParamType.String,
           ),
         ),
-        FFRoute(
-          name: AssetsInventoryPageWidget.routeName,
-          path: AssetsInventoryPageWidget.routePath,
-          builder: (context, params) => AssetsInventoryPageWidget(
-            pageComingFrom: params.getParam<NavbarNavigation>(
-              'pageComingFrom',
-              ParamType.Enum,
-            ),
+      ),
+      FFRoute(
+        name: AssetsInventoryPageWidget.routeName,
+        path: AssetsInventoryPageWidget.routePath,
+        builder: (context, params) => AssetsInventoryPageWidget(
+          pageComingFrom: params.getParam<NavbarNavigation>(
+            'pageComingFrom',
+            ParamType.Enum,
           ),
-        )
-      ].map((r) => r.toRoute(appStateNotifier)).toList(),
-    );
+        ),
+      ),
+      FFRoute(
+        name: $marketplace_check_internet_connection_library_vrjzhi
+            .HomePageWidget.routeName,
+        path: $marketplace_check_internet_connection_library_vrjzhi
+            .HomePageWidget.routePath,
+        builder: (context, params) =>
+            $marketplace_check_internet_connection_library_vrjzhi
+                .HomePageWidget(),
+      )
+    ].map((r) => r.toRoute(appStateNotifier)).toList(),
+  );
+}
 
 extension NavParamExtensions on Map<String, String?> {
   Map<String, String> get withoutNulls => Map.fromEntries(

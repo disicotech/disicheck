@@ -3,20 +3,16 @@ import '/components/commons/confirmation_modal/confirmation_modal_widget.dart';
 import '/components/commons/principal_action_button_orange/principal_action_button_orange_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/admin/components/assign_project_to_a_user/assign_project_to_a_user_widget.dart';
 import '/pages/admin/components/assign_role_to_a_user/assign_role_to_a_user_widget.dart';
 import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
-import 'dart:ui';
 import '/actions/actions.dart' as action_blocks;
 import '/index.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'control_access_request_page_model.dart';
 export 'control_access_request_page_model.dart';
 
@@ -74,8 +70,6 @@ class _ControlAccessRequestPageWidgetState
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Title(
         title: 'Control de Accesos',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
@@ -147,7 +141,14 @@ class _ControlAccessRequestPageWidgetState
                           child: wrapWithModel(
                             model: _model.desktopSideBarModel,
                             updateCallback: () => safeSetState(() {}),
-                            child: DesktopSideBarWidget(),
+                            child: DesktopSideBarWidget(
+                              homeSelected: false,
+                              mttosSelected: false,
+                              inventorySelected: false,
+                              reportsSelected: false,
+                              usersSelected: true,
+                              scheduleSelected: false,
+                            ),
                           ),
                         ),
                       ),
@@ -271,7 +272,7 @@ class _ControlAccessRequestPageWidgetState
                                                   UsersTable().querySingleRow(
                                                 queryFn: (q) => q.eqOrNull(
                                                   'id',
-                                                  widget!.userId,
+                                                  widget.userId,
                                                 ),
                                               ),
                                               builder: (context, snapshot) {
@@ -360,7 +361,7 @@ class _ControlAccessRequestPageWidgetState
                                                             child: AutoSizeText(
                                                               valueOrDefault<
                                                                   String>(
-                                                                widget!
+                                                                widget
                                                                     .userName,
                                                                 'Sin Nombre',
                                                               ).maybeHandleOverflow(
@@ -409,7 +410,7 @@ class _ControlAccessRequestPageWidgetState
                                                             child: Text(
                                                               valueOrDefault<
                                                                   String>(
-                                                                widget!
+                                                                widget
                                                                     .userEmail,
                                                                 'Sin Email',
                                                               ),
@@ -651,7 +652,7 @@ class _ControlAccessRequestPageWidgetState
                                           buttonText: 'Asignar permisos',
                                           requiredAction: () async {
                                             await UsersProjectsTable().insert({
-                                              'user_id': widget!.userId,
+                                              'user_id': widget.userId,
                                               'project_id':
                                                   _model.selectedPojectToAssign,
                                             });
@@ -663,14 +664,14 @@ class _ControlAccessRequestPageWidgetState
                                               matchingRows: (rows) =>
                                                   rows.eqOrNull(
                                                 'id',
-                                                widget!.userId,
+                                                widget.userId,
                                               ),
                                             );
                                             await AccessRequestsTable().delete(
                                               matchingRows: (rows) =>
                                                   rows.eqOrNull(
                                                 'access_request_id',
-                                                widget!.accessRequestID,
+                                                widget.accessRequestID,
                                               ),
                                             );
                                             await showDialog(

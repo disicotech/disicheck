@@ -45,8 +45,8 @@ class ObjectsWithMttoCountRow extends SupabaseDataRow {
   bool? get isActive => getField<bool>('is_active');
   set isActive(bool? value) => setField<bool>('is_active', value);
 
-  dynamic? get metadata => getField<dynamic>('metadata');
-  set metadata(dynamic? value) => setField<dynamic>('metadata', value);
+  dynamic get metadata => getField<dynamic>('metadata');
+  set metadata(dynamic value) => setField<dynamic>('metadata', value);
 
   DateTime? get adquisitionDate => getField<DateTime>('adquisition_date');
   set adquisitionDate(DateTime? value) =>

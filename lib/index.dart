@@ -16,8 +16,6 @@ export '/pages/resources/create_asset_page/create_asset_page_widget.dart'
 export '/pages/onboarding/wait_for_approval_page/wait_for_approval_page_widget.dart'
     show WaitForApprovalPageWidget;
 export '/pages/auth/login_page/login_page_widget.dart' show LoginPageWidget;
-export '/pages/home/home_page_desktop/home_page_desktop_widget.dart'
-    show HomePageDesktopWidget;
 export '/pages/maintenance/asset_profile_page/asset_profile_page_widget.dart'
     show AssetProfilePageWidget;
 export '/pages/auth/forgot_pass_word_page/forgot_pass_word_page_widget.dart'

@@ -8,13 +8,11 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/pages/home/components/skeletons/shimmer_current_project_name/shimmer_current_project_name_widget.dart';
 import '/pages/maintenance/components/activities_input/activities_input_widget.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -110,7 +108,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
               requestFn: () => MaintenanceObjectsTable().querySingleRow(
                 queryFn: (q) => q.eqOrNull(
                   'id',
-                  widget!.mttoObjectId,
+                  widget.mttoObjectId,
                 ),
               ),
             ),
@@ -176,7 +174,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                     AssetProfilePageWidget.routeName,
                                     queryParameters: {
                                       'maintenanceObjectId': serializeParam(
-                                        widget!.mttoObjectId,
+                                        widget.mttoObjectId,
                                         ParamType.String,
                                       ),
                                     }.withoutNulls,
@@ -278,7 +276,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                       .querySingleRow(
                                                     queryFn: (q) => q.eqOrNull(
                                                       'id',
-                                                      widget!
+                                                      widget
                                                           .mttoAssignedPersonId,
                                                     ),
                                                   ),
@@ -338,32 +336,32 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                 Container(
                                                   decoration: BoxDecoration(
                                                     color: () {
-                                                      if (widget!
+                                                      if (widget
                                                               .mttoCurrentStatus ==
                                                           MttoStatus.programado
                                                               .name) {
                                                         return Color(
                                                             0xFFFFD4AE);
-                                                      } else if (widget!
+                                                      } else if (widget
                                                               .mttoCurrentStatus ==
                                                           MttoStatus.en_proceso
                                                               .name) {
                                                         return Color(
                                                             0xFFECF1FF);
-                                                      } else if (widget!
+                                                      } else if (widget
                                                               .mttoCurrentStatus ==
                                                           MttoStatus
                                                               .ejecutado.name) {
                                                         return Color(
                                                             0xFFDAF5F3);
-                                                      } else if (widget!
+                                                      } else if (widget
                                                               .mttoCurrentStatus ==
                                                           MttoStatus
                                                               .parcialmente_ejecutado
                                                               .name) {
                                                         return Color(
                                                             0xFFFFE9B1);
-                                                      } else if (widget!
+                                                      } else if (widget
                                                               .mttoCurrentStatus ==
                                                           MttoStatus
                                                               .cancelado.name) {
@@ -381,34 +379,34 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                             54.0),
                                                     border: Border.all(
                                                       color: () {
-                                                        if (widget!
+                                                        if (widget
                                                                 .mttoCurrentStatus ==
                                                             MttoStatus
                                                                 .programado
                                                                 .name) {
                                                           return Color(
                                                               0xFFFFD4AE);
-                                                        } else if (widget!
+                                                        } else if (widget
                                                                 .mttoCurrentStatus ==
                                                             MttoStatus
                                                                 .en_proceso
                                                                 .name) {
                                                           return Color(
                                                               0xFFECF1FF);
-                                                        } else if (widget!
+                                                        } else if (widget
                                                                 .mttoCurrentStatus ==
                                                             MttoStatus.ejecutado
                                                                 .name) {
                                                           return Color(
                                                               0xFFDAF5F3);
-                                                        } else if (widget!
+                                                        } else if (widget
                                                                 .mttoCurrentStatus ==
                                                             MttoStatus
                                                                 .parcialmente_ejecutado
                                                                 .name) {
                                                           return Color(
                                                               0xFFFFE9B1);
-                                                        } else if (widget!
+                                                        } else if (widget
                                                                 .mttoCurrentStatus ==
                                                             MttoStatus.cancelado
                                                                 .name) {
@@ -433,30 +431,30 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                                 15.0, 6.0),
                                                     child: Text(
                                                       () {
-                                                        if (widget!
+                                                        if (widget
                                                                 .mttoCurrentStatus ==
                                                             MttoStatus
                                                                 .programado
                                                                 .name) {
                                                           return 'PROGRAMADO';
-                                                        } else if (widget!
+                                                        } else if (widget
                                                                 .mttoCurrentStatus ==
                                                             MttoStatus
                                                                 .en_proceso
                                                                 .name) {
                                                           return 'EJECUTANDO';
-                                                        } else if (widget!
+                                                        } else if (widget
                                                                 .mttoCurrentStatus ==
                                                             MttoStatus.ejecutado
                                                                 .name) {
                                                           return 'COMPLETADO';
-                                                        } else if (widget!
+                                                        } else if (widget
                                                                 .mttoCurrentStatus ==
                                                             MttoStatus
                                                                 .parcialmente_ejecutado
                                                                 .name) {
                                                           return 'PARCIAL';
-                                                        } else if (widget!
+                                                        } else if (widget
                                                                 .mttoCurrentStatus ==
                                                             MttoStatus.cancelado
                                                                 .name) {
@@ -481,7 +479,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                                       .fontStyle,
                                                             ),
                                                             color: () {
-                                                              if (widget!
+                                                              if (widget
                                                                       .mttoCurrentStatus ==
                                                                   MttoStatus
                                                                       .programado
@@ -489,21 +487,21 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                                 return FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary;
-                                                              } else if (widget!
+                                                              } else if (widget
                                                                       .mttoCurrentStatus ==
                                                                   MttoStatus
                                                                       .en_proceso
                                                                       .name) {
                                                                 return Color(
                                                                     0xFF466FFF);
-                                                              } else if (widget!
+                                                              } else if (widget
                                                                       .mttoCurrentStatus ==
                                                                   MttoStatus
                                                                       .ejecutado
                                                                       .name) {
                                                                 return Color(
                                                                     0xFF01BCAD);
-                                                              } else if (widget!
+                                                              } else if (widget
                                                                       .mttoCurrentStatus ==
                                                                   MttoStatus
                                                                       .parcialmente_ejecutado
@@ -511,7 +509,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                                 return FlutterFlowTheme.of(
                                                                         context)
                                                                     .warning;
-                                                              } else if (widget!
+                                                              } else if (widget
                                                                       .mttoCurrentStatus ==
                                                                   MttoStatus
                                                                       .cancelado
@@ -558,7 +556,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                             mainAxisAlignment: MainAxisAlignment.end,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              if (widget!.mttProvider == 'true')
+                              if (widget.mttProvider == 'true')
                                 Container(
                                   decoration: BoxDecoration(
                                     color: Color(0xFFECF1FF),
@@ -569,7 +567,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         15.0, 8.0, 15.0, 6.0),
                                     child: Text(
-                                      'Proveedor:  ${widget!.mttProvider}',
+                                      'Proveedor:  ${widget.mttProvider}',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -595,9 +593,9 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                             ],
                           ),
                         ),
-                        if ((widget!.mttoCurrentStatus !=
+                        if ((widget.mttoCurrentStatus !=
                                 MttoStatus.ejecutado.name) &&
-                            (widget!.mttoCurrentStatus !=
+                            (widget.mttoCurrentStatus !=
                                 MttoStatus.cancelado.name))
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
@@ -681,7 +679,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: [
-                                  if (widget!.mttoCurrentStatus !=
+                                  if (widget.mttoCurrentStatus !=
                                       MttoStatus.programado.name)
                                     Container(
                                       width: MediaQuery.sizeOf(context).width *
@@ -789,7 +787,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                         matchingRows: (rows) =>
                                                             rows.eqOrNull(
                                                           'id',
-                                                          widget!.maintenanceId,
+                                                          widget.maintenanceId,
                                                         ),
                                                       );
                                                       await MaintenanceObjectsTable()
@@ -803,13 +801,13 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                         matchingRows: (rows) =>
                                                             rows.eqOrNull(
                                                           'id',
-                                                          widget!.mttoObjectId,
+                                                          widget.mttoObjectId,
                                                         ),
                                                       );
                                                       await MaintenanceMonthsTable()
                                                           .insert({
                                                         'maintenance_id':
-                                                            widget!
+                                                            widget
                                                                 .maintenanceId,
                                                         'year':
                                                             valueOrDefault<int>(
@@ -860,7 +858,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                                       {
                                                                     'maintenanceId':
                                                                         serializeParam(
-                                                                      widget!
+                                                                      widget
                                                                           .maintenanceId,
                                                                       ParamType
                                                                           .String,
@@ -928,7 +926,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                           ..observations = _model
                                                               .mttoObservationsTextController
                                                               .text
-                                                          ..activities = (widget!
+                                                          ..activities = (widget
                                                                       .mttoActivities!
                                                                       .toList()
                                                                       .map<ActivityStruct?>(
@@ -1024,7 +1022,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                         ],
                                       ),
                                     ),
-                                  if (widget!.mttoCurrentStatus ==
+                                  if (widget.mttoCurrentStatus ==
                                       MttoStatus.programado.name)
                                     Container(
                                       width: MediaQuery.sizeOf(context).width *
@@ -1060,7 +1058,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                     matchingRows: (rows) =>
                                                         rows.eqOrNull(
                                                       'id',
-                                                      widget!.maintenanceId,
+                                                      widget.maintenanceId,
                                                     ),
                                                   );
                                                   await Future.delayed(
@@ -1138,9 +1136,9 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                         ],
                                       ),
                                     ),
-                                  if ((widget!.mttoCurrentStatus !=
+                                  if ((widget.mttoCurrentStatus !=
                                           MttoStatus.programado.name) ||
-                                      (widget!.mttoCurrentStatus ==
+                                      (widget.mttoCurrentStatus ==
                                           MttoStatus.en_proceso.name))
                                     Container(
                                       width: MediaQuery.sizeOf(context).width *
@@ -1167,9 +1165,6 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                   FFButtonWidget(
                                                 onPressed: () async {
                                                   if (_model.mttoObservationsTextController
-                                                              .text ==
-                                                          null ||
-                                                      _model.mttoObservationsTextController
                                                               .text ==
                                                           '') {
                                                     await Future.delayed(
@@ -1229,7 +1224,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                       matchingRows: (rows) =>
                                                           rows.eqOrNull(
                                                         'id',
-                                                        widget!.maintenanceId,
+                                                        widget.maintenanceId,
                                                       ),
                                                     );
                                                     await Future.delayed(
@@ -1266,7 +1261,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                                     {
                                                                   'maintenanceId':
                                                                       serializeParam(
-                                                                    widget!
+                                                                    widget
                                                                         .maintenanceId,
                                                                     ParamType
                                                                         .String,
@@ -1325,9 +1320,9 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                         ],
                                       ),
                                     ),
-                                  if ((widget!.mttoCurrentStatus !=
+                                  if ((widget.mttoCurrentStatus !=
                                           MttoStatus.programado.name) ||
-                                      (widget!.mttoCurrentStatus ==
+                                      (widget.mttoCurrentStatus ==
                                           MttoStatus.en_proceso.name))
                                     Container(
                                       width: MediaQuery.sizeOf(context).width *
@@ -1354,9 +1349,6 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                   FFButtonWidget(
                                                 onPressed: () async {
                                                   if (_model.mttoObservationsTextController
-                                                              .text ==
-                                                          null ||
-                                                      _model.mttoObservationsTextController
                                                               .text ==
                                                           '') {
                                                     await Future.delayed(
@@ -1405,7 +1397,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                       matchingRows: (rows) =>
                                                           rows.eqOrNull(
                                                         'id',
-                                                        widget!.mttoObjectId,
+                                                        widget.mttoObjectId,
                                                       ),
                                                     );
                                                     await MaintenancesTable()
@@ -1424,7 +1416,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                       matchingRows: (rows) =>
                                                           rows.eqOrNull(
                                                         'id',
-                                                        widget!.maintenanceId,
+                                                        widget.maintenanceId,
                                                       ),
                                                     );
                                                     await Future.delayed(
@@ -1461,7 +1453,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                                     {
                                                                   'maintenanceId':
                                                                       serializeParam(
-                                                                    widget!
+                                                                    widget
                                                                         .maintenanceId,
                                                                     ParamType
                                                                         .String,
@@ -1532,9 +1524,9 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                         ],
                                       ),
                                     ),
-                                  if ((widget!.mttoCurrentStatus ==
+                                  if ((widget.mttoCurrentStatus ==
                                           MttoStatus.programado.name) ||
-                                      (widget!.mttoCurrentStatus ==
+                                      (widget.mttoCurrentStatus ==
                                           MttoStatus.en_proceso.name))
                                     Container(
                                       width: MediaQuery.sizeOf(context).width *
@@ -1565,15 +1557,12 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                 onPressed: () async {
                                                   if (_model.mttoObservationsTextController
                                                               .text ==
-                                                          null ||
-                                                      _model.mttoObservationsTextController
-                                                              .text ==
                                                           '') {
                                                     await Future.delayed(
                                                         const Duration(
                                                             milliseconds:
                                                                 1000));
-                                                    if (widget!
+                                                    if (widget
                                                             .mttoCurrentStatus ==
                                                         MttoStatus
                                                             .programado.name) {
@@ -1666,7 +1655,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                       matchingRows: (rows) =>
                                                           rows.eqOrNull(
                                                         'id',
-                                                        widget!.maintenanceId,
+                                                        widget.maintenanceId,
                                                       ),
                                                     );
                                                     await Future.delayed(
@@ -1709,7 +1698,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                                     {
                                                                   'maintenanceId':
                                                                       serializeParam(
-                                                                    widget!
+                                                                    widget
                                                                         .maintenanceId,
                                                                     ParamType
                                                                         .String,
@@ -1822,7 +1811,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                 child: Text(
                                   valueOrDefault<String>(
                                     functions.dateForScheduledMtto(
-                                        widget!.mttoStartTime?.toString()),
+                                        widget.mttoStartTime?.toString()),
                                     '01 Dic, 2025',
                                   ),
                                   style: FlutterFlowTheme.of(context)
@@ -1873,7 +1862,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                     0.0, 0.0, 0.0, 18.0),
                                 child: Text(
                                   valueOrDefault<String>(
-                                    widget!.mttoFrecuency,
+                                    widget.mttoFrecuency,
                                     'Anual',
                                   ),
                                   style: FlutterFlowTheme.of(context)
@@ -1897,7 +1886,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                             ].divide(SizedBox(height: 7.0)),
                           ),
                         ),
-                        if (widget!.mttoCurrentStatus !=
+                        if (widget.mttoCurrentStatus !=
                             MttoStatus.programado.name)
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
@@ -1923,7 +1912,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                 ),
                                 Builder(
                                   builder: (context) {
-                                    if (widget!.mttoCurrentStatus ==
+                                    if (widget.mttoCurrentStatus ==
                                         MttoStatus.en_proceso.name) {
                                       return Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -1990,7 +1979,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                           width: 2,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .alternate!,
+                                                              .alternate,
                                                         )
                                                       : null,
                                                   activeColor:
@@ -2089,7 +2078,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                           width: 2,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .alternate!,
+                                                              .alternate,
                                                         )
                                                       : null,
                                                   activeColor:
@@ -2188,7 +2177,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                           width: 2,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .alternate!,
+                                                              .alternate,
                                                         )
                                                       : null,
                                                   activeColor:
@@ -2287,7 +2276,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                           width: 2,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .alternate!,
+                                                              .alternate,
                                                         )
                                                       : null,
                                                   activeColor:
@@ -2385,7 +2374,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                           width: 2,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .alternate!,
+                                                              .alternate,
                                                         )
                                                       : null,
                                                   activeColor:
@@ -2427,7 +2416,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                     } else {
                                       return Text(
                                         valueOrDefault<String>(
-                                          widget!.mttFinalStatus,
+                                          widget.mttFinalStatus,
                                           'No se especifica estado',
                                         ),
                                         style: FlutterFlowTheme.of(context)
@@ -2454,9 +2443,9 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                               ].divide(SizedBox(height: 7.0)),
                             ),
                           ),
-                        if ((widget!.mttoCurrentStatus !=
+                        if ((widget.mttoCurrentStatus !=
                                 MttoStatus.programado.name) &&
-                            (widget!.mttoCurrentStatus !=
+                            (widget.mttoCurrentStatus !=
                                 MttoStatus.cancelado.name))
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
@@ -2482,7 +2471,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                 ),
                                 Builder(
                                   builder: (context) {
-                                    if (widget!.mttoCurrentStatus ==
+                                    if (widget.mttoCurrentStatus ==
                                         MttoStatus.programado.name) {
                                       return Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -2519,7 +2508,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                           ),
                                         ],
                                       );
-                                    } else if (widget!.mttoCurrentStatus ==
+                                    } else if (widget.mttoCurrentStatus ==
                                         MttoStatus.en_proceso.name) {
                                       return Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -2775,8 +2764,6 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                       child: Builder(
                                                         builder: (context) {
                                                           if (_model.uploadedFileUrl_uploadedPhotographicRecord ==
-                                                                  null ||
-                                                              _model.uploadedFileUrl_uploadedPhotographicRecord ==
                                                                   '') {
                                                             return InkWell(
                                                               splashColor: Colors
@@ -3480,7 +3467,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                           ),
                                         ].divide(SizedBox(height: 20.0)),
                                       );
-                                    } else if (widget!.mttoCurrentStatus ==
+                                    } else if (widget.mttoCurrentStatus ==
                                         MttoStatus.ejecutado.name) {
                                       return Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -3491,7 +3478,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                             child: Text(
                                               functions
                                                   .convertActivitiesJsonToMultilineString(
-                                                      widget!.mttoActivities
+                                                      widget.mttoActivities
                                                           ?.toString())!,
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -3544,7 +3531,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                             ),
                             Builder(
                               builder: (context) {
-                                if ((widget!.mttoCurrentStatus ==
+                                if ((widget.mttoCurrentStatus ==
                                         MttoStatus.programado.name) &&
                                     (FFAppState().showObsInput == false)) {
                                   return Text(
@@ -3562,7 +3549,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                                   .bodyMediumIsCustom,
                                         ),
                                   );
-                                } else if ((widget!.mttoCurrentStatus ==
+                                } else if ((widget.mttoCurrentStatus ==
                                         MttoStatus.en_proceso.name) ||
                                     (FFAppState().showObsInput == true)) {
                                   return Container(
@@ -3659,16 +3646,16 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                           .asValidator(context),
                                     ),
                                   );
-                                } else if ((widget!.mttoCurrentStatus ==
+                                } else if ((widget.mttoCurrentStatus ==
                                         MttoStatus.cancelado.name) ||
-                                    (widget!.mttoCurrentStatus ==
+                                    (widget.mttoCurrentStatus ==
                                         MttoStatus.ejecutado.name)) {
                                   return Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 18.0),
                                     child: Text(
                                       valueOrDefault<String>(
-                                        widget!.mttObservations,
+                                        widget.mttObservations,
                                         'No se ingresan observaciones',
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -3692,8 +3679,8 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                 }
                               },
                             ),
-                            if (widget!.photographicRecord != null &&
-                                widget!.photographicRecord != '')
+                            if (widget.photographicRecord != null &&
+                                widget.photographicRecord != '')
                               Column(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -3717,7 +3704,7 @@ class _MttoDetailWidgetState extends State<MttoDetailWidget> {
                                   ClipRRect(
                                     borderRadius: BorderRadius.circular(8.0),
                                     child: Image.network(
-                                      widget!.photographicRecord!,
+                                      widget.photographicRecord!,
                                       width: double.infinity,
                                       height: 200.0,
                                       fit: BoxFit.cover,

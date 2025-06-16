@@ -1,4 +1,3 @@
-import 'package:collection/collection.dart';
 import 'package:ff_commons/flutter_flow/enums.dart';
 export 'package:ff_commons/flutter_flow/enums.dart';
 
@@ -58,6 +57,9 @@ enum NavbarNavigation {
   PROFILE_PAGE,
   SCHEDULE_MAINTENANCE_PAGE,
   CREATING_MAINTENANCE_STATE_PAGE,
+  REPORTS_PAGE,
+  USERS_PAGE,
+  GENERAL_SCHEDULE_PAGE,
 }
 
 enum OmCategories {
@@ -84,7 +86,6 @@ enum MttoFrecuency {
   anual,
   bianual,
   trianual,
-  minuto,
   unica,
 }
 

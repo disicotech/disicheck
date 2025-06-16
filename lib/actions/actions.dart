@@ -1,13 +1,9 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
-import '/backend/schema/enums/enums.dart';
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:convert';
 import '/index.dart';
-import 'package:ff_commons/api_requests/api_manager.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 
 /// Once the role of the user is defined, this action takes the user to the
@@ -41,7 +37,7 @@ Future checkAndSetUserRole(BuildContext context) async {
     ),
   );
   // Check authenticated use and set its RoleID
-  FFAppState().authenticatedRole = authenticatedUser!.firstOrNull!.roleId;
+  FFAppState().authenticatedRole = authenticatedUser.firstOrNull!.roleId;
   FFAppState().update(() {});
 }
 
@@ -56,16 +52,16 @@ Future<bool?> checkUserAprovalStatus(BuildContext context) async {
       currentUserUid,
     ),
   );
-  if (pendingAprovalStatus != null && (pendingAprovalStatus)!.isNotEmpty) {
+  if ((pendingAprovalStatus).isNotEmpty) {
     context.pushNamed(
       WaitForApprovalPageWidget.routeName,
       queryParameters: {
         'projectName': serializeParam(
-          pendingAprovalStatus?.firstOrNull?.projectRequested,
+          pendingAprovalStatus.firstOrNull?.projectRequested,
           ParamType.String,
         ),
         'userEmail': serializeParam(
-          pendingAprovalStatus?.firstOrNull?.email,
+          pendingAprovalStatus.firstOrNull?.email,
           ParamType.String,
         ),
       }.withoutNulls,
@@ -89,7 +85,7 @@ Future<List<MaintenancesWithProjectRow>?> checkAndFilterMttos(
     ),
   );
   // Set User Name
-  FFAppState().authenticatedUserName = queryUserName!.firstOrNull!.name;
+  FFAppState().authenticatedUserName = queryUserName.firstOrNull!.name;
   if (FFAppState().authenticatedRole == 1) {
   } else if (FFAppState().authenticatedRole == 2) {
     // Querying Mttos for Coordinators
@@ -119,8 +115,8 @@ Future loadAndSetInventory(BuildContext context) async {
 
   getAllMaintenanceObjects = await GetAllUsersByProjectCall.call();
 
-  if ((getAllMaintenanceObjects?.succeeded ?? true)) {
-    FFAppState().inventoryList = ((getAllMaintenanceObjects?.jsonBody ?? '')
+  if ((getAllMaintenanceObjects.succeeded ?? true)) {
+    FFAppState().inventoryList = ((getAllMaintenanceObjects.jsonBody ?? '')
             .toList()
             .map<MaintenanceObjectStruct?>(MaintenanceObjectStruct.maybeFromMap)
             .toList() as Iterable<MaintenanceObjectStruct?>)

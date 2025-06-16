@@ -1,14 +1,10 @@
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/resources/components/maintenance_stats/maintenance_stats_widget.dart';
-import 'dart:math';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'standard_home_view_desktop_model.dart';
 export 'standard_home_view_desktop_model.dart';
 
@@ -131,6 +127,7 @@ class _StandardHomeViewDesktopWidgetState
       height: MediaQuery.sizeOf(context).height * 1.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).tertiary,
+        borderRadius: BorderRadius.circular(8.0),
       ),
       child: Padding(
         padding: EdgeInsets.all(15.0),
@@ -194,7 +191,7 @@ class _StandardHomeViewDesktopWidgetState
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 12.0),
                                 child: Text(
-                                  widget!.scheduledMttos.toString(),
+                                  widget.scheduledMttos.toString(),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
@@ -265,7 +262,7 @@ class _StandardHomeViewDesktopWidgetState
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 12.0),
                                 child: Text(
-                                  widget!.failuresFound.toString(),
+                                  widget.failuresFound.toString(),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
@@ -336,7 +333,7 @@ class _StandardHomeViewDesktopWidgetState
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 12.0),
                                 child: Text(
-                                  widget!.failuresFixed.toString(),
+                                  widget.failuresFixed.toString(),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
@@ -395,7 +392,11 @@ class _StandardHomeViewDesktopWidgetState
                   child: wrapWithModel(
                     model: _model.maintenanceStatsModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: MaintenanceStatsWidget(),
+                    child: MaintenanceStatsWidget(
+                      scheduledMttos: widget.scheduledMttos,
+                      failuresFound: widget.failuresFound,
+                      fixedFailures: widget.failuresFixed,
+                    ),
                   ),
                 ),
               ),

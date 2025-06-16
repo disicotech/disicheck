@@ -1,11 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'maintenance_history_card_model.dart';
 export 'maintenance_history_card_model.dart';
 
@@ -67,7 +64,7 @@ class _MaintenanceHistoryCardWidgetState
             MaintenanceDetailWidget.routeName,
             queryParameters: {
               'maintenanceId': serializeParam(
-                widget!.maintenanceId,
+                widget.maintenanceId,
                 ParamType.String,
               ),
             }.withoutNulls,
@@ -120,7 +117,7 @@ class _MaintenanceHistoryCardWidgetState
                       children: [
                         Text(
                           valueOrDefault<String>(
-                            widget!.maintenanceCode,
+                            widget.maintenanceCode,
                             'MNT-111',
                           ),
                           style: FlutterFlowTheme.of(context)
@@ -137,7 +134,7 @@ class _MaintenanceHistoryCardWidgetState
                         ),
                         Text(
                           valueOrDefault<String>(
-                            widget!.typeOfMaintenance,
+                            widget.typeOfMaintenance,
                             'Tipo de Mtto.',
                           ),
                           style: FlutterFlowTheme.of(context)
@@ -153,7 +150,7 @@ class _MaintenanceHistoryCardWidgetState
                         Text(
                           valueOrDefault<String>(
                             functions.dateForScheduledMtto(
-                                widget!.maintenanceDate?.toString()),
+                                widget.maintenanceDate?.toString()),
                             'Dic 01, 2025',
                           ),
                           style: FlutterFlowTheme.of(context)

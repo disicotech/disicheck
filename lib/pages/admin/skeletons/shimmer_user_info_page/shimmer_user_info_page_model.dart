@@ -1,15 +1,7 @@
-import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/admin/skeletons/shimmer_user_info/shimmer_user_info_widget.dart';
-import 'dart:math';
-import 'dart:ui';
 import 'shimmer_user_info_page_widget.dart' show ShimmerUserInfoPageWidget;
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class ShimmerUserInfoPageModel
     extends FlutterFlowModel<ShimmerUserInfoPageWidget> {

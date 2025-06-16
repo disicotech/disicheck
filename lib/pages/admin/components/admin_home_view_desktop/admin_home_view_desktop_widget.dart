@@ -1,14 +1,10 @@
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/resources/components/maintenance_stats/maintenance_stats_widget.dart';
-import 'dart:math';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'admin_home_view_desktop_model.dart';
 export 'admin_home_view_desktop_model.dart';
 
@@ -128,7 +124,9 @@ class _AdminHomeViewDesktopWidgetState extends State<AdminHomeViewDesktopWidget>
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      decoration: BoxDecoration(),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8.0),
+      ),
       child: Padding(
         padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
         child: Column(
@@ -192,7 +190,7 @@ class _AdminHomeViewDesktopWidgetState extends State<AdminHomeViewDesktopWidget>
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 12.0),
                             child: Text(
-                              widget!.scheduledMttos.toString(),
+                              widget.scheduledMttos.toString(),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
@@ -261,7 +259,7 @@ class _AdminHomeViewDesktopWidgetState extends State<AdminHomeViewDesktopWidget>
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 12.0),
                             child: Text(
-                              widget!.failuresFound.toString(),
+                              widget.failuresFound.toString(),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
@@ -330,7 +328,7 @@ class _AdminHomeViewDesktopWidgetState extends State<AdminHomeViewDesktopWidget>
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 12.0),
                             child: Text(
-                              widget!.fixedFailures.toString(),
+                              widget.fixedFailures.toString(),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
@@ -387,7 +385,11 @@ class _AdminHomeViewDesktopWidgetState extends State<AdminHomeViewDesktopWidget>
                 child: wrapWithModel(
                   model: _model.maintenanceStatsModel,
                   updateCallback: () => safeSetState(() {}),
-                  child: MaintenanceStatsWidget(),
+                  child: MaintenanceStatsWidget(
+                    scheduledMttos: widget.scheduledMttos,
+                    failuresFound: widget.failuresFound,
+                    fixedFailures: widget.fixedFailures,
+                  ),
                 ),
               ),
             ),

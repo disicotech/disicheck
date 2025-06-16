@@ -4,15 +4,12 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/admin/components/empty_access_requests/empty_access_requests_widget.dart';
 import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
-import 'dart:ui';
 import '/actions/actions.dart' as action_blocks;
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'access_requests_page_model.dart';
 export 'access_requests_page_model.dart';
 
@@ -54,8 +51,6 @@ class _AccessRequestsPageWidgetState extends State<AccessRequestsPageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Title(
         title: 'Peticiones de Acceso',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
@@ -92,7 +87,14 @@ class _AccessRequestsPageWidgetState extends State<AccessRequestsPageWidget> {
                       child: wrapWithModel(
                         model: _model.desktopSideBarModel,
                         updateCallback: () => safeSetState(() {}),
-                        child: DesktopSideBarWidget(),
+                        child: DesktopSideBarWidget(
+                          homeSelected: true,
+                          mttosSelected: false,
+                          inventorySelected: false,
+                          reportsSelected: false,
+                          usersSelected: false,
+                          scheduleSelected: false,
+                        ),
                       ),
                     ),
                   Expanded(

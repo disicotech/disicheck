@@ -10,8 +10,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import '/pages/admin/components/assign_project_to_a_user/assign_project_to_a_user_widget.dart';
-import 'dart:convert';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import '/index.dart';
@@ -136,11 +134,11 @@ class _AssetProfileEditWidgetState extends State<AssetProfileEditWidget> {
                 children: [
                   FutureBuilder<List<MaintenanceObjectsRow>>(
                     future: FFAppState().cachedMttObjectDetail(
-                      uniqueQueryKey: widget!.maintenanceObjectId,
+                      uniqueQueryKey: widget.maintenanceObjectId,
                       requestFn: () => MaintenanceObjectsTable().querySingleRow(
                         queryFn: (q) => q.eqOrNull(
                           'id',
-                          widget!.maintenanceObjectId,
+                          widget.maintenanceObjectId,
                         ),
                       ),
                     ),
@@ -226,9 +224,7 @@ class _AssetProfileEditWidgetState extends State<AssetProfileEditWidget> {
                                               children: [
                                                 Builder(
                                                   builder: (context) {
-                                                    if (_model.uploadedLocalFile_uploadForAssetEdit ==
-                                                            null ||
-                                                        (_model
+                                                    if ((_model
                                                                 .uploadedLocalFile_uploadForAssetEdit
                                                                 .bytes
                                                                 ?.isEmpty ??
@@ -369,7 +365,7 @@ class _AssetProfileEditWidgetState extends State<AssetProfileEditWidget> {
                                   future: MaintenancesTable().querySingleRow(
                                     queryFn: (q) => q.eqOrNull(
                                       'odem_id',
-                                      widget!.maintenanceObjectId,
+                                      widget.maintenanceObjectId,
                                     ),
                                   ),
                                   builder: (context, snapshot) {
@@ -1546,8 +1542,8 @@ class _AssetProfileEditWidgetState extends State<AssetProfileEditWidget> {
                                                             (newValue) async {
                                                           safeSetState(() =>
                                                               _model.switchValue1 =
-                                                                  newValue!);
-                                                          if (newValue!) {
+                                                                  newValue);
+                                                          if (newValue) {
                                                             _model.returnedObject =
                                                                 true;
                                                             safeSetState(() {});
@@ -1808,8 +1804,8 @@ class _AssetProfileEditWidgetState extends State<AssetProfileEditWidget> {
                                                         (newValue) async {
                                                       safeSetState(() =>
                                                           _model.switchValue2 =
-                                                              newValue!);
-                                                      if (newValue!) {
+                                                              newValue);
+                                                      if (newValue) {
                                                         _model.registerObjectTransfer =
                                                             true;
                                                         safeSetState(() {});
@@ -1992,7 +1988,7 @@ class _AssetProfileEditWidgetState extends State<AssetProfileEditWidget> {
                                                                       (rows) =>
                                                                           rows.eqOrNull(
                                                                     'id',
-                                                                    widget!
+                                                                    widget
                                                                         .maintenanceObjectId,
                                                                   ),
                                                                 );
@@ -2013,7 +2009,7 @@ class _AssetProfileEditWidgetState extends State<AssetProfileEditWidget> {
                                                                       (rows) =>
                                                                           rows.eqOrNull(
                                                                     'id',
-                                                                    widget!
+                                                                    widget
                                                                         .maintenanceObjectId,
                                                                   ),
                                                                 );
@@ -2067,7 +2063,7 @@ class _AssetProfileEditWidgetState extends State<AssetProfileEditWidget> {
                                                                       (rows) =>
                                                                           rows.eqOrNull(
                                                                     'id',
-                                                                    widget!
+                                                                    widget
                                                                         .maintenanceObjectId,
                                                                   ),
                                                                 );
@@ -2264,7 +2260,7 @@ class _AssetProfileEditWidgetState extends State<AssetProfileEditWidget> {
                                                                             (rows) =>
                                                                                 rows.eqOrNull(
                                                                           'id',
-                                                                          widget!
+                                                                          widget
                                                                               .maintenanceObjectId,
                                                                         ),
                                                                       );
@@ -2298,7 +2294,7 @@ class _AssetProfileEditWidgetState extends State<AssetProfileEditWidget> {
                                                                                     AssetProfilePageWidget.routeName,
                                                                                     queryParameters: {
                                                                                       'maintenanceObjectId': serializeParam(
-                                                                                        widget!.maintenanceObjectId,
+                                                                                        widget.maintenanceObjectId,
                                                                                         ParamType.String,
                                                                                       ),
                                                                                     }.withoutNulls,

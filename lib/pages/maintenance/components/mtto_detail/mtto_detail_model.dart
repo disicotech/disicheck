@@ -1,26 +1,10 @@
-import '/backend/schema/enums/enums.dart';
-import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/commons/alert_modal/alert_modal_widget.dart';
-import '/components/commons/confirmation_modal/confirmation_modal_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/upload_data.dart';
-import '/pages/home/components/skeletons/shimmer_current_project_name/shimmer_current_project_name_widget.dart';
 import '/pages/maintenance/components/activities_input/activities_input_widget.dart';
-import 'dart:ui';
-import '/flutter_flow/custom_functions.dart' as functions;
-import '/flutter_flow/random_data_util.dart' as random_data;
 import '/flutter_flow/request_manager.dart';
 
-import '/index.dart';
 import 'mtto_detail_widget.dart' show MttoDetailWidget;
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class MttoDetailModel extends FlutterFlowModel<MttoDetailWidget> {
   ///  Local state fields for this component.

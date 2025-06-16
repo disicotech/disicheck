@@ -1,30 +1,15 @@
-import '/auth/supabase_auth/auth_util.dart';
-import '/backend/schema/enums/enums.dart';
-import '/backend/supabase/supabase.dart';
-import '/components/commons/alert_modal/alert_modal_widget.dart';
-import '/components/commons/confirmation_modal/confirmation_modal_widget.dart';
 import '/components/commons/principal_action_button_orange/principal_action_button_orange_widget.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/flutter_flow/upload_data.dart';
 import '/pages/maintenance/create_maintenance_objects/components/equipment_machines_form/equipment_machines_form_widget.dart';
 import '/pages/maintenance/create_maintenance_objects/components/infrastructure_form/infrastructure_form_widget.dart';
 import '/pages/maintenance/create_maintenance_objects/components/input_element/input_element_widget.dart';
 import '/pages/maintenance/create_maintenance_objects/components/measuring_tool_form/measuring_tool_form_widget.dart';
 import '/pages/maintenance/create_maintenance_objects/components/tools_form/tools_form_widget.dart';
-import '/pages/resources/skeletons/shimmer_create_asset/shimmer_create_asset_widget.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'create_asset_page_widget.dart' show CreateAssetPageWidget;
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class CreateAssetPageModel extends FlutterFlowModel<CreateAssetPageWidget> {
   ///  Local state fields for this page.

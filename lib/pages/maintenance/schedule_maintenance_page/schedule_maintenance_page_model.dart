@@ -1,27 +1,13 @@
-import '/auth/supabase_auth/auth_util.dart';
-import '/backend/schema/enums/enums.dart';
-import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/commons/alert_modal/alert_modal_widget.dart';
-import '/components/commons/confirmation_modal/confirmation_modal_widget.dart';
 import '/components/commons/principal_action_button_orange/principal_action_button_orange_widget.dart';
 import '/components/maintenance_object_list_view/maintenance_object_list_view_widget.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/pages/maintenance/components/skeletons/shimmer_project_users/shimmer_project_users_widget.dart';
-import 'dart:ui';
-import '/flutter_flow/random_data_util.dart' as random_data;
 import '/index.dart';
 import 'schedule_maintenance_page_widget.dart'
     show ScheduleMaintenancePageWidget;
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class ScheduleMaintenancePageModel
     extends FlutterFlowModel<ScheduleMaintenancePageWidget> {
@@ -44,6 +30,9 @@ class ScheduleMaintenancePageModel
   // State field(s) for mttoPersonAssigned widget.
   String? mttoPersonAssignedValue1;
   FormFieldController<String>? mttoPersonAssignedValueController1;
+  // State field(s) for mttoPersonAssigned widget.
+  String? mttoPersonAssignedValue2;
+  FormFieldController<String>? mttoPersonAssignedValueController2;
   // State field(s) for mttoType widget.
   String? mttoTypeValue1;
   FormFieldController<String>? mttoTypeValueController1;
@@ -68,8 +57,8 @@ class ScheduleMaintenancePageModel
   // Model for MaintenanceObjectListView component.
   late MaintenanceObjectListViewModel maintenanceObjectListViewModel2;
   // State field(s) for mttoPersonAssigned widget.
-  String? mttoPersonAssignedValue2;
-  FormFieldController<String>? mttoPersonAssignedValueController2;
+  String? mttoPersonAssignedValue3;
+  FormFieldController<String>? mttoPersonAssignedValueController3;
   // State field(s) for mttoType widget.
   String? mttoTypeValue2;
   FormFieldController<String>? mttoTypeValueController2;

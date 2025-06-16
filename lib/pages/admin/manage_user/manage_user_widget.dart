@@ -11,12 +11,10 @@ import '/pages/admin/components/assign_role_to_a_user/assign_role_to_a_user_widg
 import '/pages/admin/skeletons/shimmer_user_info/shimmer_user_info_widget.dart';
 import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
 import '/pages/home/components/skeletons/shimmer_current_project_name/shimmer_current_project_name_widget.dart';
-import 'dart:ui';
 import '/actions/actions.dart' as action_blocks;
 import '/index.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -61,6 +59,12 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.queryUserProject = await UsersWithProjectsTable().queryRows(
+        queryFn: (q) => q.eqOrNull(
+          'user_id',
+          widget.userId,
+        ),
+      );
       await action_blocks.conditionAdminRoleNavigation(context);
     });
 
@@ -149,7 +153,14 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
                           child: wrapWithModel(
                             model: _model.desktopSideBarModel,
                             updateCallback: () => safeSetState(() {}),
-                            child: DesktopSideBarWidget(),
+                            child: DesktopSideBarWidget(
+                              homeSelected: false,
+                              mttosSelected: false,
+                              inventorySelected: false,
+                              reportsSelected: false,
+                              usersSelected: true,
+                              scheduleSelected: false,
+                            ),
                           ),
                         ),
                       ),
@@ -186,7 +197,7 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
                                               UsersTable().querySingleRow(
                                             queryFn: (q) => q.eqOrNull(
                                               'id',
-                                              widget!.userId,
+                                              widget.userId,
                                             ),
                                           ),
                                         ),
@@ -390,7 +401,7 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
                                                                       AutoSizeText(
                                                                     valueOrDefault<
                                                                         String>(
-                                                                      widget!
+                                                                      widget
                                                                           .userName,
                                                                       'Sin Nombre',
                                                                     ).maybeHandleOverflow(
@@ -427,7 +438,7 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
                                                                 Text(
                                                                   valueOrDefault<
                                                                       String>(
-                                                                    widget!
+                                                                    widget
                                                                         .userEmail,
                                                                     'Sin Email',
                                                                   ),
@@ -497,7 +508,7 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
                                                                           TextSpan(
                                                                             text:
                                                                                 valueOrDefault<String>(
-                                                                              widget!.userDNI,
+                                                                              widget.userDNI,
                                                                               'No registra',
                                                                             ),
                                                                             style:
@@ -606,7 +617,7 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
                                                                           (q) =>
                                                                               q.eqOrNull(
                                                                         'user_id',
-                                                                        widget!
+                                                                        widget
                                                                             .userId,
                                                                       ),
                                                                     ),
@@ -835,25 +846,37 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
                                                   await UsersProjectsTable()
                                                       .update(
                                                     data: {
-                                                      'user_id': widget!.userId,
-                                                      'project_id': _model
-                                                          .selectedPojectToAssign,
+                                                      'user_id': widget.userId,
+                                                      'project_id': _model.selectedPojectToAssign !=
+                                                                  null &&
+                                                              _model.selectedPojectToAssign !=
+                                                                  ''
+                                                          ? _model
+                                                              .selectedPojectToAssign
+                                                          : _model
+                                                              .queryUserProject
+                                                              ?.firstOrNull
+                                                              ?.projectId,
                                                     },
                                                     matchingRows: (rows) =>
                                                         rows.eqOrNull(
                                                       'user_id',
-                                                      widget!.userId,
+                                                      widget.userId,
                                                     ),
                                                   );
                                                   await UsersTable().update(
                                                     data: {
                                                       'role_id': _model
-                                                          .selectedRoleToAssign,
+                                                                  .selectedRoleToAssign !=
+                                                              null
+                                                          ? _model
+                                                              .selectedRoleToAssign
+                                                          : widget.userRole,
                                                     },
                                                     matchingRows: (rows) =>
                                                         rows.eqOrNull(
                                                       'id',
-                                                      widget!.userId,
+                                                      widget.userId,
                                                     ),
                                                   );
                                                   await showDialog(
@@ -890,6 +913,9 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
                                                       );
                                                     },
                                                   );
+
+                                                  _model
+                                                      .clearChacheCurrentUserProjectCache();
                                                 },
                                               ),
                                             ),
@@ -927,7 +953,7 @@ class _ManageUserWidgetState extends State<ManageUserWidget> {
                                                                 (rows) => rows
                                                                     .eqOrNull(
                                                               'id',
-                                                              widget!.userId,
+                                                              widget.userId,
                                                             ),
                                                           );
                                                           Navigator.pop(

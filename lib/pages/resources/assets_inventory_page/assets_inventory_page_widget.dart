@@ -1,24 +1,21 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/enums/enums.dart';
-import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/commons/empty_assets_list_component/empty_assets_list_component_widget.dart';
 import '/components/commons/nav_bar/nav_bar_widget.dart';
 import '/components/maintenance_object_grid_view/maintenance_object_grid_view_widget.dart';
 import '/components/maintenance_object_list_view/maintenance_object_list_view_widget.dart';
-import '/components/mobile_objects_metrics_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/pages/home/components/desktop_side_bar/desktop_side_bar_widget.dart';
+import '/pages/home/components/mobile_objects_metrics/mobile_objects_metrics_widget.dart';
+import '/pages/maintenance/components/skeletons/shimmer_project_input/shimmer_project_input_widget.dart';
 import '/pages/resources/components/filter_by_category/filter_by_category_widget.dart';
 import '/pages/resources/components/filter_by_category_copy/filter_by_category_copy_widget.dart';
 import '/pages/resources/skeletons/shimmer_mobile_objects_list/shimmer_mobile_objects_list_widget.dart';
-import 'dart:math';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -185,7 +182,14 @@ class _AssetsInventoryPageWidgetState extends State<AssetsInventoryPageWidget>
                         wrapWithModel(
                           model: _model.desktopSideBarModel1,
                           updateCallback: () => safeSetState(() {}),
-                          child: DesktopSideBarWidget(),
+                          child: DesktopSideBarWidget(
+                            homeSelected: false,
+                            mttosSelected: false,
+                            inventorySelected: true,
+                            reportsSelected: false,
+                            usersSelected: false,
+                            scheduleSelected: false,
+                          ),
                         ),
                         Expanded(
                           child: Container(
@@ -395,7 +399,7 @@ class _AssetsInventoryPageWidgetState extends State<AssetsInventoryPageWidget>
                                                   highlightColor:
                                                       Colors.transparent,
                                                   onTap: () async {
-                                                    if (widget!
+                                                    if (widget
                                                             .pageComingFrom ==
                                                         NavbarNavigation
                                                             .CREATING_MAINTENANCE_STATE_PAGE) {
@@ -454,7 +458,7 @@ class _AssetsInventoryPageWidgetState extends State<AssetsInventoryPageWidget>
                                                                 size: 24.0,
                                                               ),
                                                               Text(
-                                                                widget!.pageComingFrom ==
+                                                                widget.pageComingFrom ==
                                                                         NavbarNavigation
                                                                             .CREATING_MAINTENANCE_STATE_PAGE
                                                                     ? 'Seleccionar este activo'
@@ -720,17 +724,7 @@ class _AssetsInventoryPageWidgetState extends State<AssetsInventoryPageWidget>
                                                                               (context, snapshot) {
                                                                             // Customize what your widget looks like when it's loading.
                                                                             if (!snapshot.hasData) {
-                                                                              return Center(
-                                                                                child: SizedBox(
-                                                                                  width: 50.0,
-                                                                                  height: 50.0,
-                                                                                  child: CircularProgressIndicator(
-                                                                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                      FlutterFlowTheme.of(context).primary,
-                                                                                    ),
-                                                                                  ),
-                                                                                ),
-                                                                              );
+                                                                              return ShimmerProjectInputWidget();
                                                                             }
                                                                             List<ProjectsRow>
                                                                                 containerProjectsRowList =
@@ -927,7 +921,7 @@ class _AssetsInventoryPageWidgetState extends State<AssetsInventoryPageWidget>
                                                             Builder(
                                                               builder:
                                                                   (context) {
-                                                                if (widget!
+                                                                if (widget
                                                                         .pageComingFrom ==
                                                                     NavbarNavigation
                                                                         .CREATING_MAINTENANCE_STATE_PAGE) {
@@ -1025,7 +1019,7 @@ class _AssetsInventoryPageWidgetState extends State<AssetsInventoryPageWidget>
                                                                                               assetName: objectsWithNoMttoListItem.name,
                                                                                               assetProject: objectsWithNoMttoListItem.assignedProjectId,
                                                                                               assetCategory: objectsWithNoMttoListItem.category,
-                                                                                              pageComingFrom: widget!.pageComingFrom!.name,
+                                                                                              pageComingFrom: widget.pageComingFrom!.name,
                                                                                               assetId: objectsWithNoMttoListItem.id,
                                                                                               maintenanceObjectPhoto: objectsWithNoMttoListItem.moImage,
                                                                                               assetCode: objectsWithNoMttoListItem.code,
@@ -1138,7 +1132,7 @@ class _AssetsInventoryPageWidgetState extends State<AssetsInventoryPageWidget>
                                                                                                 searchedObjectsWithNoMttoItem,
                                                                                                 r'''$.category''',
                                                                                               ).toString(),
-                                                                                              pageComingFrom: widget!.pageComingFrom!.name,
+                                                                                              pageComingFrom: widget.pageComingFrom!.name,
                                                                                               assetId: getJsonField(
                                                                                                 searchedObjectsWithNoMttoItem,
                                                                                                 r'''$.id''',
@@ -1261,7 +1255,7 @@ class _AssetsInventoryPageWidgetState extends State<AssetsInventoryPageWidget>
                                                                                               assetName: objectsListItem.name,
                                                                                               assetProject: objectsListItem.assignedProjectId,
                                                                                               assetCategory: objectsListItem.category,
-                                                                                              pageComingFrom: widget!.pageComingFrom!.name,
+                                                                                              pageComingFrom: widget.pageComingFrom!.name,
                                                                                               assetId: objectsListItem.id,
                                                                                               maintenanceObjectPhoto: objectsListItem.moImage,
                                                                                               assetCode: objectsListItem.code,
@@ -1374,7 +1368,7 @@ class _AssetsInventoryPageWidgetState extends State<AssetsInventoryPageWidget>
                                                                                                 searchedObjectsWithNoMttoItem,
                                                                                                 r'''$.category''',
                                                                                               ).toString(),
-                                                                                              pageComingFrom: widget!.pageComingFrom!.name,
+                                                                                              pageComingFrom: widget.pageComingFrom!.name,
                                                                                               assetId: getJsonField(
                                                                                                 searchedObjectsWithNoMttoItem,
                                                                                                 r'''$.id''',
@@ -1765,7 +1759,14 @@ class _AssetsInventoryPageWidgetState extends State<AssetsInventoryPageWidget>
                         wrapWithModel(
                           model: _model.desktopSideBarModel2,
                           updateCallback: () => safeSetState(() {}),
-                          child: DesktopSideBarWidget(),
+                          child: DesktopSideBarWidget(
+                            homeSelected: false,
+                            mttosSelected: false,
+                            inventorySelected: true,
+                            reportsSelected: false,
+                            usersSelected: false,
+                            scheduleSelected: false,
+                          ),
                         ),
                         Expanded(
                           child: Container(
@@ -2146,7 +2147,7 @@ class _AssetsInventoryPageWidgetState extends State<AssetsInventoryPageWidget>
                                                   ],
                                                 ),
                                               ),
-                                              if (widget!.pageComingFrom ==
+                                              if (widget.pageComingFrom ==
                                                   NavbarNavigation
                                                       .CREATING_MAINTENANCE_STATE_PAGE)
                                                 Row(
@@ -2164,7 +2165,7 @@ class _AssetsInventoryPageWidgetState extends State<AssetsInventoryPageWidget>
                                                         highlightColor:
                                                             Colors.transparent,
                                                         onTap: () async {
-                                                          if (widget!
+                                                          if (widget
                                                                   .pageComingFrom ==
                                                               NavbarNavigation
                                                                   .CREATING_MAINTENANCE_STATE_PAGE) {
@@ -2333,7 +2334,7 @@ class _AssetsInventoryPageWidgetState extends State<AssetsInventoryPageWidget>
                                                                       assetCategory:
                                                                           objectsListItem
                                                                               .category,
-                                                                      pageComingFrom: widget!
+                                                                      pageComingFrom: widget
                                                                           .pageComingFrom!
                                                                           .name,
                                                                       assetId:

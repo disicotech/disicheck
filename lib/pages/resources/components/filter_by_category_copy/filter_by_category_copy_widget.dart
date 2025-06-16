@@ -1,10 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'filter_by_category_copy_model.dart';
 export 'filter_by_category_copy_model.dart';
 
@@ -165,7 +163,7 @@ class _FilterByCategoryCopyWidgetState
                                   ? BorderSide(
                                       width: 2,
                                       color: FlutterFlowTheme.of(context)
-                                          .alternate!,
+                                          .alternate,
                                     )
                                   : null,
                               activeColor: FlutterFlowTheme.of(context).primary,
@@ -223,7 +221,7 @@ class _FilterByCategoryCopyWidgetState
                                   ? BorderSide(
                                       width: 2,
                                       color: FlutterFlowTheme.of(context)
-                                          .alternate!,
+                                          .alternate,
                                     )
                                   : null,
                               activeColor: FlutterFlowTheme.of(context).primary,
@@ -281,7 +279,7 @@ class _FilterByCategoryCopyWidgetState
                                   ? BorderSide(
                                       width: 2,
                                       color: FlutterFlowTheme.of(context)
-                                          .alternate!,
+                                          .alternate,
                                     )
                                   : null,
                               activeColor: FlutterFlowTheme.of(context).primary,
@@ -339,7 +337,7 @@ class _FilterByCategoryCopyWidgetState
                                   ? BorderSide(
                                       width: 2,
                                       color: FlutterFlowTheme.of(context)
-                                          .alternate!,
+                                          .alternate,
                                     )
                                   : null,
                               activeColor: FlutterFlowTheme.of(context).primary,

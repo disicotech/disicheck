@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'flutter_flow/request_manager.dart';
 import '/backend/schema/structs/index.dart';
-import '/backend/schema/enums/enums.dart';
-import 'package:ff_commons/api_requests/api_manager.dart';
 import 'backend/supabase/supabase.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:csv/csv.dart';
 import 'package:synchronized/synchronized.dart';
 import 'flutter_flow/flutter_flow_util.dart';
-import 'dart:convert';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -472,7 +469,6 @@ class FFAppState extends ChangeNotifier {
     'Anual',
     'Bianual',
     'Trianual',
-    'Min',
     'Única'
   ];
   List<String> get mttFrecuency => _mttFrecuency;

@@ -6,7 +6,6 @@ import '/components/commons/confirmation_modal/confirmation_modal_widget.dart';
 import '/components/commons/principal_action_button_orange/principal_action_button_orange_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import '/pages/maintenance/create_maintenance_objects/components/equipment_machines_form/equipment_machines_form_widget.dart';
@@ -19,7 +18,6 @@ import 'dart:ui';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -254,8 +252,6 @@ class _CreateAssetPageWidgetState extends State<CreateAssetPageWidget> {
                                                 Builder(
                                                   builder: (context) {
                                                     if (_model.uploadedFileUrl_uploadedLocalPhotoFile ==
-                                                            null ||
-                                                        _model.uploadedFileUrl_uploadedLocalPhotoFile ==
                                                             '') {
                                                       return Container(
                                                         width: 120.0,
@@ -578,7 +574,7 @@ class _CreateAssetPageWidgetState extends State<CreateAssetPageWidget> {
                                                                       width: 2,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .alternate!,
+                                                                          .alternate,
                                                                     )
                                                                   : null,
                                                               activeColor:
@@ -674,7 +670,7 @@ class _CreateAssetPageWidgetState extends State<CreateAssetPageWidget> {
                                                                       width: 2,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .alternate!,
+                                                                          .alternate,
                                                                     )
                                                                   : null,
                                                               activeColor:
@@ -2102,20 +2098,14 @@ class _CreateAssetPageWidgetState extends State<CreateAssetPageWidget> {
                                               requiredAction: () async {
                                                 if (_model.moSelectedCategory ==
                                                     MoCategories.INFRA.name) {
-                                                  if ((_model.registrantDniTextController.text == null || _model.registrantDniTextController.text == '') ||
+                                                  if ((_model.registrantDniTextController.text == '') ||
                                                       (_model.categoryDropdownValue == null ||
                                                           _model.categoryDropdownValue ==
                                                               '') ||
-                                                      (_model.criticalityLevelTextController.text ==
-                                                              null ||
-                                                          _model.criticalityLevelTextController
+                                                      (_model.criticalityLevelTextController
                                                                   .text ==
                                                               '') ||
                                                       (_model
-                                                                  .serviceLifeTextController
-                                                                  .text ==
-                                                              null ||
-                                                          _model
                                                                   .serviceLifeTextController
                                                                   .text ==
                                                               '') ||
@@ -2130,18 +2120,8 @@ class _CreateAssetPageWidgetState extends State<CreateAssetPageWidget> {
                                                                   .infrastructureFormModel
                                                                   .infraIdentifierCodeTextController
                                                                   .text ==
-                                                              null ||
-                                                          _model
-                                                                  .infrastructureFormModel
-                                                                  .infraIdentifierCodeTextController
-                                                                  .text ==
                                                               '') ||
                                                       (_model
-                                                                  .infrastructureFormModel
-                                                                  .infraSerialCodeTextController
-                                                                  .text ==
-                                                              null ||
-                                                          _model
                                                                   .infrastructureFormModel
                                                                   .infraSerialCodeTextController
                                                                   .text ==
@@ -2312,20 +2292,14 @@ class _CreateAssetPageWidgetState extends State<CreateAssetPageWidget> {
                                                         .moSelectedCategory ==
                                                     MoCategories
                                                         .HERRAMIENTAS.name) {
-                                                  if ((_model.registrantDniTextController.text == null || _model.registrantDniTextController.text == '') ||
+                                                  if ((_model.registrantDniTextController.text == '') ||
                                                       (_model.categoryDropdownValue == null ||
                                                           _model.categoryDropdownValue ==
                                                               '') ||
-                                                      (_model.criticalityLevelTextController.text ==
-                                                              null ||
-                                                          _model.criticalityLevelTextController
+                                                      (_model.criticalityLevelTextController
                                                                   .text ==
                                                               '') ||
                                                       (_model
-                                                                  .serviceLifeTextController
-                                                                  .text ==
-                                                              null ||
-                                                          _model
                                                                   .serviceLifeTextController
                                                                   .text ==
                                                               '') ||
@@ -2340,18 +2314,8 @@ class _CreateAssetPageWidgetState extends State<CreateAssetPageWidget> {
                                                                   .toolsFormModel
                                                                   .toolsIdentifierCodeTextController
                                                                   .text ==
-                                                              null ||
-                                                          _model
-                                                                  .toolsFormModel
-                                                                  .toolsIdentifierCodeTextController
-                                                                  .text ==
                                                               '') ||
                                                       (_model
-                                                                  .toolsFormModel
-                                                                  .toolsSerialCodeTextController
-                                                                  .text ==
-                                                              null ||
-                                                          _model
                                                                   .toolsFormModel
                                                                   .toolsSerialCodeTextController
                                                                   .text ==
@@ -2561,20 +2525,14 @@ class _CreateAssetPageWidgetState extends State<CreateAssetPageWidget> {
                                                     MoCategories
                                                         .EQUIPOS_MAQUINAS
                                                         .name) {
-                                                  if ((_model.registrantDniTextController.text == null || _model.registrantDniTextController.text == '') ||
+                                                  if ((_model.registrantDniTextController.text == '') ||
                                                       (_model.categoryDropdownValue == null ||
                                                           _model.categoryDropdownValue ==
                                                               '') ||
-                                                      (_model.criticalityLevelTextController.text ==
-                                                              null ||
-                                                          _model.criticalityLevelTextController
+                                                      (_model.criticalityLevelTextController
                                                                   .text ==
                                                               '') ||
                                                       (_model
-                                                                  .serviceLifeTextController
-                                                                  .text ==
-                                                              null ||
-                                                          _model
                                                                   .serviceLifeTextController
                                                                   .text ==
                                                               '') ||
@@ -2589,18 +2547,8 @@ class _CreateAssetPageWidgetState extends State<CreateAssetPageWidget> {
                                                                   .equipmentMachinesFormModel
                                                                   .equipmentMachineIdentifierCodeTextController
                                                                   .text ==
-                                                              null ||
-                                                          _model
-                                                                  .equipmentMachinesFormModel
-                                                                  .equipmentMachineIdentifierCodeTextController
-                                                                  .text ==
                                                               '') ||
                                                       (_model
-                                                                  .equipmentMachinesFormModel
-                                                                  .equipmentMachineSerialCodeTextController
-                                                                  .text ==
-                                                              null ||
-                                                          _model
                                                                   .equipmentMachinesFormModel
                                                                   .equipmentMachineSerialCodeTextController
                                                                   .text ==
@@ -2802,20 +2750,14 @@ class _CreateAssetPageWidgetState extends State<CreateAssetPageWidget> {
                                                         .moSelectedCategory ==
                                                     MoCategories
                                                         .INSTRUMENTOS.name) {
-                                                  if ((_model.registrantDniTextController.text == null || _model.registrantDniTextController.text == '') ||
+                                                  if ((_model.registrantDniTextController.text == '') ||
                                                       (_model.categoryDropdownValue == null ||
                                                           _model.categoryDropdownValue ==
                                                               '') ||
-                                                      (_model.criticalityLevelTextController.text ==
-                                                              null ||
-                                                          _model.criticalityLevelTextController
+                                                      (_model.criticalityLevelTextController
                                                                   .text ==
                                                               '') ||
                                                       (_model
-                                                                  .serviceLifeTextController
-                                                                  .text ==
-                                                              null ||
-                                                          _model
                                                                   .serviceLifeTextController
                                                                   .text ==
                                                               '') ||
@@ -2830,18 +2772,8 @@ class _CreateAssetPageWidgetState extends State<CreateAssetPageWidget> {
                                                                   .measuringToolFormModel
                                                                   .measuringToolCodeTextController
                                                                   .text ==
-                                                              null ||
-                                                          _model
-                                                                  .measuringToolFormModel
-                                                                  .measuringToolCodeTextController
-                                                                  .text ==
                                                               '') ||
                                                       (_model
-                                                                  .measuringToolFormModel
-                                                                  .measuringToolSerialTextController
-                                                                  .text ==
-                                                              null ||
-                                                          _model
                                                                   .measuringToolFormModel
                                                                   .measuringToolSerialTextController
                                                                   .text ==

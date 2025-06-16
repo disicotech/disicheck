@@ -1,12 +1,6 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:ui';
 import 'equipment_machines_form_widget.dart' show EquipmentMachinesFormWidget;
-import 'package:easy_debounce/easy_debounce.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class EquipmentMachinesFormModel
     extends FlutterFlowModel<EquipmentMachinesFormWidget> {

@@ -1,10 +1,7 @@
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:ui';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'activities_input_model.dart';
 export 'activities_input_model.dart';
@@ -38,14 +35,14 @@ class _ActivitiesInputWidgetState extends State<ActivitiesInputWidget> {
     _model.activityNameTextController ??= TextEditingController(
         text: FFAppState()
             .activitiesList
-            .elementAtOrNull(widget!.itemAtIndex!)
+            .elementAtOrNull(widget.itemAtIndex!)
             ?.name);
     _model.activityNameFocusNode ??= FocusNode();
 
     _model.activityDescriptionTextController ??= TextEditingController(
         text: FFAppState()
             .activitiesList
-            .elementAtOrNull(widget!.itemAtIndex!)
+            .elementAtOrNull(widget.itemAtIndex!)
             ?.description);
     _model.activityDescriptionFocusNode ??= FocusNode();
 
@@ -82,7 +79,7 @@ class _ActivitiesInputWidgetState extends State<ActivitiesInputWidget> {
                       Duration(milliseconds: 2000),
                       () async {
                         FFAppState().updateActivitiesListAtIndex(
-                          widget!.itemAtIndex!,
+                          widget.itemAtIndex!,
                           (e) =>
                               e..name = _model.activityNameTextController.text,
                         );
@@ -174,7 +171,7 @@ class _ActivitiesInputWidgetState extends State<ActivitiesInputWidget> {
                       Duration(milliseconds: 2000),
                       () async {
                         FFAppState().updateActivitiesListAtIndex(
-                          widget!.itemAtIndex!,
+                          widget.itemAtIndex!,
                           (e) => e
                             ..description =
                                 _model.activityDescriptionTextController.text,
@@ -258,7 +255,7 @@ class _ActivitiesInputWidgetState extends State<ActivitiesInputWidget> {
           hoverColor: Colors.transparent,
           highlightColor: Colors.transparent,
           onTap: () async {
-            FFAppState().removeAtIndexFromActivitiesList(widget!.itemAtIndex!);
+            FFAppState().removeAtIndexFromActivitiesList(widget.itemAtIndex!);
             _model.updatePage(() {});
           },
           child: Icon(
