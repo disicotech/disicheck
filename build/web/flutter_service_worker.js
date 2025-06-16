@@ -1,7 +1,7 @@
 'use strict';
 const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
-const CACHE_NAME = 'flutter-app-cache-v2.0.2';
+const CACHE_NAME = 'flutter-app-cache';
 
 const RESOURCES = {"flutter_bootstrap.js": "74744934ffdcd0f5341a5eeb31af28a6",
 "version.json": "008f43a652c644ab6a04aa5132dabbb9",
@@ -14,10 +14,10 @@ const RESOURCES = {"flutter_bootstrap.js": "74744934ffdcd0f5341a5eeb31af28a6",
 "icons/app_launcher_icon.png": "4cfc48750577602d95d916cef17c561b",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "manifest.json": "192ac43ddf6724a860d1816d97c098a6",
-"assets/AssetManifest.json": "b0836233d9a873172de5f0e997b0f25c",
+"assets/AssetManifest.json": "e90c36e83f413735d703d610678d18c8",
 "assets/NOTICES": "8cf420eba0764b7cee7504e6c835f5e4",
 "assets/FontManifest.json": "e34d215e4e87efbe7f36715697d61343",
-"assets/AssetManifest.bin.json": "952dc4fba3109bb76fc89defca7841b8",
+"assets/AssetManifest.bin.json": "db323216ef0e302ea79501682e971db6",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "33b7d9392238c04c131b6ce224e13711",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf": "7fac12c2a72eecbc46f07ffa89dbec62",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf": "8fc40215a4b4ff6d40c3290edf5381ea",
@@ -33,7 +33,7 @@ const RESOURCES = {"flutter_bootstrap.js": "74744934ffdcd0f5341a5eeb31af28a6",
 "assets/packages/marketplace_check_internet_connection_library_vrjzhi/assets/pdfs/favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "assets/packages/marketplace_check_internet_connection_library_vrjzhi/assets/fonts/favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "assets/shaders/ink_sparkle.frag": "ecc85a2e95f5e9f53123dcaf8cb9b6ce",
-"assets/AssetManifest.bin": "c864cb24cd383fc0fada9cb025690a43",
+"assets/AssetManifest.bin": "7fa5c572d30dc3f13a192012152960ad",
 "assets/fonts/MaterialIcons-Regular.otf": "13faf88f2ddca0aad77562820f05aa15",
 "assets/assets/audios/favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "assets/assets/jsons/favicon.png": "5dcef449791fa27946b3d35ad8803796",
@@ -63,11 +63,14 @@ const RESOURCES = {"flutter_bootstrap.js": "74744934ffdcd0f5341a5eeb31af28a6",
 "assets/assets/fonts/Gilroy-ThinItalic.ttf": "6fe75d8801ab6a4aeb79f5627be2a655",
 "assets/assets/fonts/Gilroy-BoldItalic.ttf": "920fb5d3a984a3906d0c681214ce0087",
 "assets/assets/fonts/Gilroy-SemiBoldItalic.ttf": "e2389bf40e3693ec0257d576bce4ff65",
+"assets/assets/fonts/Roboto-Regular.ttf": "8a36205bd9b83e03af0591a004bc97f4",
 "assets/assets/fonts/Gilroy-RegularItalic.ttf": "b564aec808c412ff20b83a2d779122b5",
 "assets/assets/fonts/Gilroy-BlackItalic.ttf": "fba7a1177258a7e2680202eff4036c54",
+"assets/assets/fonts/Nunito-Regular.ttf": "0c890be2af0d241a2387ad2c4c16af2c",
 "assets/assets/fonts/Gilroy-Regular.ttf": "31ff7c1a62a300dbbf9656b4ba14a0d5",
 "assets/assets/fonts/Gilroy-UltraLight.ttf": "f5bd9c00f2cc7353bfc80031dd5d9394",
 "assets/assets/fonts/Gilroy-Black.ttf": "b8a3b3a91be25a0030d694a34e152217",
+"assets/assets/fonts/Nunito-SemiBold.ttf": "45db66b4d9dff8842f4a8e5e3deb2f94",
 "assets/assets/fonts/favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "assets/assets/fonts/Gilroy-ExtraBold.ttf": "b487bfc69e2a1cb0578fe2a910da8b2b",
 "assets/assets/fonts/Gilroy-MediumItalic.ttf": "5d08cc9fffd565a2b9d9baae3846cb65",
@@ -169,16 +172,40 @@ self.addEventListener("activate", function(event) {
 // The fetch handler redirects requests for RESOURCE files to the service
 // worker cache.
 self.addEventListener("fetch", (event) => {
-  if (event.request.method !== "GET") return;
-  event.respondWith(
-    fetch(event.request)
-      .then((response) => {
-        return caches.open(CACHE_NAME).then((cache) => {
-          cache.put(event.request, response.clone());
+  if (event.request.method !== 'GET') {
+    return;
+  }
+  var origin = self.location.origin;
+  var key = event.request.url.substring(origin.length + 1);
+  // Redirect URLs to the index.html
+  if (key.indexOf('?v=') != -1) {
+    key = key.split('?v=')[0];
+  }
+  if (event.request.url == origin || event.request.url.startsWith(origin + '/#') || key == '') {
+    key = '/';
+  }
+  // If the URL is not the RESOURCE list then return to signal that the
+  // browser should take over.
+  if (!RESOURCES[key]) {
+    return;
+  }
+  // If the URL is the index.html, perform an online-first request.
+  if (key == '/') {
+    return onlineFirst(event);
+  }
+  event.respondWith(caches.open(CACHE_NAME)
+    .then((cache) =>  {
+      return cache.match(event.request).then((response) => {
+        // Either respond with the cached resource, or perform a fetch and
+        // lazily populate the cache only if the resource was successfully fetched.
+        return response || fetch(event.request).then((response) => {
+          if (response && Boolean(response.ok)) {
+            cache.put(event.request, response.clone());
+          }
           return response;
         });
       })
-      .catch(() => caches.match(event.request))
+    })
   );
 });
 self.addEventListener('message', (event) => {
